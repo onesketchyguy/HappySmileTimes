@@ -8,6 +8,8 @@ public class Talker : MonoBehaviour
     public DiologueManager DM;
     public  Player player;
     public string DIALOGUE;
+    public bool Sales;
+    public GameObject SP;
   
     // Start is called before the first frame update
     void Start()
@@ -29,14 +31,37 @@ public class Talker : MonoBehaviour
 
             if (collision.gameObject.tag == "Player")
             {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    print("sdasda");
-                    DM.Dtext.text = DIALOGUE;
-                    DM.DBOX.gameObject.SetActive(true);
-
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                print("sdasda");
+                player.AllowedToMove = false;
+                DM.Dtext.text = DIALOGUE;
+                DM.DBOX.gameObject.SetActive(true);
+                Invoke("Leave", .5f);
+                if (Sales) {
+                    Invoke("Shop", .5f);
+                  
+                 
                 }
+            }
+           
             
         }
+    }
+    public void Leave() {
+        player.AllowedToMove = true;
+        DM.Dtext.text = "";
+        DM.DBOX.gameObject.SetActive(false);
+    }
+    public void Shop()
+    {
+        SP.SetActive(true);
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        player.AllowedToMove = true;
+        DM.Dtext.text = "";
+        DM.DBOX.gameObject.SetActive(false);
+
     }
 }
