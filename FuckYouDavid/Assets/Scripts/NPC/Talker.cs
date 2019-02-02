@@ -55,7 +55,9 @@ public class Talker : MonoBehaviour
     }
     public void Shop()
     {
-        SP.SetActive(true);
+        if (SP != null) {
+            SP.SetActive(true);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
