@@ -6,6 +6,10 @@ public class Fighter : MonoBehaviour
 
     private float lastRotation;
 
+    [SerializeField] public CombatUniversals combattant;
+
+    [SerializeField] private bool attackOnSight = false;
+
     Movement mov => GetComponent<Movement>();
 
     [SerializeField] private float sightRange = 5;
@@ -59,7 +63,14 @@ public class Fighter : MonoBehaviour
         {
             if (sightHit.transform.tag == "Player")
             {
-                Debug.Log("Commence to battling!");
+                if (attackOnSight)
+                {
+                    Debug.Log("Commence to battling!");
+                }
+                else
+                {
+                    Debug.Log("Commence to chatting!");
+                }
             }
         }
     }
