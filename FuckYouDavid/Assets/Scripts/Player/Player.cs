@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] public CombatUniversals combattant;
 
+    private void Start()
+    {
+        combattant.Inititialize();
+    }
+
     void Update()
     {
         if (AllowedToMove) {
