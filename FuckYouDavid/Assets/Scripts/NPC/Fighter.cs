@@ -47,6 +47,11 @@ public class Fighter : MonoBehaviour
 
     RaycastHit2D sightHit => (Physics2D.Linecast(sightPosStart, sightPosEnd, Collisions));
 
+    private void Start()
+    {
+        combattant.Inititialize();
+    }
+
     private void Update()
     {
         if (rotationSpeed > 0)
@@ -66,6 +71,8 @@ public class Fighter : MonoBehaviour
                 if (attackOnSight)
                 {
                     Debug.Log("Commence to battling!");
+
+                    CombatManager.gameState = CombatManager.GameState.InCombat;
                 }
                 else
                 {
