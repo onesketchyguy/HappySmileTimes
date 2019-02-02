@@ -3,7 +3,7 @@
 [RequireComponent(typeof(Movement))]
 public class Player : MonoBehaviour
 {
-    public bool AllowedToMove;
+    public bool AllowedToMove = true;
     Movement mov => GetComponent<Movement>();
 
     void Update()
