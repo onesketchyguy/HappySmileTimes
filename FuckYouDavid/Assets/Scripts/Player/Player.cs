@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
     public bool AllowedToMove = true;
     Movement mov => GetComponent<Movement>();
 
+    [SerializeField] public CombatUniversals combattant;
+
     void Update()
     {
         if (AllowedToMove) {

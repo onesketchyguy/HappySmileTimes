@@ -1,56 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class CombatUniversals : MonoBehaviour
+﻿[System.Serializable]
+public class CombatUniversals
 {
-  
-    public int Stength; //attack
-    public int Agility; //attackspeed
-    public int Chin; //defence
-    public int StaminaStat;
+    //Stats
+    public int Stength = 1; //attack
+    public int Agility = 1; //attackspeed
+    public int Chin = 1; //defence
+    public int StaminaStat = 1;
 
-
-    //vals
-    public int MaxHealth;
-    public int MaxStamina;
+    // Main Values
+    public int MaxHealth => 5 + (Chin * 5);
+    public int MaxStamina => 5 + (StaminaStat * 5);
     public int CurrentStamina;
     public int CurrentHealth;
-    public int PL;
 
-    public Sprite CombatSprite;
-    public Sprite BackSprite;
+    public int PowerLevel => StaminaStat + Stength + Chin + Agility;
 
+    public UnityEngine.Sprite CombatSprite;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Inititialize()
     {
-        CalculatePowerlevel();
-        CalculateHealth();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (gameObject.tag != "Player")
-        {
-            if (CurrentHealth<= 0) {
-                //WinCombat();
-            }
-        }
-    }
-
-    public void CalculatePowerlevel() {
-        PL = StaminaStat + Stength + Chin + Agility;
-
-    }
-
-    public void CalculateHealth()
-    {
-        MaxHealth = (StaminaStat + Chin) *2;
         CurrentHealth = MaxHealth;
+        CurrentHealth = MaxStamina;
     }
-
-
-
 }
