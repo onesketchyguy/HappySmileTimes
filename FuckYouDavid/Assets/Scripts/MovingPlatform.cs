@@ -10,7 +10,7 @@ public class MovingPlatform : MonoBehaviour
         {
             GameObject Player = collision.gameObject;
             Player.GetComponent<Movement>().input = Right;
-            Player.GetComponent<Player>().AllowedToMove = false;
+            CombatManager.gameState = CombatManager.GameState.OnConveyor;
         }
       
     }
@@ -19,7 +19,7 @@ public class MovingPlatform : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GameObject Player = collision.gameObject;
-            Player.GetComponent<Player>().AllowedToMove = true;
+            CombatManager.gameState = CombatManager.GameState.Playing;
         }
     }
 }

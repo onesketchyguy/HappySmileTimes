@@ -15,7 +15,15 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (AllowedToMove) {
+        if (CombatManager.gameState == CombatManager.GameState.InCombat)
+        {
+            CombatManager.combatant_0 = combattant;
+        }
+
+        AllowedToMove = CombatManager.gameState == CombatManager.GameState.Playing;
+
+        if (AllowedToMove)
+        {
             mov.input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
     }

@@ -73,6 +73,8 @@ public class Fighter : MonoBehaviour
                     Debug.Log("Commence to battling!");
 
                     CombatManager.gameState = CombatManager.GameState.InCombat;
+
+                    CombatManager.combatant_1 = combattant;
                 }
                 else
                 {
@@ -82,7 +84,7 @@ public class Fighter : MonoBehaviour
         }
     }
 
-    void Rotate()
+    private void Rotate()
     {
         mov.RotateClockWise();
 

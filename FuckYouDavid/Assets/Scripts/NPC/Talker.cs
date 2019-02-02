@@ -49,7 +49,7 @@ public class Talker : MonoBehaviour
         }
     }
     public void Leave() {
-        player.AllowedToMove = true;
+        CombatManager.gameState = CombatManager.GameState.InChat;
         DM.Dtext.text = "";
         DM.DBOX.gameObject.SetActive(false);
     }
@@ -59,7 +59,7 @@ public class Talker : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        player.AllowedToMove = true;
+        CombatManager.gameState = CombatManager.GameState.Playing;
         DM.Dtext.text = "";
         DM.DBOX.gameObject.SetActive(false);
 
