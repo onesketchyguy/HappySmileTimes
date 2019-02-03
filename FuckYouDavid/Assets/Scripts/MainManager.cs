@@ -2,6 +2,18 @@
 
 public class MainManager : MonoBehaviour
 {
+    public static MainManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public delegate void Option_a();
 
     public static Option_a option_A;
@@ -10,7 +22,7 @@ public class MainManager : MonoBehaviour
 
     public static Option_b option_B;
 
-    public static GameObject OptionsBOX,ButtonA,ButtonB;
+    public GameObject ButtonA, ButtonB;
 
     public void Yes()
     {
@@ -22,10 +34,9 @@ public class MainManager : MonoBehaviour
         option_B();
     }
 
-
     public void ON()
     {
-        Debug.Log("On pressed");
+        Debug.Log("Turning on buttons...");
 
         ButtonA.SetActive(true);
         ButtonB.SetActive(true);
@@ -34,10 +45,9 @@ public class MainManager : MonoBehaviour
 
     public void OFF()
     {
-        Debug.Log("Off pressed");
+        Debug.Log("Turning off buttons...");
+
         ButtonA.SetActive(false);
-        ButtonB.SetActive(true);
+        ButtonB.SetActive(false);
     }
-
-
 }

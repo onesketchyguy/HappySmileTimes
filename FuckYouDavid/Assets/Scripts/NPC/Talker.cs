@@ -17,7 +17,6 @@ public class Talker : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
-        DM = FindObjectOfType<DiologueManager>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -39,7 +38,11 @@ public class Talker : MonoBehaviour
 
     public void Onchat()
     {
-     
+        if (DM == null)
+        {
+            DM = FindObjectOfType<DiologueManager>();
+        }
+
         DM.Dtext.text = DIALOGUE;
         DM.DBOX.gameObject.SetActive(true);
 
@@ -66,20 +69,19 @@ public class Talker : MonoBehaviour
     {
         InChat = false;
 
-        Debug.Log("Leaving");
+        Debug.Log("Leaving chat...");
 
         GameManager.gameState = GameManager.GameState.Playing;
 
-        DM.Dtext.text = "";
-
-        DM.DBOX.gameObject.SetActive(false);
+        DiologueManager.instance.ClearDialogueBox();
     }
 
     public void Shop()
     {
         GameManager.gameState = GameManager.GameState.InChat;
-        DM.Dtext.text = "";
-        DM.DBOX.gameObject.SetActive(false);
+
+        DiologueManager.instance.ClearDialogueBox();
+
         if (SP != null) {
        
             SP.gameObject.SetActive(true);
@@ -88,9 +90,6 @@ public class Talker : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        GameManager.gameState = GameManager.GameState.Playing;
-        DM.Dtext.text = "";
-        DM.DBOX.gameObject.SetActive(false);
-
+        Leave();
     }
 }

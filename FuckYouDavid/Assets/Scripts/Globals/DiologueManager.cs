@@ -1,25 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class DiologueManager : MonoBehaviour
 {
+    public static DiologueManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public GameObject DBOX;
     public Text Dtext;
 
     void Start()
     {
-        Dtext.text = " ";
-        if (DBOX!=null) {
-            DBOX.gameObject.SetActive(false);
-            print("Not null");
-        }
+        ClearDialogueBox();
     }
 
-    void Update()
+    public void ClearDialogueBox()
     {
+        if (DBOX != null)
+        {
+            DBOX.gameObject.SetActive(false);
 
-        
+            Dtext.text = " ";
+        }
     }
 }

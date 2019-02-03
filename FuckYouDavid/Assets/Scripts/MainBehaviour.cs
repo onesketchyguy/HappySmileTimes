@@ -3,34 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class MainBehaviour : MonoBehaviour
 {
-
     public DiologueManager DM;
     public string LevelToGo = "Main";
-    public GameObject Options;
     public Talker T;
 
     // Start is called before the first frame update
     void Start()
     {
         T = FindObjectOfType<Talker>();
-      
     }
 
-    void Update()
-    {
-        if (Options == null)
-        {
-            Options = GameObject.Find("OptionsBOX");
-
-            Options = MainManager.OptionsBOX;
-        }
-    }
 
     public void ON()
     {
         Debug.Log("On pressed");
 
-        Options.SetActive(true);
+        MainManager.instance.ON();
 
         MainManager.option_A += Yes_Selected;
 
@@ -46,7 +34,8 @@ public class MainBehaviour : MonoBehaviour
         Debug.Log("Off pressed");
 
         T.Leave();
-        Options.SetActive(false);
+
+        MainManager.instance.OFF();
     }
 
 

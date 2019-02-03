@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,15 +30,24 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (GetComponent<Canvas>())
+            GetComponent<Canvas>().worldCamera = Camera.main;
+
+        SceneManager.activeSceneChanged += sceneChanged;
+
         foreach (var obj in ChildrenToSpawnOnStart)
         {
             Instantiate(obj, transform.position, transform.rotation, transform);
-            if (obj.name.Contains("OptionsBOX")) {
-                obj.SetActive(false);
-                MainManager.OptionsBOX=obj;
-            }
-
         }
+
+        MainManager.instance.OFF();
+    }
+
+    private void sceneChanged(Scene arg0, Scene arg1)
+    {
+        MainManager.instance.OFF();
+
+        DiologueManager.instance.ClearDialogueBox();
 
         if (GetComponent<Canvas>())
             GetComponent<Canvas>().worldCamera = Camera.main;

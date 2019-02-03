@@ -19,7 +19,6 @@ public class CombatManager : MonoBehaviour
     {
         CombatScreen.SetActive(GameManager.gameState == GameManager.GameState.InCombat);
 
-
         if (CombatScreen.activeSelf)
         {
             if (combatant_regions[0] != null && combatant_regions[1] != null)
