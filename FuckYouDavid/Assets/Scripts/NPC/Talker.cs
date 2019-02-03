@@ -50,14 +50,17 @@ public class Talker : MonoBehaviour
      
         DM.Dtext.text = DIALOGUE;
         DM.DBOX.gameObject.SetActive(true);
+
         if (HasItem==true) {
             //gives Item
             HasItem = false;
             Invoke("NewD",1);
         }
-        if (Main == false)
+        if (Main == false||Sales==false)
         {
-            Invoke("Leave", TextTime);
+            
+                Invoke("Leave", TextTime);
+            
         }
         else if (Main == true)
         {

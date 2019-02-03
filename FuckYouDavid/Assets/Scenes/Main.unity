@@ -1115,6 +1115,7 @@ MonoBehaviour:
   SP: {fileID: 0}
   MM: {fileID: 0}
   Main: 1
+  HasItem: 0
   InChat: 0
   TextTime: 0.75
 --- !u!50 &604254453
@@ -1298,6 +1299,7 @@ MonoBehaviour:
   SP: {fileID: 0}
   MM: {fileID: 0}
   Main: 1
+  HasItem: 0
   InChat: 0
   TextTime: 0.75
 --- !u!50 &895796460
@@ -1666,6 +1668,7 @@ MonoBehaviour:
   SP: {fileID: 0}
   MM: {fileID: 0}
   Main: 1
+  HasItem: 0
   InChat: 0
   TextTime: 0.75
 --- !u!50 &968791923
@@ -2124,7 +2127,7 @@ PrefabInstance:
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: DIALOGUE
-      value: ' the music is kind of loud'
+      value: ' The music is kind of loud'
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
