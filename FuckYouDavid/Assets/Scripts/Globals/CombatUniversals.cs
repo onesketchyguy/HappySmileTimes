@@ -1,6 +1,10 @@
 ﻿[System.Serializable]
 public class CombatUniversals
 {
+    public string Name = "Nameless";
+
+    public UnityEngine.Sprite Image;
+
     //Stats
     public int Stength = 1; //attack
     public int Agility = 1; //attackspeed
@@ -15,11 +19,26 @@ public class CombatUniversals
 
     public int PowerLevel => StaminaStat + Stength + Chin + Agility;
 
-    public UnityEngine.Sprite CombatSprite;
-
     public void Inititialize()
     {
         CurrentHealth = MaxHealth;
         CurrentHealth = MaxStamina;
+    }
+
+    public System.Collections.Generic.List<CombatOptions> attacks = new System.Collections.Generic.List<CombatOptions>()
+    {
+        new CombatOptions { name = "Punch", power = 5, powerType = CombatOptions.reliance.Strength }
+    };
+
+    [System.Serializable]
+    public class CombatOptions
+    {
+        public string name;
+
+        public enum reliance { Strength, Agility, Chin, Stamina }
+
+        public reliance powerType;
+
+        public int power;
     }
 }

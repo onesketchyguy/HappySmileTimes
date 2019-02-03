@@ -68,17 +68,23 @@ public class Fighter : MonoBehaviour
         {
             if (sightHit.transform.tag == "Player")
             {
+                CombatManager.combatant_1 = combattant;
+
                 if (attackOnSight)
                 {
                     Debug.Log("Commence to battling!");
 
                     CombatManager.gameState = CombatManager.GameState.InCombat;
-
-                    CombatManager.combatant_1 = combattant;
                 }
                 else
                 {
                     Debug.Log("Commence to chatting!");
+
+                    rotationSpeed = 0;
+
+                    //Commence dialogue.
+
+                    CombatManager.gameState = CombatManager.GameState.InCombat;
                 }
             }
         }

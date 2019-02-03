@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         combattant.Inititialize();
+
+        combattant.Name = "You";
     }
 
     void Update()
