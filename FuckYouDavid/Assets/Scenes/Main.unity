@@ -1827,7 +1827,7 @@ PrefabInstance:
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: TextTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e3615e4265d9b4992692420a30e386, type: 3}
@@ -1995,7 +1995,7 @@ PrefabInstance:
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: TextTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e3615e4265d9b4992692420a30e386, type: 3}
@@ -2115,6 +2115,86 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038907762967089555, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.4999964
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649540170128353849, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512528721974149986, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396880053511425318, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396880053511425318, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4396880053511425318, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396880053511425318, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396880053511425318, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396880053511425318, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205704254765818054, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777105721636078101, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777105721636078101, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5777105721636078101, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777105721636078101, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777105721636078101, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777105721636078101, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 208e3fee96eed0b418d7a0969b167d64, type: 3}
@@ -2419,7 +2499,7 @@ PrefabInstance:
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: TextTime
-      value: 2
+      value: 2.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e3615e4265d9b4992692420a30e386, type: 3}
