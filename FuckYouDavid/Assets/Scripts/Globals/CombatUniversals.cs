@@ -25,9 +25,9 @@ public class CombatUniversals
         CurrentHealth = MaxStamina;
     }
 
-    public System.Collections.Generic.List<Move> attacks = new System.Collections.Generic.List<Move>()
+    internal System.Collections.Generic.List<Move> attacks = new System.Collections.Generic.List<Move>()
     {
-        new Move { name = "Punch", power = 5, powerType = Move.reliance.Strength }
+        GameManager.instance.moves.ToArray()[0]
     };
 
     [System.Serializable]

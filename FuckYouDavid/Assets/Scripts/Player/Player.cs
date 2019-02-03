@@ -21,11 +21,11 @@ public class Player : MonoBehaviour
         {
             CombatManager.combatant_0 = combattant;
         }
-        if (Input.GetKeyDown(KeyCode.I)) {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
             print("I");
-            GameManager.gameState = GameManager.GameState.InChat;
+            GameManager.gameState = GameManager.GameState.InBag;
             Inventory.SetActive(true);
-
         }
         AllowedToMove = GameManager.gameState == GameManager.GameState.Playing;
 

@@ -3,9 +3,14 @@
 public class Conveyor : MonoBehaviour
 {
     public Vector2 dir = Vector2.right;
+
     private void Start()
     {
-        gameObject.AddComponent<BoxCollider2D>().isTrigger = true;
+        BoxCollider2D boxCollider = gameObject.AddComponent<BoxCollider2D>();
+
+        boxCollider.isTrigger = true;
+
+        boxCollider.size = new Vector2(0.8f, 0.8f);
 
         GetComponent<SpriteRenderer>().sortingOrder = -10;
     }
@@ -19,6 +24,7 @@ public class Conveyor : MonoBehaviour
             GameManager.gameState = GameManager.GameState.OnConveyor;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
