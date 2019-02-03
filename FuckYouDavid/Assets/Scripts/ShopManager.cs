@@ -9,6 +9,7 @@ public class ShopManager : MonoBehaviour
 
     public Player player;
     public Text Costs;
+    public GameObject SP;
 
 
 
@@ -25,6 +26,19 @@ public class ShopManager : MonoBehaviour
 
     }
 
-  
+    public void Leave() {
+        SP.SetActive(false);
+
+    }
+    public void Burger()
+    {
+        // if (Player.Money>=10) {
+
+        //   }
+        print("pressed yum yum");
+
+    }
+
+
 
 }

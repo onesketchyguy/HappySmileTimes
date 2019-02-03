@@ -27,17 +27,16 @@ public class Talker : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-       
-
             if (collision.gameObject.tag == "Player")
             {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 print("sdasda");
-                player.AllowedToMove = false;
+                CombatManager.gameState = CombatManager.GameState.InChat;
                 DM.Dtext.text = DIALOGUE;
                 DM.DBOX.gameObject.SetActive(true);
                 Invoke("Leave", .5f);
+
                 if (Sales) {
                     Invoke("Shop", .5f);
                   
@@ -49,7 +48,7 @@ public class Talker : MonoBehaviour
         }
     }
     public void Leave() {
-        CombatManager.gameState = CombatManager.GameState.InChat;
+        CombatManager.gameState = CombatManager.GameState.Playing;
         DM.Dtext.text = "";
         DM.DBOX.gameObject.SetActive(false);
     }
