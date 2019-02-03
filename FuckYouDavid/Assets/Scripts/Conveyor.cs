@@ -6,6 +6,8 @@ public class Conveyor : MonoBehaviour
     private void Start()
     {
         gameObject.AddComponent<BoxCollider2D>().isTrigger = true;
+
+        GetComponent<SpriteRenderer>().sortingOrder = -10;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -14,7 +16,7 @@ public class Conveyor : MonoBehaviour
         {
             GameObject Player = collision.gameObject;
             Player.GetComponent<Movement>().input = dir;
-            CombatManager.gameState = CombatManager.GameState.OnConveyor;
+            GameManager.gameState = GameManager.GameState.OnConveyor;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -22,7 +24,7 @@ public class Conveyor : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GameObject Player = collision.gameObject;
-            CombatManager.gameState = CombatManager.GameState.Playing;
+            GameManager.gameState = GameManager.GameState.Playing;
         }
     }
 }

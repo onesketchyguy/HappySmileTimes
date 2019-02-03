@@ -74,7 +74,7 @@ public class Fighter : MonoBehaviour
                 {
                     Debug.Log("Commence to battling!");
 
-                    CombatManager.gameState = CombatManager.GameState.InCombat;
+                    GameManager.gameState = GameManager.GameState.InCombat;
                 }
                 else
                 {
@@ -84,7 +84,7 @@ public class Fighter : MonoBehaviour
 
                     //Commence dialogue.
 
-                    CombatManager.gameState = CombatManager.GameState.InCombat;
+                    GameManager.gameState = GameManager.GameState.InCombat;
                 }
             }
         }

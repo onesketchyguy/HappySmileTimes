@@ -38,7 +38,7 @@ public class MainManager : MonoBehaviour
 
     public void Yes() {
         print("Yes");
-        CombatManager.gameState = CombatManager.GameState.Playing;
+        GameManager.gameState = GameManager.GameState.Playing;
         SceneManager.LoadScene(LevelToGo);
         
 

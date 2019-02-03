@@ -17,17 +17,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (CombatManager.gameState == CombatManager.GameState.InCombat)
+        if (GameManager.gameState == GameManager.GameState.InCombat)
         {
             CombatManager.combatant_0 = combattant;
         }
         if (Input.GetKeyDown(KeyCode.I)) {
             print("I");
-            CombatManager.gameState = CombatManager.GameState.InChat;
+            GameManager.gameState = GameManager.GameState.InChat;
             Inventory.SetActive(true);
 
         }
-        AllowedToMove = CombatManager.gameState == CombatManager.GameState.Playing;
+        AllowedToMove = GameManager.gameState == GameManager.GameState.Playing;
 
         if (AllowedToMove)
         {

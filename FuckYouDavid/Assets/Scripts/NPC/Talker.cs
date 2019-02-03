@@ -35,7 +35,7 @@ public class Talker : MonoBehaviour
             {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                CombatManager.gameState = CombatManager.GameState.InChat;
+                GameManager.gameState = GameManager.GameState.InChat;
                 Onchat();
             }
           
@@ -66,14 +66,14 @@ public class Talker : MonoBehaviour
     public void Leave() {
         InChat = false;
         print("Leaving");
-        CombatManager.gameState = CombatManager.GameState.Playing;
+        GameManager.gameState = GameManager.GameState.Playing;
         DM.Dtext.text = "";
         DM.DBOX.gameObject.SetActive(false);
       
     }
     public void Shop()
     {
-        CombatManager.gameState = CombatManager.GameState.InChat;
+        GameManager.gameState = GameManager.GameState.InChat;
         DM.Dtext.text = "";
         DM.DBOX.gameObject.SetActive(false);
         if (SP != null) {
@@ -83,7 +83,7 @@ public class Talker : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        CombatManager.gameState = CombatManager.GameState.Playing;
+        GameManager.gameState = GameManager.GameState.Playing;
         DM.Dtext.text = "";
         DM.DBOX.gameObject.SetActive(false);
 
