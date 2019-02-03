@@ -13,15 +13,16 @@ public class MainBehaviour : MonoBehaviour
     void Start()
     {
         T = FindObjectOfType<Talker>();
+      
+    }
 
+    void Update()
+    {
         if (Options == null)
         {
             Options = GameObject.Find("OptionsBOX");
 
-            if (Options == null)
-            {
-                Debug.LogError("Unable to identify OptionsBox!");
-            }
+            Options = MainManager.OptionsBOX;
         }
     }
 

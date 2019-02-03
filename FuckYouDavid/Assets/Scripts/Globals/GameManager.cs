@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
         foreach (var obj in ChildrenToSpawnOnStart)
         {
             Instantiate(obj, transform.position, transform.rotation, transform);
+            if (obj.name.Contains("OptionsBOX")) {
+                obj.SetActive(false);
+                MainManager.OptionsBOX=obj;
+            }
+
         }
 
         if (GetComponent<Canvas>())

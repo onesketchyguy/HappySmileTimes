@@ -10,6 +10,8 @@ public class MainManager : MonoBehaviour
 
     public static Option_b option_B;
 
+    public static GameObject OptionsBOX,ButtonA,ButtonB;
+
     public void Yes()
     {
         option_A();
@@ -19,4 +21,23 @@ public class MainManager : MonoBehaviour
     {
         option_B();
     }
+
+
+    public void ON()
+    {
+        Debug.Log("On pressed");
+
+        ButtonA.SetActive(true);
+        ButtonB.SetActive(true);
+
+    }
+
+    public void OFF()
+    {
+        Debug.Log("Off pressed");
+        ButtonA.SetActive(false);
+        ButtonB.SetActive(true);
+    }
+
+
 }
