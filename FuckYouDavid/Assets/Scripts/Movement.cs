@@ -19,9 +19,16 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        myFaceDirection = (input.x > 0 ? faceDirection.Right : input.y > 0 ? faceDirection.Up : input.x < 0 ? faceDirection.Left : input.y < 0 ? faceDirection.Down : myFaceDirection);
+        if (GameManager.gameState == GameManager.GameState.Playing || GameManager.gameState == GameManager.GameState.OnConveyor)
+        {
+            myFaceDirection = (input.x > 0 ? faceDirection.Right : input.y > 0 ? faceDirection.Up : input.x < 0 ? faceDirection.Left : input.y < 0 ? faceDirection.Down : myFaceDirection);
 
-        myRigidBody.velocity = Vector3.MoveTowards(myRigidBody.velocity, (Vector3)(input * speed), 50 * Time.deltaTime);
+            myRigidBody.velocity = Vector3.MoveTowards(myRigidBody.velocity, (Vector3)(input * speed), 50 * Time.deltaTime);
+        }
+        else
+        {
+            myRigidBody.velocity = Vector2.zero;
+        }
     }
 
     public void RotateClockWise()
