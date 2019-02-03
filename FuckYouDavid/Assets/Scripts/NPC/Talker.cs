@@ -13,7 +13,7 @@ public class Talker : MonoBehaviour
     public MainManager MM;
     public bool Main=false;
     public bool InChat;
-  
+    public float TextTime = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +50,7 @@ public class Talker : MonoBehaviour
 
         if (Main == false)
         {
-            Invoke("Leave", .5f);
+            Invoke("Leave", TextTime);
         }
         else if (Main == true)
         {
