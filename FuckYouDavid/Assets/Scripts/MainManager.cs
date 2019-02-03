@@ -9,14 +9,24 @@ public class MainManager : MonoBehaviour
     public DiologueManager DM;
     public string LevelToGo;
     public GameObject Options;
+    public Talker T;
 
     // Start is called before the first frame update
     void Start()
     {
-        Options.SetActive(false);
+     
+        T = FindObjectOfType<Talker>();
     }
     public void ON() {
+ 
         Options.SetActive(true);
+
+    }
+    public void OFF()
+    {
+        Debug.Log("Play");
+        T.Leave();
+        Options.SetActive(false);
 
     }
 
@@ -28,17 +38,15 @@ public class MainManager : MonoBehaviour
 
     public void Yes() {
         print("Yes");
+        CombatManager.gameState = CombatManager.GameState.Playing;
         SceneManager.LoadScene(LevelToGo);
         
 
     }
 
     public void No() {
-        print("No");
-        CombatManager.gameState = CombatManager.GameState.Playing;
-        Options.SetActive(false);
-        DM.Dtext.text = "";
-        DM.DBOX.gameObject.SetActive(false);
+        OFF();
+        //T.Leave();
     }
 
 }

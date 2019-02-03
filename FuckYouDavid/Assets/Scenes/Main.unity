@@ -1853,7 +1853,7 @@ MonoBehaviour:
   DIALOGUE: Quit
   Sales: 0
   SP: {fileID: 0}
-  Options: {fileID: 1290609465}
+  MM: {fileID: 0}
   Main: 1
 --- !u!50 &604254453
 Rigidbody2D:
@@ -2315,7 +2315,7 @@ MonoBehaviour:
   DIALOGUE: Play
   Sales: 0
   SP: {fileID: 0}
-  Options: {fileID: 1290609465}
+  MM: {fileID: 0}
   Main: 1
 --- !u!50 &895796460
 Rigidbody2D:
@@ -2700,7 +2700,7 @@ MonoBehaviour:
   DIALOGUE: Options
   Sales: 0
   SP: {fileID: 0}
-  Options: {fileID: 1290609465}
+  MM: {fileID: 0}
   Main: 1
 --- !u!50 &968791923
 Rigidbody2D:
@@ -3061,7 +3061,7 @@ GameObject:
   - component: {fileID: 1290609466}
   - component: {fileID: 1290609467}
   m_Layer: 0
-  m_Name: Options
+  m_Name: OptionsBOX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
