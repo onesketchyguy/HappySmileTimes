@@ -136,9 +136,10 @@ MonoBehaviour:
   DIALOGUE: Hey bro trying to get your dick sucked
   Sales: 0
   SP: {fileID: 0}
-  MM: {fileID: 0}
   Main: 0
+  HasItem: 0
   InChat: 0
+  TextTime: 1
 --- !u!114 &2974174134391212807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +179,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00279665, y: -0.07907596}
+  m_Offset: {x: 0.017141819, y: -0.028868318}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -189,7 +190,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59051037, y: 0.5581519}
+  m_Size: {x: 0.6995325, y: 0.6585672}
   m_EdgeRadius: 0
 --- !u!61 &6637559486504149656
 BoxCollider2D:
