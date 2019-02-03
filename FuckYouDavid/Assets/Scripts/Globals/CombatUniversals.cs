@@ -23,12 +23,14 @@ public class CombatUniversals
     {
         CurrentHealth = MaxHealth;
         CurrentHealth = MaxStamina;
+
+        if (attacks.Count < 1)
+        {
+            attacks.Add(GameManager.instance.moves.ToArray()[0]);
+        }
     }
 
-    internal System.Collections.Generic.List<Move> attacks = new System.Collections.Generic.List<Move>()
-    {
-        GameManager.instance.moves.ToArray()[0]
-    };
+    internal System.Collections.Generic.List<Move> attacks = new System.Collections.Generic.List<Move>() { };
 
     [System.Serializable]
     public class Move

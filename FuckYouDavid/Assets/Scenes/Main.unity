@@ -2255,11 +2255,6 @@ MonoBehaviour:
     StaminaStat: 1
     CurrentStamina: 0
     CurrentHealth: 0
-    attacks:
-    - name: Punch
-      description: 
-      powerType: 0
-      power: 5
 --- !u!212 &1733140591
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2599,7 +2594,31 @@ MonoBehaviour:
   - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}
   - {fileID: 5221820662604740199, guid: 288ffa7f3aa395d409d58ef67f4d9f3d, type: 3}
   - {fileID: 2208264721924431943, guid: d4cca1b9287b93f4baaa38a6b4a3aa3d, type: 3}
-  moves: []
+  moves:
+  - name: Smack
+    description: 
+    powerType: 0
+    power: 1
+  - name: Use feet
+    description: 
+    powerType: 1
+    power: 1
+  - name: Spit
+    description: 
+    powerType: 1
+    power: 2
+  - name: Fast Punch
+    description: 
+    powerType: 1
+    power: 1
+  - name: Hard Punch
+    description: 
+    powerType: 0
+    power: 5
+  - name: Flail
+    description: 
+    powerType: 1
+    power: 2
 --- !u!224 &2040125855
 RectTransform:
   m_ObjectHideFlags: 0
