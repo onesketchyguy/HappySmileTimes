@@ -1,52 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
+    public delegate void Option_a();
 
-    public DiologueManager DM;
-    public string LevelToGo;
-    public GameObject Options;
-    public Talker T;
+    public static Option_a option_A;
 
-    // Start is called before the first frame update
-    void Start()
+    public delegate void Option_b();
+
+    public static Option_b option_B;
+
+    public void Yes()
     {
-     
-        T = FindObjectOfType<Talker>();
+        option_A();
     }
-    public void ON() {
- 
-        Options.SetActive(true);
 
-    }
-    public void OFF()
+    public void No()
     {
-        Debug.Log("Play");
-        T.Leave();
-        Options.SetActive(false);
-
+        option_B();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void Yes() {
-        print("Yes");
-        GameManager.gameState = GameManager.GameState.Playing;
-        SceneManager.LoadScene(LevelToGo);
-        
-
-    }
-
-    public void No() {
-        OFF();
-        //T.Leave();
-    }
-
 }

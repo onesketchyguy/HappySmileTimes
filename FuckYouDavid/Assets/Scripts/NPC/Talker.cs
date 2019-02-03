@@ -1,52 +1,44 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Talker : MonoBehaviour
 {
-
     public DiologueManager DM;
     public  Player player;
     public string DIALOGUE;
     public bool Sales;
     public GameObject SP;
-    public MainManager MM;
+    public MainBehaviour MM => GetComponent<MainBehaviour>() ?? gameObject.AddComponent<MainBehaviour>();
     public bool Main=false;
     public bool HasItem;
     public bool InChat;
     public float TextTime = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
         DM = FindObjectOfType<DiologueManager>();
-        MM = FindObjectOfType<MainManager>();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-      
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-            if (collision.gameObject.tag == "Player")
-            {
+        if (collision.gameObject.tag == "Player")
+        {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GameManager.gameState = GameManager.GameState.InChat;
                 Onchat();
             }
-          
-            
         }
     }
-    public void NewD() {
+
+    public void NewD()
+    {
         DIALOGUE = "Jeez man dont be a choosey begger";
     }
-    public void Onchat() {
+
+    public void Onchat()
+    {
      
         DM.Dtext.text = DIALOGUE;
         DM.DBOX.gameObject.SetActive(true);
@@ -56,11 +48,9 @@ public class Talker : MonoBehaviour
             HasItem = false;
             Invoke("NewD",1);
         }
-        if (Main == false||Sales==false)
+        if (Main == false)
         {
-            
-                Invoke("Leave", TextTime);
-            
+            Invoke("Leave", TextTime);
         }
         else if (Main == true)
         {
@@ -72,15 +62,19 @@ public class Talker : MonoBehaviour
         }
     }
 
-
-    public void Leave() {
+    public void Leave()
+    {
         InChat = false;
-        print("Leaving");
+
+        Debug.Log("Leaving");
+
         GameManager.gameState = GameManager.GameState.Playing;
+
         DM.Dtext.text = "";
+
         DM.DBOX.gameObject.SetActive(false);
-      
     }
+
     public void Shop()
     {
         GameManager.gameState = GameManager.GameState.InChat;
@@ -91,6 +85,7 @@ public class Talker : MonoBehaviour
             SP.gameObject.SetActive(true);
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         GameManager.gameState = GameManager.GameState.Playing;
