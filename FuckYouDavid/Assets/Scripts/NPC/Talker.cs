@@ -12,6 +12,7 @@ public class Talker : MonoBehaviour
     public GameObject SP;
     public MainManager MM;
     public bool Main=false;
+    public bool HasItem;
     public bool InChat;
     public float TextTime = 1f;
     // Start is called before the first frame update
@@ -42,12 +43,18 @@ public class Talker : MonoBehaviour
             
         }
     }
-
+    public void NewD() {
+        DIALOGUE = "Jeez man dont be a choosey begger";
+    }
     public void Onchat() {
      
         DM.Dtext.text = DIALOGUE;
         DM.DBOX.gameObject.SetActive(true);
-
+        if (HasItem==true) {
+            //gives Item
+            HasItem = false;
+            Invoke("NewD",1);
+        }
         if (Main == false)
         {
             Invoke("Leave", TextTime);

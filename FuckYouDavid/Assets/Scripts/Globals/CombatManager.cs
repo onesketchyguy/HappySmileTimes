@@ -101,11 +101,13 @@ public class CombatManager : MonoBehaviour
         if (hit)
         {
             Debug.Log("Hit!");
+            //Hit or 
             combatant_1.CurrentHealth -= power;
         }
         else
         {
             Debug.Log("Miss!");
+            //miss
         }
     }
 
