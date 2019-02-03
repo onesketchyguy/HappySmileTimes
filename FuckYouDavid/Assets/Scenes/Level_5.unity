@@ -2500,6 +2500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 919635868}
+  - component: {fileID: 919635869}
   - component: {fileID: 919635867}
   - component: {fileID: 919635866}
   - component: {fileID: 919635865}
@@ -2589,6 +2590,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &919635869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919635864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39a0348de8f40248aaf8b8361d7bcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChildrenToSpawnOnStart:
+  - {fileID: 3864160167436043280, guid: 208e3fee96eed0b418d7a0969b167d64, type: 3}
+  - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}
+  - {fileID: 5221820662604740199, guid: 288ffa7f3aa395d409d58ef67f4d9f3d, type: 3}
+  - {fileID: 2208264721924431943, guid: d4cca1b9287b93f4baaa38a6b4a3aa3d, type: 3}
 --- !u!4 &950119230 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7783949857887327202, guid: 3f1b53446dafbd94380160219398aa23,
