@@ -6,6 +6,7 @@ public class Conveyor : MonoBehaviour
     private void Start()
     {
         gameObject.AddComponent<BoxCollider2D>().isTrigger = true;
+        GetComponent<SpriteRenderer>().sortingOrder = -10;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
