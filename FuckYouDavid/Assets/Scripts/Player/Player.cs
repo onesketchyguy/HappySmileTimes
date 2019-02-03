@@ -17,12 +17,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (CombatManager.gameState == CombatManager.GameState.InCombat)
+        if (GameManager.gameState == GameManager.GameState.InCombat)
         {
             CombatManager.combatant_0 = combattant;
         }
 
-        AllowedToMove = CombatManager.gameState == CombatManager.GameState.Playing;
+        AllowedToMove = GameManager.gameState == GameManager.GameState.Playing;
 
         if (AllowedToMove)
         {

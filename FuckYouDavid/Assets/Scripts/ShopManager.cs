@@ -28,7 +28,7 @@ public class ShopManager : MonoBehaviour
 
     public void Leave() {
         SP.SetActive(false);
-        CombatManager.gameState = CombatManager.GameState.Playing;
+        GameManager.gameState = GameManager.GameState.Playing;
     }
 
     public void Burger()

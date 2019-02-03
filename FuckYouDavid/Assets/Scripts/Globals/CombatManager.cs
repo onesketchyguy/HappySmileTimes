@@ -3,10 +3,6 @@ using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
-    public enum GameState { Playing, InCombat, InBag, InChat, OnConveyor, Paused }
-
-    public static GameState gameState = GameState.Playing;
-
     public GameObject CombatScreen;
 
     [SerializeField] private Image[] icons;
@@ -21,7 +17,7 @@ public class CombatManager : MonoBehaviour
 
     private void Update()
     {
-        CombatScreen.SetActive(gameState == GameState.InCombat);
+        CombatScreen.SetActive(GameManager.gameState == GameManager.GameState.InCombat);
 
 
         if (CombatScreen.activeSelf)
@@ -160,7 +156,7 @@ public class CombatManager : MonoBehaviour
         {
             Debug.Log("Got away!");
 
-            gameState = GameState.Playing;
+            GameManager.gameState = GameManager.GameState.Playing;
         }
         else
         {
