@@ -54,6 +54,11 @@ public class Fighter : MonoBehaviour
 
     private void Update()
     {
+        if (combattant.isDead)
+        {
+            Destroy(gameObject);
+        }
+
         if (rotationSpeed > 0)
         {
             if (lastRotation < Time.time)

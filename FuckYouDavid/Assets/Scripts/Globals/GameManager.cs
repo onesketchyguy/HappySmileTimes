@@ -40,12 +40,19 @@ public class GameManager : MonoBehaviour
             Instantiate(obj, transform.position, transform.rotation, transform);
         }
 
-        MainManager.instance.OFF();
+        if (MainManager.instance != null)
+            MainManager.instance.OFF();
+    }
+
+    public void LoadScene(string SceneToLoad)
+    {
+        SceneManager.LoadScene(SceneToLoad);
     }
 
     private void sceneChanged(Scene arg0, Scene arg1)
     {
-        MainManager.instance.OFF();
+        if (MainManager.instance != null)
+            MainManager.instance.OFF();
 
         DiologueManager.instance.ClearDialogueBox();
 

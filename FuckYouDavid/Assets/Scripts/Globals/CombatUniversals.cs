@@ -17,6 +17,8 @@ public class CombatUniversals
     public int CurrentStamina;
     public int CurrentHealth;
 
+    public bool isDead => CurrentHealth <= 0;
+
     public int PowerLevel => StaminaStat + Stength + Chin + Agility;
 
     public void Inititialize()

@@ -17,16 +17,23 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (combattant.isDead)
+        {
+            GameManager.instance.LoadScene("Splash");
+        }
+
         if (GameManager.gameState == GameManager.GameState.InCombat)
         {
             CombatManager.combatant_0 = combattant;
         }
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             print("I");
             GameManager.gameState = GameManager.GameState.InBag;
             Inventory.SetActive(true);
         }
+
         AllowedToMove = GameManager.gameState == GameManager.GameState.Playing;
 
         if (AllowedToMove)
