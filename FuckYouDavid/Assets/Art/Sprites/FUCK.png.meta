@@ -14,6 +14,7 @@ TextureImporter:
     21300018: right_0
     21300020: right_1
     21300022: right_2
+    21300024: FUCK_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -333,6 +334,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7449052080881d3459b79994cdef444c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FUCK_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e022e688a72c87845a26cfd5fe23b3da
       vertices: []
       indices: 
       edges: []
