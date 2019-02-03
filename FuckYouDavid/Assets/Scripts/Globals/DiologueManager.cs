@@ -11,7 +11,10 @@ public class DiologueManager : MonoBehaviour
     void Start()
     {
         Dtext.text = " ";
-        DBOX.gameObject.SetActive(false);
+        if (DBOX!=null) {
+            DBOX.gameObject.SetActive(false);
+            print("Not null");
+        }
     }
 
     void Update()

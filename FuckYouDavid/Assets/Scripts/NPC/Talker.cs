@@ -10,13 +10,16 @@ public class Talker : MonoBehaviour
     public string DIALOGUE;
     public bool Sales;
     public GameObject SP;
+    public MainManager MM;
+    public bool Main=false;
   
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
         DM = FindObjectOfType<DiologueManager>();
-   
+        MM = FindObjectOfType<MainManager>();
+
     }
 
     // Update is called once per frame
@@ -31,12 +34,18 @@ public class Talker : MonoBehaviour
             {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                print("sdasda");
-                CombatManager.gameState = CombatManager.GameState.InChat;
-                DM.Dtext.text = DIALOGUE;
-                DM.DBOX.gameObject.SetActive(true);
-                Invoke("Leave", .5f);
+               
+                    CombatManager.gameState = CombatManager.GameState.InChat;
+                    DM.Dtext.text = DIALOGUE;
+                    DM.DBOX.gameObject.SetActive(true);
+                if (Main==false)
+                {
+                    Invoke("Leave", .5f);
+                }
 
+                else if (Main==true) {
+                    MM.ON();
+                }
                 if (Sales) {
                     Invoke("Shop", .5f);
                   
@@ -49,12 +58,14 @@ public class Talker : MonoBehaviour
     }
     public void Leave() {
         CombatManager.gameState = CombatManager.GameState.Playing;
+        MM.Options.gameObject.SetActive(false);
         DM.Dtext.text = "";
         DM.DBOX.gameObject.SetActive(false);
     }
     public void Shop()
     {
         if (SP != null) {
+            CombatManager.gameState = CombatManager.GameState.InChat;
             SP.SetActive(true);
         }
     }

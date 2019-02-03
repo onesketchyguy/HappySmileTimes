@@ -28,8 +28,9 @@ public class ShopManager : MonoBehaviour
 
     public void Leave() {
         SP.SetActive(false);
-
+        CombatManager.gameState = CombatManager.GameState.Playing;
     }
+
     public void Burger()
     {
         // if (Player.Money>=10) {
