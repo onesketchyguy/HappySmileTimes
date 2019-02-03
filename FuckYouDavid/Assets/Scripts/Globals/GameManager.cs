@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameState gameState = GameState.Playing;
 
     [SerializeField] private GameObject[] ChildrenToSpawnOnStart;
+
+    public List<CombatUniversals.Move> moves = new List<CombatUniversals.Move>() { };
 
     public static GameManager instance;
 
@@ -30,5 +33,8 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(obj, transform.position, transform.rotation, transform);
         }
+
+        if (GetComponent<Canvas>())
+            GetComponent<Canvas>().worldCamera = Camera.main;
     }
 }

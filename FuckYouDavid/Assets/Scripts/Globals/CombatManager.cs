@@ -74,22 +74,22 @@ public class CombatManager : MonoBehaviour
 
         switch (combatant_0.attacks.ToArray()[attackNo].powerType)
         {
-            case CombatUniversals.CombatOptions.reliance.Strength:
+            case CombatUniversals.Move.reliance.Strength:
                 hit = CalculateChances(combatant_0.Stength, combatant_1.Agility);
 
                 power = combatant_0.attacks.ToArray()[attackNo].power * combatant_0.Stength;
                 break;
-            case CombatUniversals.CombatOptions.reliance.Agility:
+            case CombatUniversals.Move.reliance.Agility:
                 hit = CalculateChances(combatant_0.Agility, combatant_1.Agility);
 
                 power = combatant_0.attacks.ToArray()[attackNo].power * combatant_0.Agility;
                 break;
-            case CombatUniversals.CombatOptions.reliance.Chin:
+            case CombatUniversals.Move.reliance.Chin:
                 hit = CalculateChances(combatant_0.Chin, combatant_1.Agility);
 
                 power = combatant_0.attacks.ToArray()[attackNo].power * combatant_0.Chin;
                 break;
-            case CombatUniversals.CombatOptions.reliance.Stamina:
+            case CombatUniversals.Move.reliance.Stamina:
                 hit = CalculateChances(combatant_0.StaminaStat, combatant_1.Agility);
 
                 power = combatant_0.attacks.ToArray()[attackNo].power * combatant_0.StaminaStat;

@@ -25,15 +25,17 @@ public class CombatUniversals
         CurrentHealth = MaxStamina;
     }
 
-    public System.Collections.Generic.List<CombatOptions> attacks = new System.Collections.Generic.List<CombatOptions>()
+    public System.Collections.Generic.List<Move> attacks = new System.Collections.Generic.List<Move>()
     {
-        new CombatOptions { name = "Punch", power = 5, powerType = CombatOptions.reliance.Strength }
+        new Move { name = "Punch", power = 5, powerType = Move.reliance.Strength }
     };
 
     [System.Serializable]
-    public class CombatOptions
+    public class Move
     {
         public string name;
+
+        public string description;
 
         public enum reliance { Strength, Agility, Chin, Stamina }
 
