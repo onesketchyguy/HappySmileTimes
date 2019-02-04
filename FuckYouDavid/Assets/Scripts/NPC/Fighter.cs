@@ -8,7 +8,7 @@ public class Fighter : MonoBehaviour
 
     [SerializeField] public CombatUniversals combattant;
 
-    [SerializeField] private bool attackOnSight = false;
+    [SerializeField] private bool attackOnSight => !GetComponent<Talker>();
 
     Movement mov => GetComponent<Movement>();
 
@@ -100,7 +100,7 @@ public class Fighter : MonoBehaviour
             {
                 Debug.Log("Commence to battling!");
 
-                GameManager.gameState = GameManager.GameState.InCombat;
+                StartFight();
             }
             else
             {
@@ -108,7 +108,12 @@ public class Fighter : MonoBehaviour
 
                 //Commence dialogue.
 
-                //GameManager.gameState = GameManager.GameState.InCombat;
+                Talker fightComponent = GetComponent<Talker>();
+
+                if (fightComponent)
+                {
+                    fightComponent.Onchat();
+                }
             }
         }
     }
@@ -118,5 +123,12 @@ public class Fighter : MonoBehaviour
         mov.RotateClockWise();
 
         lastRotation = Time.time + rotationSpeed;
+    }
+
+    public void StartFight()
+    {
+        GameManager.gameState = GameManager.GameState.InCombat;
+
+        PlayerSeen = false;
     }
 }

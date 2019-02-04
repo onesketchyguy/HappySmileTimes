@@ -3,7 +3,6 @@
 public class Talker : MonoBehaviour
 {
     public DiologueManager DM;
-    public  Player player;
     public string DIALOGUE,DIALOGUE2;
     public bool Sales;
     public GameObject SP;
@@ -12,12 +11,6 @@ public class Talker : MonoBehaviour
     public bool HasItem;
     public bool InChat;
     public float TextTime = 1f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = FindObjectOfType<Player>();
-    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -74,6 +67,13 @@ public class Talker : MonoBehaviour
         GameManager.gameState = GameManager.GameState.Playing;
 
         DiologueManager.instance.ClearDialogueBox();
+
+        Fighter fightComponent = GetComponent<Fighter>();
+
+        if (fightComponent)
+        {
+            fightComponent.StartFight();
+        }
     }
 
     public void Shop()

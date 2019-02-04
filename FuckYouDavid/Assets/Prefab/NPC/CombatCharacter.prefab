@@ -246,10 +246,18 @@ MonoBehaviour:
   combattant:
     Name: Some ass hole
     Image: {fileID: 21300002, guid: 71e5e0344a236aa4b8b017b047831ae4, type: 3}
-    Stength: 1
-    Agility: 1
-    Chin: 1
-    StaminaStat: 1
+    Stength:
+      level: 1
+      experience: 0
+    Agility:
+      level: 1
+      experience: 0
+    Chin:
+      level: 1
+      experience: 0
+    StaminaStat:
+      level: 1
+      experience: 0
     experience: 0
     CurrentStamina: 0
     CurrentHealth: 0
