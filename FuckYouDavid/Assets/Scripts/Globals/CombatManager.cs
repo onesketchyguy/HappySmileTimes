@@ -3,9 +3,13 @@ using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
+    private bool playersTurn;
+
     public GameObject CombatScreen;
 
     [SerializeField] private Image[] icons;
+
+    [SerializeField] private GameObject optionsRegion;
 
     [SerializeField] private GameObject[] combatant_regions;
 
@@ -21,6 +25,8 @@ public class CombatManager : MonoBehaviour
 
         if (CombatScreen.activeSelf)
         {
+            optionsRegion.SetActive(playersTurn);
+
             if (combatant_regions[0] != null && combatant_regions[1] != null)
             {
                 if (combatant_0 != null)
@@ -28,6 +34,11 @@ public class CombatManager : MonoBehaviour
                     icons[0].sprite = combatant_0.Image;
 
                     SetUiElements(combatant_regions[0], combatant_0);
+
+                    if (combatant_0.CurrentHealth <= 0)
+                    {
+                        GameManager.gameState = GameManager.GameState.Playing;
+                    }
                 }
 
                 if (combatant_1 != null)
@@ -35,7 +46,21 @@ public class CombatManager : MonoBehaviour
                     icons[1].sprite = combatant_1.Image;
 
                     SetUiElements(combatant_regions[1], combatant_1);
+
+                    if (combatant_1.CurrentHealth <= 0)
+                    {
+                        GameManager.gameState = GameManager.GameState.Playing;
+                    }
                 }
+            }
+
+            if (!playersTurn)
+            {
+                SetFightPanel(false);
+
+                // Implement AI that makes strategy instead of being retarded
+
+                AI_Attack(Random.Range(0, combatant_1.attacks.Count - 1));
             }
         }
         else
@@ -65,33 +90,43 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public void Attack(int attackNo)
+    public void Player_Attack(int attackNo)
+    {
+        CommitAttack(attackNo, combatant_0, combatant_1);
+    }
+
+    public void AI_Attack(int attackNo)
+    {
+        CommitAttack(attackNo, combatant_1, combatant_0);
+    }
+
+    private void CommitAttack(int attackNo, CombatUniversals combatant_A, CombatUniversals combatant_B)
     {
         bool hit = false;
 
         int power = 0;
 
-        switch (combatant_0.attacks.ToArray()[attackNo].powerType)
+        switch (combatant_A.attacks.ToArray()[attackNo].powerType)
         {
             case CombatUniversals.Move.reliance.Strength:
-                hit = CalculateChances(combatant_0.Stength, combatant_1.Agility);
+                hit = CalculateChances(combatant_A.Stength, combatant_B.Agility);
 
-                power = combatant_0.attacks.ToArray()[attackNo].power * combatant_0.Stength;
+                power = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Stength;
                 break;
             case CombatUniversals.Move.reliance.Agility:
-                hit = CalculateChances(combatant_0.Agility, combatant_1.Agility);
+                hit = CalculateChances(combatant_A.Agility, combatant_B.Agility);
 
-                power = combatant_0.attacks.ToArray()[attackNo].power * combatant_0.Agility;
+                power = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Agility;
                 break;
             case CombatUniversals.Move.reliance.Chin:
-                hit = CalculateChances(combatant_0.Chin, combatant_1.Agility);
+                hit = CalculateChances(combatant_A.Chin, combatant_B.Agility);
 
-                power = combatant_0.attacks.ToArray()[attackNo].power * combatant_0.Chin;
+                power = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Chin;
                 break;
             case CombatUniversals.Move.reliance.Stamina:
-                hit = CalculateChances(combatant_0.StaminaStat, combatant_1.Agility);
+                hit = CalculateChances(combatant_A.StaminaStat, combatant_B.Agility);
 
-                power = combatant_0.attacks.ToArray()[attackNo].power * combatant_0.StaminaStat;
+                power = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.StaminaStat;
                 break;
             default:
                 break;
@@ -101,13 +136,15 @@ public class CombatManager : MonoBehaviour
         {
             Debug.Log("Hit!");
             //Hit or 
-            combatant_1.CurrentHealth -= power;
+            combatant_B.CurrentHealth -= Random.Range(combatant_A.attacks.ToArray()[attackNo].power, power);
         }
         else
         {
             Debug.Log("Miss!");
             //miss
         }
+
+        playersTurn = !playersTurn;
     }
 
     bool CalculateChances(int stat, float successChance)
@@ -156,6 +193,9 @@ public class CombatManager : MonoBehaviour
         if (CalculateChances(combatant_0.Agility, 0.6f))
         {
             Debug.Log("Got away!");
+
+            //Replace with proper escape!
+            combatant_1.CurrentHealth = 0;
 
             GameManager.gameState = GameManager.GameState.Playing;
         }
