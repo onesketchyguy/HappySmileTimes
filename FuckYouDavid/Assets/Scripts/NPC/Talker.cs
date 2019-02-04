@@ -4,7 +4,7 @@ public class Talker : MonoBehaviour
 {
     public DiologueManager DM;
     public  Player player;
-    public string DIALOGUE;
+    public string DIALOGUE,DIALOGUE2;
     public bool Sales;
     public GameObject SP;
     public MainBehaviour MM => GetComponent<MainBehaviour>() ?? gameObject.AddComponent<MainBehaviour>();
@@ -33,7 +33,7 @@ public class Talker : MonoBehaviour
 
     public void NewD()
     {
-        DIALOGUE = "Jeez man dont be a choosey begger";
+        DIALOGUE = DIALOGUE2;
     }
 
     public void Onchat()
