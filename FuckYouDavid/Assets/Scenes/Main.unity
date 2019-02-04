@@ -1020,6 +1020,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: ChildrenToSpawnOnStart.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: ChildrenToSpawnOnStart.Array.data[3]
+      value: 
+      objectReference: {fileID: 4522769273125857492, guid: b393eaa17100d7440acc8d388c1d1129,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a8205152bbc7854ab39d09ab48977a2, type: 3}
 --- !u!1 &519420028

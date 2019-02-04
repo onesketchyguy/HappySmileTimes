@@ -96,7 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllowedToMove: 1
-  Inventory: {fileID: 0}
+  Inventory: {fileID: 1506177316642797996, guid: b393eaa17100d7440acc8d388c1d1129,
+    type: 3}
   combattant:
     Name: Nameless
     Image: {fileID: 21300018, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
@@ -104,6 +105,7 @@ MonoBehaviour:
     Agility: 1
     Chin: 1
     StaminaStat: 1
+    experience: 0
     CurrentStamina: 0
     CurrentHealth: 0
 --- !u!114 &4857996175179814235

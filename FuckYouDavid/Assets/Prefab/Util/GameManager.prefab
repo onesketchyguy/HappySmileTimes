@@ -123,6 +123,7 @@ MonoBehaviour:
   - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}
   - {fileID: 5221820662604740199, guid: 288ffa7f3aa395d409d58ef67f4d9f3d, type: 3}
   - {fileID: 2208264721924431943, guid: d4cca1b9287b93f4baaa38a6b4a3aa3d, type: 3}
+  - {fileID: 4522769273125857492, guid: b393eaa17100d7440acc8d388c1d1129, type: 3}
   moves:
   - name: Punch
     description: Straight to the point
@@ -311,6 +312,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6939113495119107741}
     m_Modifications:
+    - target: {fileID: 8387946916670427547, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: ButtonA
+      value: 
+      objectReference: {fileID: 6242829453566749417}
+    - target: {fileID: 8387946916670427547, guid: 208e3fee96eed0b418d7a0969b167d64,
+        type: 3}
+      propertyPath: ButtonB
+      value: 
+      objectReference: {fileID: 2915279123782208744}
     - target: {fileID: 3864160167436043280, guid: 208e3fee96eed0b418d7a0969b167d64,
         type: 3}
       propertyPath: m_Name
@@ -421,16 +432,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8387946916670427547, guid: 208e3fee96eed0b418d7a0969b167d64,
-        type: 3}
-      propertyPath: ButtonA
-      value: 
-      objectReference: {fileID: 6242829453566749417}
-    - target: {fileID: 8387946916670427547, guid: 208e3fee96eed0b418d7a0969b167d64,
-        type: 3}
-      propertyPath: ButtonB
-      value: 
-      objectReference: {fileID: 2915279123782208744}
     - target: {fileID: 5649540170128353849, guid: 208e3fee96eed0b418d7a0969b167d64,
         type: 3}
       propertyPath: m_AnchoredPosition.y

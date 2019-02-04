@@ -5,12 +5,13 @@ public class Player : MonoBehaviour
 {
     public bool AllowedToMove = true;
     Movement mov => GetComponent<Movement>();
-    public GameObject Inventory;
+    public InventoryManager Inventory;
 
     [SerializeField] public CombatUniversals combattant;
 
     private void Start()
     {
+        Inventory = GameObject.FindObjectOfType<InventoryManager>();
         combattant.Inititialize();
         combattant.Name = "You";
     }
@@ -29,9 +30,22 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            print("I");
-            GameManager.gameState = GameManager.GameState.InBag;
-            Inventory.SetActive(true);
+            switch (GameManager.gameState)
+            {
+                case GameManager.GameState.Playing:
+                    GameManager.gameState =( GameManager.GameState.InBag);
+                    break;
+                case GameManager.GameState.InCombat:
+                    break;
+                case GameManager.GameState.InBag:
+                    GameManager.gameState = ( GameManager.GameState.Playing);
+                    break;
+              
+                default:
+                    break;
+            }
+         
+
         }
 
         AllowedToMove = GameManager.gameState == GameManager.GameState.Playing;
