@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         if (MainManager.instance != null)
             MainManager.instance.OFF();
 
-        InvokeRepeating("UpdateNameText", 0, Time.deltaTime);
+        InvokeRepeating("UpdateNameText", 0, 1f * Time.deltaTime);
     }
 
     public void LoadScene(string SceneToLoad)
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         if (PlayerName == "")
         {
             //Open name dialogue
-            InvokeRepeating("UpdateNameText", 0, Time.deltaTime);
+            InvokeRepeating("UpdateNameText", 0, 1f * Time.deltaTime);
         }
 
         gameState = GameState.Playing;
@@ -91,9 +91,9 @@ public class GameManager : MonoBehaviour
             {
                 if (text.name == "NameText")
                 {
-                    string texttoUse = text.text;
+                    string textToUse = text.text;
 
-                    texttoUse += Input.inputString;
+                    textToUse += Input.inputString;
 
                     if (Input.GetKeyDown(KeyCode.Backspace))
                     {
@@ -107,12 +107,12 @@ public class GameManager : MonoBehaviour
                             NewText += character;
                         }
 
-                        texttoUse = NewText;
+                        textToUse = NewText;
                     }
 
-                    text.text = texttoUse;
+                    text.text = textToUse;
 
-                    PlayerName = texttoUse;
+                    PlayerName = textToUse;
                 }
             }
 
@@ -120,9 +120,11 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            namePanel.SetActive(true);
+            namePanel.SetActive(false);
 
             gameState = GameState.Playing;
+
+            CancelInvoke("UpdateNameText");
         }
     }
 }
