@@ -85,6 +85,10 @@ public class Fighter : MonoBehaviour
                 {
                     PlayerSeen = true;
 
+                    rotationSpeed = 0;
+
+                    GameManager.gameState = GameManager.GameState.Playing;
+
                     SeenAnimObject.SetActive(true);
                 }
             }
@@ -101,8 +105,6 @@ public class Fighter : MonoBehaviour
             else
             {
                 Debug.Log("Commence to chatting!");
-
-                rotationSpeed = 0;
 
                 //Commence dialogue.
 
