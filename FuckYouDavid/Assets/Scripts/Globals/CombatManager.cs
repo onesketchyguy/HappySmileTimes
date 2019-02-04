@@ -89,7 +89,7 @@ public class CombatManager : MonoBehaviour
         {
             Logger.text = $"{loggerQueue.Dequeue()}";
 
-            if (Logger.text == "Got away!")
+            if (Logger.text == "<i>Got away!</i>")
             {
                 //Replace with proper escape!
                 combatant_1.CurrentHealth = 0;
@@ -104,6 +104,11 @@ public class CombatManager : MonoBehaviour
             if (combatant_1.CurrentHealth <= 0 || combatant_0.CurrentHealth <= 0)
             {
                 GameManager.gameState = GameManager.GameState.Playing;
+
+                if (combatant_0.CurrentHealth <= 0)
+                {
+                    GameManager.instance.LoadScene("Main");
+                }
 
                 return;
             }
@@ -130,27 +135,6 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public void SetupFightPanel()
-    {
-        //Open fight menu
-
-        SetFightPanel(true);
-
-        for (int i = 0; i < attacks.Length; i++)
-        {
-            var item = attacks[i];
-
-            if (i < combatant_0.attacks.Count)
-            {
-                item.GetComponentInChildren<Text>().text = combatant_0.attacks.ToArray()[i].name;
-            }
-            else
-            {
-                item.gameObject.SetActive(false);
-            }
-        }
-    }
-
     public void Player_Attack(int attackNo)
     {
         CommitAttack(attackNo, combatant_0, combatant_1);
@@ -172,28 +156,30 @@ public class CombatManager : MonoBehaviour
         switch (combatant_A.attacks.ToArray()[attackNo].powerType)
         {
             case CombatUniversals.Move.reliance.Strength:
-                hit = CalculateChances(combatant_A.Stength, combatant_B.Agility);
+                hit = CalculateChances(combatant_A.Stength.level, combatant_B.Agility.level);
 
-                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Stength;
+                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Stength.level;
                 break;
             case CombatUniversals.Move.reliance.Agility:
-                hit = CalculateChances(combatant_A.Agility, combatant_B.Agility);
+                hit = CalculateChances(combatant_A.Agility.level, combatant_B.Agility.level);
 
-                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Agility;
+                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Agility.level;
                 break;
             case CombatUniversals.Move.reliance.Chin:
-                hit = CalculateChances(combatant_A.Chin, combatant_B.Agility);
+                hit = CalculateChances(combatant_A.Chin.level, combatant_B.Agility.level);
 
-                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Chin;
+                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Chin.level;
                 break;
             case CombatUniversals.Move.reliance.Stamina:
-                hit = CalculateChances(combatant_A.StaminaStat, combatant_B.Agility);
+                hit = CalculateChances(combatant_A.StaminaStat.level, combatant_B.Agility.level);
 
-                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.StaminaStat;
+                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.StaminaStat.level;
                 break;
             default:
                 break;
         }
+
+        loggerQueue.Enqueue($"{combatant_A.Name} used {combatant_A.attacks.ToArray()[attackNo].name}...");
 
         if (hit == true)
         {
@@ -201,20 +187,41 @@ public class CombatManager : MonoBehaviour
 
             int damageToDeal = Random.Range(power, power + special + 1);
 
-            loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}!");
+            loggerQueue.Enqueue($"<b>{combatant_A.Name}</b> hit <b>{combatant_B.Name}</b> for <b>{damageToDeal}!</b>");
 
             if (damageToDeal >= power + special)
             {
-                loggerQueue.Enqueue($"It was a critical hit!");
+                loggerQueue.Enqueue("<b>Critical hit!</b>");
             }
 
+            combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
             combatant_B.CurrentHealth -= damageToDeal;
+
+            if (combatant_A.attacks.ToArray()[attackNo].experience >= combatant_A.attacks.ToArray()[attackNo].maxExperience)
+            {
+                if (1 <= combatant_A.attacks.ToArray()[attackNo].Upgrade.Length)
+                {
+                    loggerQueue.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up to {combatant_A.attacks.ToArray()[attackNo].Upgrade[0].name} for {combatant_A.Name}!");
+
+                    combatant_A.attacks.Add(combatant_A.attacks.ToArray()[attackNo].Upgrade[0]);
+
+                    combatant_A.attacks.Remove(combatant_A.attacks.ToArray()[attackNo]);
+
+                    combatant_A.attacks.ToArray()[attackNo].experience = 0;
+
+                }
+                else
+                {
+                    loggerQueue.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up! But there are no upgrades available...");
+                }
+            }
         }
         else
         {
             //miss
 
-            loggerQueue.Enqueue($"{combatant_A.Name} missed attack against {combatant_B.Name}!");
+            loggerQueue.Enqueue($"<i>It missed...</i>");
         }
 
         logging = true;
@@ -260,11 +267,29 @@ public class CombatManager : MonoBehaviour
         return (chance > chance2);
     }
 
-    private void SetFightPanel(bool active)
+    //Pressed by button
+    public void SetFightPanel(bool active)
     {
         if (fightOptionsRegion != null)
         {
             fightOptionsRegion.SetActive(active);
+
+            if (active == true)
+            {
+                for (int i = 0; i < attacks.Length; i++)
+                {
+                    var item = attacks[i];
+
+                    if (i < combatant_0.attacks.Count)
+                    {
+                        item.GetComponentInChildren<Text>().text = combatant_0.attacks.ToArray()[i].name;
+                    }
+                    else
+                    {
+                        item.gameObject.SetActive(false);
+                    }
+                }
+            }
         }
         else
         {
@@ -277,11 +302,13 @@ public class CombatManager : MonoBehaviour
         //OpenPlayers bag
 
         Debug.Log("Attempting to open bag.");
+
+        GameManager.gameState = GameManager.GameState.InBag;
     }
 
     public void Run()
     {
-        if (CalculateChances(combatant_0.Agility, 0.6f))
+        if (CalculateChances(combatant_0.Agility.level, 0.6f))
         {
             loggerQueue.Enqueue("Got away!");
         }
@@ -304,7 +331,14 @@ public class CombatManager : MonoBehaviour
 
             if (text)
             {
-                text.text = combatUniversal.Name;
+                if (text.name.Contains("Health"))
+                {
+                    text.text = $"{combatUniversal.CurrentHealth}/{combatUniversal.MaxHealth}";
+                }
+                else
+                {
+                    text.text = combatUniversal.Name;
+                }
             }
 
             Slider slider = item.GetComponent<Slider>();

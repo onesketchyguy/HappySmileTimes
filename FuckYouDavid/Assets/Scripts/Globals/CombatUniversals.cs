@@ -1,4 +1,7 @@
-﻿[System.Serializable]
+﻿using System;
+using System.Collections.Generic;
+
+[Serializable]
 public class CombatUniversals
 {
     public string Name = "Nameless";
@@ -6,22 +9,22 @@ public class CombatUniversals
     public UnityEngine.Sprite Image;
 
     //Stats
-    public int Stength = 1; //attack
-    public int Agility = 1; //attackspeed
-    public int Chin = 1; //defence
-    public int StaminaStat = 1;
+    public Stat Stength; //attack
+    public Stat Agility; //attackspeed
+    public Stat Chin; //defence
+    public Stat StaminaStat;
 
     public int experience;
 
     // Main Values
-    public int MaxHealth => 5 + (Chin * 5);
-    public int MaxStamina => 5 + (StaminaStat * 5);
+    public int MaxHealth => 5 + (Chin.level * 5);
+    public int MaxStamina => 5 + (StaminaStat.level * 5);
     public int CurrentStamina;
     public int CurrentHealth;
 
     public bool isDead => CurrentHealth <= 0;
 
-    public int PowerLevel => StaminaStat + Stength + Chin + Agility;
+    public int PowerLevel => StaminaStat.level + Stength.level + Chin.level + Agility.level;
 
     public void Inititialize()
     {
@@ -34,9 +37,18 @@ public class CombatUniversals
         }
     }
 
-    internal System.Collections.Generic.List<Move> attacks = new System.Collections.Generic.List<Move>() { };
+    internal List<Move> attacks = new List<Move>() { };
 
-    [System.Serializable]
+    [Serializable]
+    public class Stat
+    {
+        public int level = 1;
+
+        public int experience = 0;
+        public int maxExperience => level * 10;
+    }
+
+    [Serializable]
     public class Move
     {
         public string name;
@@ -48,5 +60,11 @@ public class CombatUniversals
         public reliance powerType;
 
         public int power;
+
+        internal int experience;
+
+        public int maxExperience => power * 10;
+
+        public Move[] Upgrade;
     }
 }

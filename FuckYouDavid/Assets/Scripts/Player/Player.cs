@@ -5,24 +5,17 @@ public class Player : MonoBehaviour
 {
     public bool AllowedToMove = true;
     Movement mov => GetComponent<Movement>();
-    public InventoryManager Inventory;
 
     [SerializeField] public CombatUniversals combattant;
 
     private void Start()
     {
-        Inventory = GameObject.FindObjectOfType<InventoryManager>();
         combattant.Inititialize();
-        combattant.Name = "You";
+        combattant.Name = GameManager.PlayerName;
     }
 
     void Update()
     {
-        if (combattant.isDead)
-        {
-            GameManager.instance.LoadScene("Splash");
-        }
-
         if (GameManager.gameState == GameManager.GameState.InCombat)
         {
             CombatManager.combatant_0 = combattant;
