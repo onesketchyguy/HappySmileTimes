@@ -72,12 +72,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.35, y: 0.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -96,19 +96,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllowedToMove: 1
+  Inventory: {fileID: 0}
   combattant:
     Name: Nameless
-    Image: {fileID: 21300000, guid: 71e5e0344a236aa4b8b017b047831ae4, type: 3}
+    Image: {fileID: 21300018, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
     Stength: 1
     Agility: 1
     Chin: 1
     StaminaStat: 1
     CurrentStamina: 0
     CurrentHealth: 0
-    attacks:
-    - name: Punch
-      powerType: 0
-      power: 1
 --- !u!114 &4857996175179814235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,18 +132,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSprites:
-  - {fileID: 21300016, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300018, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300016, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300020, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  - {fileID: 21300014, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300016, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300014, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300012, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
   verticalSprites_Up:
-  - {fileID: 21300006, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300010, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300012, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  - {fileID: 21300002, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300004, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300002, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300010, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
   verticalSprites_Down:
-  - {fileID: 21300004, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300008, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300014, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  - {fileID: 21300000, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300006, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300000, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300008, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
   timeToSpendOnSprites: 0.1
 --- !u!50 &4857996175179814215
 Rigidbody2D:

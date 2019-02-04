@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: d997927672214d84994f168f7c1d433a
+guid: f4ba2ba6f169a9343af536c47f874efc
 TextureImporter:
   fileIDToRecycleName:
-    21300000: FUCK_0
-    21300002: FUCK_1
-    21300004: down
-    21300006: up
-    21300008: down_0
-    21300010: up_0
-    21300012: up_1
-    21300014: down_1
-    21300016: right
-    21300018: right_0
-    21300020: right_1
-    21300022: right_2
-    21300024: FUCK_2
-    21300026: FUCK_3
-    21300028: FUCK_4
+    21300000: Down_0
+    21300002: Up_0
+    21300004: Up_1
+    21300006: Down_1
+    21300008: Down_2
+    21300010: Up_2
+    21300012: Right_2
+    21300014: Right_0
+    21300016: Right_1
+    21300018: Player_Icon
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -75,10 +70,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -86,10 +81,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 128
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,10 +92,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
-    maxTextureSize: 128
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,10 +103,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: WebGL
-    maxTextureSize: 128
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,101 +116,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FUCK_0
+      name: Down_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 20
-        height: 20
+        y: 12
+        width: 7
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32c82ce41c9498249a223fa2e20faac2
+      spriteID: 4fb0381a2f79dc846bd434283ca0221b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_1
+      name: Up_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1e70a68f38616428f4150298ac188a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Up_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 4
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e01381d04332140b9bc06a7935b1ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Down_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 12
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e7ea16e6994934489a5139e527bfb5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Down_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 12
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac599a1d452cec34893e62d670fce36f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Up_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 4
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d54f6a94c1d514db5f9fb68ecf346f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right_2
       rect:
         serializedVersion: 2
         x: 20
-        y: 0
-        width: 20
-        height: 20
+        y: 4
+        width: 7
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b5278a931aac5b4eb0cd03786840ec0
+      spriteID: 9240519ef2c73924fb945b0fa1a0941e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_2
+      name: Right_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 20
-        height: 20
+        x: 20
+        y: 12
+        width: 7
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 740fd5eec6b648d45ab48c50a6db9305
+      spriteID: a44267bd425adca4ba465d61b5dcc257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_3
+      name: Right_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 0
-        width: 20
-        height: 20
+        x: 27
+        y: 12
+        width: 5
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e7cfb12d0da38b40a970ac5c2ca9d7f
+      spriteID: 54a89b1911b2c2f4598a8e8142a680d4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_4
+      name: Player_Icon
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 20
-        height: 20
+        x: 34
+        y: 3
+        width: 13
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b6fec9f2e7f8bc43811d4ce7eee3092
+      spriteID: 9235c28a93f8c6744a12b6abd10a0d69
       vertices: []
       indices: 
       edges: []
@@ -223,7 +318,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 05a48277ca328be41ae74c94313c6856
+    spriteID: e1e67b053cfdcd841ac84721679c745e
     vertices: []
     indices: 
     edges: []

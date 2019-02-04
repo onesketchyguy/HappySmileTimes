@@ -74,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.35, y: 0.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -136,9 +136,10 @@ MonoBehaviour:
   DIALOGUE: Hey N word
   Sales: 1
   SP: {fileID: 0}
-  MM: {fileID: 0}
   Main: 0
+  HasItem: 0
   InChat: 0
+  TextTime: 1
 --- !u!114 &6368295790338762365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,18 +153,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSprites:
-  - {fileID: 21300016, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300018, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300016, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300020, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  - {fileID: 21300014, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300016, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300014, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300012, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
   verticalSprites_Up:
-  - {fileID: 21300006, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300010, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300012, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  - {fileID: 21300002, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300004, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300002, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300010, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
   verticalSprites_Down:
-  - {fileID: 21300004, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300008, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - {fileID: 21300014, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  - {fileID: 21300000, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300006, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300000, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  - {fileID: 21300008, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
   timeToSpendOnSprites: 0.1
 --- !u!61 &6368295790338762366
 BoxCollider2D:
@@ -183,7 +186,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.35, y: 0.4}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.35, y: 0.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -209,7 +212,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.35, y: 0.4}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.35, y: 0.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
