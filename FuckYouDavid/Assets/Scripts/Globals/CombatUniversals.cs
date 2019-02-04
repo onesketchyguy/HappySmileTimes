@@ -11,6 +11,8 @@ public class CombatUniversals
     public int Chin = 1; //defence
     public int StaminaStat = 1;
 
+    public int experience;
+
     // Main Values
     public int MaxHealth => 5 + (Chin * 5);
     public int MaxStamina => 5 + (StaminaStat * 5);

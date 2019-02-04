@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
 
     private void sceneChanged(Scene arg0, Scene arg1)
     {
+        gameState = GameState.Playing;
+
         if (MainManager.instance != null)
             MainManager.instance.OFF();
 

@@ -16,6 +16,8 @@ public class Fighter : MonoBehaviour
 
     [SerializeField] private LayerMask Collisions;
 
+    [SerializeField] private GameObject SeenAnimObject;
+
     Vector2 sightPosStart => transform.position + (getFaceDirection() * 0.5f);
 
     Vector2 sightPosEnd => transform.position + (getFaceDirection() * sightRange);
@@ -45,11 +47,15 @@ public class Fighter : MonoBehaviour
         return dir;
     }
 
+    bool PlayerSeen = false;
+
     RaycastHit2D sightHit => (Physics2D.Linecast(sightPosStart, sightPosEnd, Collisions));
 
     private void Start()
     {
         combattant.Inititialize();
+
+        SeenAnimObject.SetActive(false);
     }
 
     private void Update()
@@ -75,22 +81,32 @@ public class Fighter : MonoBehaviour
             {
                 CombatManager.combatant_1 = combattant;
 
-                if (attackOnSight)
+                if (PlayerSeen == false)
                 {
-                    Debug.Log("Commence to battling!");
+                    PlayerSeen = true;
 
-                    GameManager.gameState = GameManager.GameState.InCombat;
+                    SeenAnimObject.SetActive(true);
                 }
-                else
-                {
-                    Debug.Log("Commence to chatting!");
+            }
+        }
 
-                    rotationSpeed = 0;
+        if (PlayerSeen && !SeenAnimObject.activeSelf)
+        {
+            if (attackOnSight)
+            {
+                Debug.Log("Commence to battling!");
 
-                    //Commence dialogue.
+                GameManager.gameState = GameManager.GameState.InCombat;
+            }
+            else
+            {
+                Debug.Log("Commence to chatting!");
 
-                    GameManager.gameState = GameManager.GameState.InCombat;
-                }
+                rotationSpeed = 0;
+
+                //Commence dialogue.
+
+                //GameManager.gameState = GameManager.GameState.InCombat;
             }
         }
     }
