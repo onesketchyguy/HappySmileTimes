@@ -89,7 +89,7 @@ public class CombatManager : MonoBehaviour
         {
             Logger.text = $"{loggerQueue.Dequeue()}";
 
-            if (Logger.text == "Got away!")
+            if (Logger.text == "<i>Got away!</i>")
             {
                 //Replace with proper escape!
                 combatant_1.CurrentHealth = 0;
@@ -104,6 +104,11 @@ public class CombatManager : MonoBehaviour
             if (combatant_1.CurrentHealth <= 0 || combatant_0.CurrentHealth <= 0)
             {
                 GameManager.gameState = GameManager.GameState.Playing;
+
+                if (combatant_0.CurrentHealth <= 0)
+                {
+                    GameManager.instance.LoadScene("Main");
+                }
 
                 return;
             }
@@ -174,7 +179,7 @@ public class CombatManager : MonoBehaviour
                 break;
         }
 
-        loggerQueue.Enqueue($"{combatant_A.Name} used {combatant_A.attacks.ToArray()[attackNo].name}!");
+        loggerQueue.Enqueue($"{combatant_A.Name} used {combatant_A.attacks.ToArray()[attackNo].name}...");
 
         if (hit == true)
         {
@@ -182,11 +187,11 @@ public class CombatManager : MonoBehaviour
 
             int damageToDeal = Random.Range(power, power + special + 1);
 
-            loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}!");
+            loggerQueue.Enqueue($"<b>{combatant_A.Name}</b> hit <b>{combatant_B.Name}</b> for <b>{damageToDeal}!</b>");
 
             if (damageToDeal >= power + special)
             {
-                loggerQueue.Enqueue("Critical hit!");
+                loggerQueue.Enqueue("<b>Critical hit!</b>");
             }
 
             combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -216,7 +221,7 @@ public class CombatManager : MonoBehaviour
         {
             //miss
 
-            loggerQueue.Enqueue($"<i>{combatant_A.Name} missed!</i>");
+            loggerQueue.Enqueue($"<i>It missed...</i>");
         }
 
         logging = true;
@@ -326,7 +331,14 @@ public class CombatManager : MonoBehaviour
 
             if (text)
             {
-                text.text = combatUniversal.Name;
+                if (text.name.Contains("Health"))
+                {
+                    text.text = $"{combatUniversal.CurrentHealth}/{combatUniversal.MaxHealth}";
+                }
+                else
+                {
+                    text.text = combatUniversal.Name;
+                }
             }
 
             Slider slider = item.GetComponent<Slider>();

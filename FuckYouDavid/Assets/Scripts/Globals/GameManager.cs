@@ -1,9 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static string PlayerName = "";
+
+    public GameObject namePanel;
+
     public enum GameState { Playing, InCombat, InBag, InChat, OnConveyor, Paused }
 
     public static GameState gameState = GameState.Playing;
@@ -42,15 +47,25 @@ public class GameManager : MonoBehaviour
 
         if (MainManager.instance != null)
             MainManager.instance.OFF();
+
+        InvokeRepeating("UpdateNameText", 0, Time.deltaTime);
     }
 
     public void LoadScene(string SceneToLoad)
     {
+        if (SceneToLoad == "Main") PlayerName = "";
+
         SceneManager.LoadScene(SceneToLoad);
     }
 
     private void sceneChanged(Scene arg0, Scene arg1)
     {
+        if (PlayerName == "")
+        {
+            //Open name dialogue
+            InvokeRepeating("UpdateNameText", 0, Time.deltaTime);
+        }
+
         gameState = GameState.Playing;
 
         if (MainManager.instance != null)
@@ -60,5 +75,54 @@ public class GameManager : MonoBehaviour
 
         if (GetComponent<Canvas>())
             GetComponent<Canvas>().worldCamera = Camera.main;
+    }
+
+    private void UpdateNameText()
+    {
+        namePanel.SetActive(true);
+
+        gameState = GameState.Paused;
+
+        foreach (var obj in namePanel.GetComponentsInChildren<Transform>())
+        {
+            Text text = obj.GetComponent<Text>();
+
+            if (text != null)
+            {
+                if (text.name == "NameText")
+                {
+                    string texttoUse = text.text;
+
+                    texttoUse += Input.inputString;
+
+                    if (Input.GetKeyDown(KeyCode.Backspace))
+                    {
+                        string NewText = "";
+
+                        char[] array = text.text.ToCharArray();
+                        for (int i = 0; i < array.Length - 1; i++)
+                        {
+                            char character = array[i];
+
+                            NewText += character;
+                        }
+
+                        texttoUse = NewText;
+                    }
+
+                    text.text = texttoUse;
+
+                    PlayerName = texttoUse;
+                }
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            namePanel.SetActive(true);
+
+            gameState = GameState.Playing;
+        }
     }
 }
