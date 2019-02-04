@@ -128,122 +128,157 @@ MonoBehaviour:
     description: Straight to the point
     powerType: 0
     power: 1
+    Upgrade:
+    - name: Great punch
+      description: A pretty good punch.
+      powerType: 0
+      power: 2
+      Upgrade: []
   - name: Use feet
     description: Kind of like a kick
     powerType: 1
     power: 1
+    Upgrade: []
   - name: Spit
     description: EWW.. or yum no judgment
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Fast Punch
     description: Straight to the
     powerType: 1
     power: 1
+    Upgrade: []
   - name: Hard Punch
     description: More straighter to the point
     powerType: 0
     power: 5
+    Upgrade: []
   - name: Flail
     description: Panic that could work
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Barrier
     description: Leave me alone
     powerType: 2
     power: 2
+    Upgrade: []
   - name: Fetal Possition
     description: 'Wait for your mom to help '
     powerType: 2
     power: 4
+    Upgrade: []
   - name: double punch
     description: Straight to the point Straight to the point
     powerType: 1
     power: 3
+    Upgrade: []
   - name: A Fucking FireBall
     description: 'to send you''re enimes to burn again '
     powerType: 3
     power: 5
+    Upgrade: []
   - name: karate high jump attack
     description: For the jackie chan fans
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Fastest attack ever
     description: Wanta see me do it again
     powerType: 1
     power: 3
+    Upgrade: []
   - name: kameameama
     description: 'From your favoirte anime '
     powerType: 3
     power: 5
+    Upgrade: []
   - name: Falcon punch
     description: 'from the plastation brawls '
     powerType: 0
     power: 3
+    Upgrade: []
   - name: 'cursyhameha '
     description: Vanquish your enemies or your dean
     powerType: 3
     power: 2
+    Upgrade: []
   - name: 'A pokemon '
     description: referancing it makes the whole game not stolen
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Dwite's karate
     description: 'Newer and udpated now with bear defences '
     powerType: 0
     power: 3
+    Upgrade: []
   - name: A gun
     description: Fighting dirtier than ever before
     powerType: 0
     power: 6
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
   - name: Flail
     description: 
     powerType: 1
     power: 2
+    Upgrade: []
 --- !u!223 &6939113495119107743
 Canvas:
   m_ObjectHideFlags: 0
