@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
 
-    public GameObject Panel;
+    public GameObject Panel,Moves,Bag;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +18,12 @@ public class InventoryManager : MonoBehaviour
             Panel.SetActive(GameManager.gameState==GameManager.GameState.InBag);      
     }
 
+    public void PanelController(int Factor) {
+        Panel.SetActive(Factor==1);
+        Moves.SetActive(Factor == 3);
+        Bag.SetActive(Factor == 2);
+
+
+    }
 
 }
