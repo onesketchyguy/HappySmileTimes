@@ -16,6 +16,8 @@ public class CombatUniversals
 
     public int experience;
 
+    public GameManager.States CurrentState = GameManager.States.Fine;
+
     // Main Values
     public int MaxHealth => 5 + (Chin.level * 5);
     public int MaxStamina => 5 + (StaminaStat.level * 5);

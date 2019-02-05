@@ -253,6 +253,15 @@ public class CombatManager : MonoBehaviour
         }
     }
 
+    bool CalculateChances(float successChance)
+    {
+        float chance = 1 - Mathf.Abs((Random.Range(0.0f, 1) - 1) / 1);
+
+        //Debug.Log(chance);
+
+        return (chance > successChance);
+    }
+
     bool CalculateChances(int stat, float successChance)
     {
         float chance = 1 - Mathf.Abs((Random.Range(0.0f, 1 * stat) - 1 * stat) / 1 * stat);
@@ -334,6 +343,28 @@ public class CombatManager : MonoBehaviour
                 invItem.AddComponent<Image>().sprite = item.image;
 
                 invItem.AddComponent<Button>().onClick.AddListener(delegate { RemoveItemFromBag(item); });
+
+                GameObject textObject = new GameObject(item.name + "Text");
+
+                textObject.transform.SetParent(invItem.transform);
+
+                textObject.transform.position = invItem.transform.position;
+
+                textObject.transform.localScale = new Vector3(1, 1, 1);
+
+                Text t = textObject.AddComponent<Text>();
+
+                t.font = GetComponentInChildren<Text>().font;
+
+                t.color = Color.black;
+
+                t.text = $"{item.name} x {item.count}";
+
+                Outline ol = textObject.AddComponent<Outline>();
+
+                ol.effectDistance = new Vector2(2, 2);
+
+                ol.effectColor = Color.white;
             }
         }
         else
@@ -356,7 +387,64 @@ public class CombatManager : MonoBehaviour
                     continue;
 
                 if (item.name == itemToRemove.name)
-                    Destroy(item.gameObject);
+                {
+                    if (CalculateChances(itemToRemove.ChanceOfEffect))
+                    {
+                        loggerQueue.Enqueue($"{combatant_0.Name} used {itemToRemove.name} successfully!");
+
+                        switch (itemToRemove.Effect)
+                        {
+                            case GameManager.States.Fine:
+                                combatant_0.CurrentState = itemToRemove.Effect;
+                                break;
+                            case GameManager.States.GrossOut:
+                                combatant_1.CurrentState = itemToRemove.Effect;
+                                break;
+                            case GameManager.States.Burn:
+                                combatant_1.CurrentState = itemToRemove.Effect;
+                                break;
+                            case GameManager.States.Freeze:
+                                combatant_1.CurrentState = itemToRemove.Effect;
+                                break;
+                            case GameManager.States.Paralysis:
+                                combatant_1.CurrentState = itemToRemove.Effect;
+                                break;
+                            case GameManager.States.Poison:
+                                combatant_1.CurrentState = itemToRemove.Effect;
+                                break;
+                            case GameManager.States.Confusion:
+                                combatant_1.CurrentState = itemToRemove.Effect;
+                                break;
+                            case GameManager.States.Heal:
+                                combatant_1.CurrentState = itemToRemove.Effect;
+                                break;
+                            case GameManager.States.Taunt:
+                                combatant_1.CurrentState = itemToRemove.Effect;
+                                break;
+                            case GameManager.States.Protection:
+                                combatant_0.CurrentState = itemToRemove.Effect;
+                                break;
+                            default:
+                                break;
+                        }
+
+                        Invoke("Logger_DisplayNext", 0);
+                    }
+                    else
+                    {
+                        loggerQueue.Enqueue($"{combatant_0.Name} failed to use {itemToRemove.name}...");
+                    }
+
+                    if (itemToRemove.count > 1)
+                    {
+                        itemToRemove.count -= 1;
+                    }
+                    else
+                    {
+                        Destroy(item.gameObject);
+                    }
+                }
+                    
             }
         }
         else

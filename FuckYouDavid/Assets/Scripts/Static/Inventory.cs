@@ -22,4 +22,13 @@ public class ItemDefinition
     public UnityEngine.Sprite image;
 
     public int count;
+
+    public GameManager.States Effect;
+
+    /// <summary>
+    /// Chance of effect.
+    /// Range of 0-1
+    /// if 0 no chance, if 1 always succeed.
+    /// </summary>
+    public float ChanceOfEffect = 1;
 }
