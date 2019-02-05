@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DM: {fileID: 0}
-  LevelToGo: World_3
+  LevelToGo: World_1
   T: {fileID: 0}
 --- !u!1 &968791918
 GameObject:
