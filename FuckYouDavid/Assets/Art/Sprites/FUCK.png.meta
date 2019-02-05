@@ -19,6 +19,7 @@ TextureImporter:
     21300028: FUCK_4
     21300030: FUCK_5
     21300032: FUCK_6
+    21300034: FUCK_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -274,6 +275,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9b13cb6b5c86bae4999aa22558f4e0fd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FUCK_7
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f501ab6490e0514db030b8337bfd77e
       vertices: []
       indices: 
       edges: []
