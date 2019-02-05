@@ -18,7 +18,7 @@ public class CombatManager : MonoBehaviour
 
     public static CombatUniversals combatant_0, combatant_1;
 
-    [SerializeField] private GameObject fightOptionsRegion;
+    [SerializeField] private GameObject fightOptionsRegion, inventoryPanel, inventoryContent;
 
     [SerializeField] private Text Logger;
     private bool logging = true;
@@ -35,6 +35,8 @@ public class CombatManager : MonoBehaviour
                 return;
             }
 
+            inventoryPanel.SetActive(false);
+
             loggerQueue.Enqueue($"{combatant_1.Name} encountered!");
 
             Invoke("Logger_DisplayNext", 0);
@@ -48,6 +50,11 @@ public class CombatManager : MonoBehaviour
         if (CombatScreen.activeSelf)
         {
             optionsRegion.SetActive(playersTurn == true && logging == false);
+
+            if (optionsRegion.activeSelf == false || fightOptionsRegion.activeSelf == true)
+            {
+                inventoryPanel.SetActive(false);
+            }
 
             SetupUI();
 
@@ -304,7 +311,58 @@ public class CombatManager : MonoBehaviour
 
         Debug.Log("Attempting to open bag.");
 
-        GameManager.gameState = GameManager.GameState.InBag;
+        inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+
+        foreach (var item in inventoryContent.GetComponentsInChildren<Transform>())
+        {
+            if (item == inventoryContent.transform)
+                continue;
+
+            Destroy(item.gameObject);
+        }
+
+        Player player = FindObjectOfType<Player>();
+
+        if (player)
+        {
+            foreach (var item in player.inventory.items.ToArray())
+            {
+                GameObject invItem = Instantiate(new GameObject(), inventoryContent.transform) as GameObject;
+
+                invItem.name = item.name;
+
+                invItem.AddComponent<Image>().sprite = item.image;
+
+                invItem.AddComponent<Button>().onClick.AddListener(delegate { RemoveItemFromBag(item); });
+            }
+        }
+        else
+        {
+            inventoryPanel.SetActive(false);
+        }
+    }
+
+    public void RemoveItemFromBag(ItemDefinition itemToRemove)
+    {
+        Player player = FindObjectOfType<Player>();
+
+        if (player)
+        {
+            player.inventory.items.Remove(itemToRemove);
+
+            foreach (var item in inventoryContent.GetComponentsInChildren<Transform>())
+            {
+                if (item == inventoryContent.transform)
+                    continue;
+
+                if (item.name == itemToRemove.name)
+                    Destroy(item.gameObject);
+            }
+        }
+        else
+        {
+            inventoryPanel.SetActive(false);
+        }
     }
 
     public void Run()
