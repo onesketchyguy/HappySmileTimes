@@ -60,7 +60,7 @@ public class Fighter : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.gameState != GameManager.GameState.Playing)
+        if (GameManager.gameState != GameManager.GameState.Playing && GameManager.gameState != GameManager.GameState.InChat)
             return;
 
         if (combattant.isDead)
@@ -88,7 +88,7 @@ public class Fighter : MonoBehaviour
                 {
                     PlayerSeen = true;
 
-                    GameManager.gameState = GameManager.GameState.Playing;
+                    GameManager.gameState = GameManager.GameState.InChat;
 
                     SeenAnimObject.SetActive(true);
 
