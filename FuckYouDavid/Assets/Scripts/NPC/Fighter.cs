@@ -60,6 +60,9 @@ public class Fighter : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.gameState != GameManager.GameState.Playing)
+            return;
+
         if (combattant.isDead)
         {
             Destroy(gameObject);
@@ -84,8 +87,6 @@ public class Fighter : MonoBehaviour
                 if (PlayerSeen == false)
                 {
                     PlayerSeen = true;
-
-                    rotationSpeed = 0;
 
                     GameManager.gameState = GameManager.GameState.Playing;
 
