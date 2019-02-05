@@ -68,7 +68,7 @@ public class Fighter : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (rotationSpeed > 0)
+        if (rotationSpeed > 0 && PlayerSeen == false)
         {
             if (lastRotation < Time.time)
             {
@@ -91,6 +91,8 @@ public class Fighter : MonoBehaviour
                     GameManager.gameState = GameManager.GameState.Playing;
 
                     SeenAnimObject.SetActive(true);
+
+                    SoundManager.Reference.PlayNotificationSound();
                 }
             }
         }

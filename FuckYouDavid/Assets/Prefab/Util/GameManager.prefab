@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xpSFX: {fileID: 0}
+  NotificationSound: {fileID: 8300000, guid: 515c1aaa38dccfc47bee0bde3ceef7b4, type: 3}
   DoorSounds:
   - {fileID: 8300000, guid: ecd375b41af34d348b3a463697e74e9d, type: 3}
   - {fileID: 8300000, guid: fd8aec67e0f3a2f4bb78d5179cdc6013, type: 3}

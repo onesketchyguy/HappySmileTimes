@@ -12,13 +12,13 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        S.p("sadas" );
         combattant.Inititialize();
-        combattant.Name = GameManager.PlayerName;
     }
 
     void Update()
     {
+        combattant.Name = GameManager.PlayerName;
+
         if (GameManager.gameState == GameManager.GameState.InCombat)
         {
             CombatManager.combatant_0 = combattant;

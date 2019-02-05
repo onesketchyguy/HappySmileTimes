@@ -12,6 +12,8 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip xpSFX;
 
+    public AudioClip NotificationSound;
+
     [SerializeField] AudioClip[] DoorSounds;
 
     private AudioSource m_source;
@@ -24,7 +26,7 @@ public class SoundManager : MonoBehaviour
     public void PlayXPEffect()
     {
         if (xpSFX != null)
-            m_source.PlayOneShot(xpSFX, 1 * PlayerPrefsManager.GetSFXVolume());
+            m_source.PlayOneShot(xpSFX, 1 /* PlayerPrefsManager.GetSFXVolume()*/);
     }
 
     public void PlayDoorSound(int soundToPlay)
@@ -32,8 +34,13 @@ public class SoundManager : MonoBehaviour
         m_source.PlayOneShot(DoorSounds[soundToPlay], 1 /* PlayerPrefsManager.GetSFXVolume()*/);
     }
 
+    public void PlayNotificationSound()
+    {
+        m_source.PlayOneShot(NotificationSound, 1 /* PlayerPrefsManager.GetSFXVolume()*/);
+    }
+
     public void PlaySound(AudioClip clip, float volume)
     {
-        m_source.PlayOneShot(clip, volume * PlayerPrefsManager.GetSFXVolume());
+        m_source.PlayOneShot(clip, volume /* PlayerPrefsManager.GetSFXVolume()*/);
     }
 }
