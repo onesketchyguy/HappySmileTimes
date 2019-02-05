@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using DavidRules;
 [RequireComponent(typeof(Movement))]
 public class Player : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-       
+        S.p("sadas" );
         combattant.Inititialize();
         combattant.Name = GameManager.PlayerName;
     }
