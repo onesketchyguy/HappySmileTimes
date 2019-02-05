@@ -3,6 +3,8 @@
 [RequireComponent(typeof(Movement))]
 public class Player : MonoBehaviour
 {
+    public Inventory myInventory;
+
     public bool AllowedToMove = true;
     Movement mov => GetComponent<Movement>();
 
