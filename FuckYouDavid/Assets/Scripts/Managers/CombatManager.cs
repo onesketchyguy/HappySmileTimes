@@ -37,7 +37,7 @@ public class CombatManager : MonoBehaviour
 
             loggerQueue.Enqueue($"{combatant_1.Name} encountered!");
 
-            InvokeRepeating("Logger_DisplayNext", 0, 1);
+            Invoke("Logger_DisplayNext", 0);
         }
 
         CombatScreen.SetActive(active);
@@ -91,11 +91,12 @@ public class CombatManager : MonoBehaviour
 
             if (Logger.text == "<i>Got away!</i>")
             {
-                //Replace with proper escape!
-                combatant_1.CurrentHealth = 0;
-
                 GameManager.gameState = GameManager.GameState.Playing;
             }
+
+            float time = Logger.text.ToCharArray().Length / 10;
+
+            Invoke("Logger_DisplayNext", time > 1 && time < 3 ? time : 2);
         }
         else
         {
@@ -187,11 +188,11 @@ public class CombatManager : MonoBehaviour
 
             int damageToDeal = Random.Range(power, power + special + 1);
 
-            loggerQueue.Enqueue($"<b>{combatant_A.Name}</b> hit <b>{combatant_B.Name}</b> for <b>{damageToDeal}!</b>");
+            loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
             if (damageToDeal >= power + special)
             {
-                loggerQueue.Enqueue("<b>Critical hit!</b>");
+                loggerQueue.Enqueue("Critical hit!");
             }
 
             combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -226,7 +227,7 @@ public class CombatManager : MonoBehaviour
 
         logging = true;
 
-        InvokeRepeating("Logger_DisplayNext", 0, 2);
+        Invoke("Logger_DisplayNext", 0);
 
         if (combatant_1.CurrentHealth <= 0 && !loggerQueue.Contains($"{combatant_1.Name} knocked out."))
         {
