@@ -48,7 +48,63 @@ public class GameManager : MonoBehaviour
         if (MainManager.instance != null)
             MainManager.instance.OFF();
 
-        InvokeRepeating("UpdateNameText", 0, 1f * Time.deltaTime);
+        UpdateNameText = true;
+    }
+
+    private void Update()
+    {
+        if (UpdateNameText == true)
+        {
+            namePanel.SetActive(true);
+
+            gameState = GameState.Paused;
+
+            foreach (var obj in namePanel.GetComponentsInChildren<Transform>())
+            {
+                Text text = obj.GetComponent<Text>();
+
+                if (text != null)
+                {
+                    if (text.name == "NameText")
+                    {
+                        string textToUse = text.text;
+
+                        textToUse += Input.inputString;
+
+                        if (Input.GetKeyDown(KeyCode.Backspace))
+                        {
+                            string NewText = "";
+
+                            char[] array = text.text.ToCharArray();
+                            for (int i = 0; i < array.Length - 1; i++)
+                            {
+                                char character = array[i];
+
+                                NewText += character;
+                            }
+
+                            textToUse = NewText;
+                        }
+
+                        text.text = textToUse;
+
+                        PlayerName = textToUse;
+                    }
+                }
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return) && PlayerName != "")
+            {
+                namePanel.SetActive(false);
+
+                gameState = GameState.Playing;
+
+                CancelInvoke("UpdateNameText");
+
+                UpdateNameText = false;
+            }
+        }
     }
 
     public void LoadScene(string SceneToLoad)
@@ -63,7 +119,7 @@ public class GameManager : MonoBehaviour
         if (PlayerName == "")
         {
             //Open name dialogue
-            InvokeRepeating("UpdateNameText", 0, 1f * Time.deltaTime);
+            UpdateNameText = true;
         }
 
         gameState = GameState.Playing;
@@ -77,54 +133,5 @@ public class GameManager : MonoBehaviour
             GetComponent<Canvas>().worldCamera = Camera.main;
     }
 
-    private void UpdateNameText()
-    {
-        namePanel.SetActive(true);
-
-        gameState = GameState.Paused;
-
-        foreach (var obj in namePanel.GetComponentsInChildren<Transform>())
-        {
-            Text text = obj.GetComponent<Text>();
-
-            if (text != null)
-            {
-                if (text.name == "NameText")
-                {
-                    string textToUse = text.text;
-
-                    textToUse += Input.inputString;
-
-                    if (Input.GetKeyDown(KeyCode.Backspace))
-                    {
-                        string NewText = "";
-
-                        char[] array = text.text.ToCharArray();
-                        for (int i = 0; i < array.Length - 1; i++)
-                        {
-                            char character = array[i];
-
-                            NewText += character;
-                        }
-
-                        textToUse = NewText;
-                    }
-
-                    text.text = textToUse;
-
-                    PlayerName = textToUse;
-                }
-            }
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            namePanel.SetActive(false);
-
-            gameState = GameState.Playing;
-
-            CancelInvoke("UpdateNameText");
-        }
-    }
+    private bool UpdateNameText = false;
 }

@@ -2,8 +2,10 @@ fileFormatVersion: 2
 guid: c555d3e493f67f44380e4d1126c2aa93
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ShopItems_0
-    21300002: ShopItems_1
+    21300000: Burger
+    21300002: DogyTreat
+    21300004: Key
+    21300006: HotDog
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShopItems_0
+      name: Burger
       rect:
         serializedVersion: 2
         x: 1
@@ -116,7 +118,7 @@ TextureImporter:
         width: 16
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,7 +130,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShopItems_1
+      name: DogyTreat
       rect:
         serializedVersion: 2
         x: 0
@@ -136,13 +138,53 @@ TextureImporter:
         width: 20
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: d5a9fe0e95badd048bf5483beada1557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Key
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 11
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e45812b7bccde4a9cd9c70705c84d0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HotDog
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d5a3873fa88274bb703dd38bb8b3f3
       vertices: []
       indices: 
       edges: []
