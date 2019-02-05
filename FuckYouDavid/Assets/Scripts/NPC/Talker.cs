@@ -5,6 +5,7 @@ public class Talker : MonoBehaviour
     public DiologueManager DM;
     public string DIALOGUE,DIALOGUE2;
     public bool Sales;
+    public Inventory INV;
     public GameObject SP;
     public MainBehaviour MM => GetComponent<MainBehaviour>() ?? gameObject.AddComponent<MainBehaviour>();
     public bool Main=false;
