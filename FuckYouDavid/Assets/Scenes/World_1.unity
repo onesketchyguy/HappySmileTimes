@@ -2685,6 +2685,7 @@ MonoBehaviour:
   DIALOGUE2: 
   Sales: 0
   INV:
+    items: []
     keys: []
     Money: 0
   SP: {fileID: 0}
