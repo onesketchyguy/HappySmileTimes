@@ -1224,8 +1224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DM: {fileID: 0}
-  player: {fileID: 0}
   DIALOGUE: You scared want to leave?
+  DIALOGUE2: 
   Sales: 0
   SP: {fileID: 0}
   Main: 1
@@ -1487,8 +1487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DM: {fileID: 0}
-  player: {fileID: 0}
   DIALOGUE: You ready to GO BITCH!
+  DIALOGUE2: 
   Sales: 0
   SP: {fileID: 0}
   Main: 1
@@ -1755,8 +1755,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DM: {fileID: 0}
-  player: {fileID: 0}
   DIALOGUE: Music too loud pussy
+  DIALOGUE2: 
   Sales: 0
   SP: {fileID: 0}
   Main: 1
