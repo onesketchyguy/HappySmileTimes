@@ -95,16 +95,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5347bad9303c79142b7f81729533e4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory:
+    items: []
+    keys: []
+    Money: 0
   AllowedToMove: 1
-  Inventory: {fileID: 1506177316642797996, guid: b393eaa17100d7440acc8d388c1d1129,
-    type: 3}
   combattant:
     Name: Nameless
     Image: {fileID: 21300018, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
-    Stength: 1
-    Agility: 1
-    Chin: 1
-    StaminaStat: 1
+    Stength:
+      level: 1
+      experience: 0
+    Agility:
+      level: 1
+      experience: 0
+    Chin:
+      level: 1
+      experience: 0
+    StaminaStat:
+      level: 1
+      experience: 0
     experience: 0
     CurrentStamina: 0
     CurrentHealth: 0
