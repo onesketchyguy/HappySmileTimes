@@ -18,7 +18,7 @@ public class Door : MonoBehaviour
             {
                 Player player = collision.gameObject.GetComponent<Player>();
 
-                if (player.myInventory.keys.Contains(Key))
+                if (player.inventory.keys.Contains(Key))
                 {
                     OpenDoor();
                 }

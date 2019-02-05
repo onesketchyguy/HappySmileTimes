@@ -3,7 +3,7 @@ using DavidRules;
 [RequireComponent(typeof(Movement))]
 public class Player : MonoBehaviour
 {
-    public Inventory myInventory;
+    public Inventory inventory;
 
     public bool AllowedToMove = true;
     Movement mov => GetComponent<Movement>();

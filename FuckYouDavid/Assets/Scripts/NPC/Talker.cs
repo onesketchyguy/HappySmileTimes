@@ -19,6 +19,7 @@ public class Talker : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                
                 GameManager.gameState = GameManager.GameState.InChat;
                 Onchat();
             }
@@ -42,6 +43,10 @@ public class Talker : MonoBehaviour
 
         if (HasItem==true) {
             //gives Item
+          
+            Player player = FindObjectOfType<Player>();
+            player.inventory.keys.Add(INV.keys.ToArray()[0]);
+            INV.Money += player.inventory.Money;
             HasItem = false;
             Invoke("NewD",1);
         }

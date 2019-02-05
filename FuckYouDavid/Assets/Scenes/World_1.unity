@@ -8554,6 +8554,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: ef1a9898960f60a41921df60e40dc2a2,
+        type: 3}
+      propertyPath: INV.keys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: ef1a9898960f60a41921df60e40dc2a2,
+        type: 3}
+      propertyPath: INV.keys.Array.data[0]
+      value: FrontDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: ef1a9898960f60a41921df60e40dc2a2,
+        type: 3}
+      propertyPath: INV.Money
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef1a9898960f60a41921df60e40dc2a2, type: 3}
 --- !u!1001 &4857996174587671862

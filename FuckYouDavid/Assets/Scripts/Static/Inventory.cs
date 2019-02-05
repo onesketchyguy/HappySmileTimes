@@ -5,7 +5,7 @@
 [System.Serializable]
 public class Inventory
 {
-    private Dictionary<string, int> items = new Dictionary<string, int> { };
+    public  Dictionary<string, int> items = new Dictionary<string, int> { };
 
     public List<string> keys = new List<string> { };
 
