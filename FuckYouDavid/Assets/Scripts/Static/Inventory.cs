@@ -1,20 +1,25 @@
 ﻿using System.Collections.Generic;
 /// <summary>
-/// Resources available to any given unit.
+/// Items available.
 /// </summary>
 [System.Serializable]
 public class Inventory
 {
-    public  Dictionary<string, ItemDefinition> items = new Dictionary<string, ItemDefinition> { };
+    public  List <ItemDefinition> items = new List<ItemDefinition> { };
 
     public List<string> keys = new List<string> { };
 
     public float Money = 0;
 }
-
+/// <summary>
+/// Defines what an item is.
+/// </summary>
 [System.Serializable]
 public class ItemDefinition
 {
+    public string name;
+
     public UnityEngine.Sprite image;
+
     public int count;
 }
