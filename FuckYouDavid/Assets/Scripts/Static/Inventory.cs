@@ -5,9 +5,16 @@
 [System.Serializable]
 public class Inventory
 {
-    public  Dictionary<string, int> items = new Dictionary<string, int> { };
+    public  Dictionary<string, ItemDefinition> items = new Dictionary<string, ItemDefinition> { };
 
     public List<string> keys = new List<string> { };
 
     public float Money = 0;
+}
+
+[System.Serializable]
+public class ItemDefinition
+{
+    public UnityEngine.Sprite image;
+    public int count;
 }
