@@ -1227,6 +1227,10 @@ MonoBehaviour:
   DIALOGUE: You scared want to leave?
   DIALOGUE2: 
   Sales: 0
+  INV:
+    items: []
+    keys: []
+    Money: 0
   SP: {fileID: 0}
   Main: 1
   HasItem: 0
@@ -1490,6 +1494,10 @@ MonoBehaviour:
   DIALOGUE: You ready to GO BITCH!
   DIALOGUE2: 
   Sales: 0
+  INV:
+    items: []
+    keys: []
+    Money: 0
   SP: {fileID: 0}
   Main: 1
   HasItem: 0
@@ -1646,7 +1654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DM: {fileID: 0}
-  LevelToGo: World_1
+  LevelToGo: World_2
   T: {fileID: 0}
 --- !u!1 &968791918
 GameObject:
@@ -1758,6 +1766,10 @@ MonoBehaviour:
   DIALOGUE: Music too loud pussy
   DIALOGUE2: 
   Sales: 0
+  INV:
+    items: []
+    keys: []
+    Money: 0
   SP: {fileID: 0}
   Main: 1
   HasItem: 0
