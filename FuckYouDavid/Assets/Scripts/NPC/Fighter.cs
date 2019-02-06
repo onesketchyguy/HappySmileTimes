@@ -71,7 +71,18 @@ public class Fighter : MonoBehaviour
 
             FindObjectOfType<Player>().inventory += inventory;
 
-            Debug.Log("Added items to player inventory.");
+            string itemsRetrieved = $"Got {inventory.Money}";
+
+            foreach (var item in inventory.items.ToArray())
+            {
+                itemsRetrieved += $", {item.name}";
+            }
+
+            itemsRetrieved += ".";
+
+            float timeToDisplayNotification = itemsRetrieved.ToCharArray().Length/2;
+
+            FindObjectOfType<DiologueManager>().DisplayMessage(itemsRetrieved, timeToDisplayNotification);
 
             Destroy(gameObject);
         }

@@ -71,7 +71,7 @@ public class CombatManager : MonoBehaviour
 
                         // Implement AI that makes strategy instead of being retarded
 
-                        AI_Attack(Random.Range(0, combatant_1.attacks.Count - 1));
+                        Attack(Random.Range(0, combatant_1.attacks.Count - 1), combatant_1);
                     }
                 }
             }
@@ -145,12 +145,90 @@ public class CombatManager : MonoBehaviour
 
     public void Player_Attack(int attackNo)
     {
-        CommitAttack(attackNo, combatant_0, combatant_1);
+        Attack(attackNo, combatant_0);
     }
 
-    public void AI_Attack(int attackNo)
+    public void Attack(int attackNo, CombatUniversals combatant)
     {
-        CommitAttack(attackNo, combatant_1, combatant_0);
+        bool freed = false;
+
+        string state = "";
+
+        int damage = 0;
+
+        switch (combatant.CurrentState)
+        {
+            case GameManager.States.Normal:
+                CommitAttack(attackNo, combatant, combatant_0);
+                break;
+            case GameManager.States.GrossOut:
+                freed = CalculateChances(combatant.Chin.level, 0.6f);
+
+                state = "gross out";
+                break;
+            case GameManager.States.Burn:
+                freed = CalculateChances(combatant.Chin.level, 0.6f);
+
+                state = "burn";
+                break;
+            case GameManager.States.Freeze:
+                freed = CalculateChances(combatant.Chin.level, 0.6f);
+
+                state = "frozen";
+                break;
+            case GameManager.States.Paralysis:
+                freed = CalculateChances(combatant.Chin.level, 0.6f);
+
+                state = "paralysis";
+                break;
+            case GameManager.States.Poison:
+                freed = CalculateChances(combatant.Chin.level, 0.6f);
+
+                state = "poison";
+                break;
+            case GameManager.States.Confusion:
+                freed = CalculateChances(combatant.Chin.level, 0.6f);
+
+                state = "confusion";
+                break;
+            case GameManager.States.Heal:
+                freed = CalculateChances(combatant.Chin.level, 0f);
+
+                state = "healing";
+                break;
+            case GameManager.States.Taunt:
+                freed = CalculateChances(combatant.Chin.level, 0.6f);
+
+                state = "taunting";
+                break;
+            case GameManager.States.Protection:
+                freed = CalculateChances(combatant.Chin.level, 0f);
+
+                state = "blocking";
+                break;
+            default:
+                break;
+        }
+
+        if (freed)
+        {
+            loggerQueue.Enqueue($"{combatant.Name} recovered from {state}...");
+
+            combatant.CurrentState = GameManager.States.Normal;
+
+            Invoke("Logger_DisplayNext", 0);
+        }
+        else if (state != "")
+        {
+            loggerQueue.Enqueue($"{combatant.Name} is {state}...");
+
+            if (damage > 0)
+            {
+                loggerQueue.Enqueue($"{combatant.Name} hurt for {damage}hp!");
+            }
+
+            Invoke("Logger_DisplayNext", 0);
+        }
     }
 
     private void CommitAttack(int attackNo, CombatUniversals combatant_A, CombatUniversals combatant_B)
@@ -161,75 +239,363 @@ public class CombatManager : MonoBehaviour
 
         int power = combatant_A.attacks.ToArray()[attackNo].power;
 
-        switch (combatant_A.attacks.ToArray()[attackNo].powerType)
+        loggerQueue.Enqueue($"{combatant_A.Name} used {combatant_A.attacks.ToArray()[attackNo].name}...");
+
+        switch (combatant_A.attacks.ToArray()[attackNo].Effect)
         {
-            case CombatUniversals.Move.reliance.Strength:
-                hit = CalculateChances(combatant_A.Stength.level, combatant_B.Agility.level);
+            case GameManager.States.Normal:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Agility.level;
 
-                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Stength.level;
+                    hit = CalculateChances(power, combatant_B.Agility.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Agility.level)) - combatant_B.Chin.level;
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+
+                        if (damageToDeal >= power + special)
+                        {
+                            loggerQueue.Enqueue("Critical hit!");
+                        }
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        combatant_B.CurrentHealth -= damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                    }
+                }
                 break;
-            case CombatUniversals.Move.reliance.Agility:
-                hit = CalculateChances(combatant_A.Agility.level, combatant_B.Agility.level);
+            case GameManager.States.GrossOut:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Agility.level;
 
-                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Agility.level;
+                    hit = CalculateChances(power, combatant_B.Agility.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Agility.level)) - combatant_B.Chin.level;
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+
+                        if (damageToDeal >= power + special)
+                        {
+                            loggerQueue.Enqueue("Critical hit!");
+                        }
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        combatant_B.CurrentHealth -= damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+
+                        combatant_B.CurrentState = GameManager.States.GrossOut;
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                    }
+                }
                 break;
-            case CombatUniversals.Move.reliance.Chin:
-                hit = CalculateChances(combatant_A.Chin.level, combatant_B.Agility.level);
+            case GameManager.States.Burn:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Agility.level;
 
-                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.Chin.level;
+                    hit = CalculateChances(power, combatant_B.Agility.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Agility.level)) - combatant_B.Chin.level;
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+
+                        if (damageToDeal >= power + special)
+                        {
+                            loggerQueue.Enqueue("Critical hit!");
+                        }
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        combatant_B.CurrentHealth -= damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+
+                        combatant_B.CurrentState = GameManager.States.Burn;
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                    }
+                }
                 break;
-            case CombatUniversals.Move.reliance.Stamina:
-                hit = CalculateChances(combatant_A.StaminaStat.level, combatant_B.Agility.level);
+            case GameManager.States.Freeze:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Agility.level;
 
-                special = combatant_A.attacks.ToArray()[attackNo].power * combatant_A.StaminaStat.level;
+                    hit = CalculateChances(power, combatant_B.Agility.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Agility.level)) - combatant_B.Chin.level;
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+
+                        if (damageToDeal >= power + special)
+                        {
+                            loggerQueue.Enqueue("Critical hit!");
+                        }
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        combatant_B.CurrentHealth -= damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+
+                        combatant_B.CurrentState = GameManager.States.Freeze;
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                    }
+                }
+                break;
+            case GameManager.States.Paralysis:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Agility.level;
+
+                    hit = CalculateChances(power, combatant_B.Agility.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Agility.level)) - combatant_B.Chin.level;
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+
+                        if (damageToDeal >= power + special)
+                        {
+                            loggerQueue.Enqueue("Critical hit!");
+                        }
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        combatant_B.CurrentHealth -= damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+
+                        combatant_B.CurrentState = GameManager.States.Paralysis;
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                    }
+                }
+                break;
+            case GameManager.States.Poison:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Agility.level;
+
+                    hit = CalculateChances(power, combatant_B.Agility.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Agility.level)) - combatant_B.Chin.level;
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+
+                        if (damageToDeal >= power + special)
+                        {
+                            loggerQueue.Enqueue("Critical hit!");
+                        }
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        combatant_B.CurrentHealth -= damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+
+                        combatant_B.CurrentState = GameManager.States.Poison;
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                    }
+                }
+                break;
+            case GameManager.States.Confusion:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Agility.level;
+
+                    hit = CalculateChances(power, combatant_B.Agility.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Agility.level)) - combatant_B.Chin.level;
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+
+                        if (damageToDeal >= power + special)
+                        {
+                            loggerQueue.Enqueue("Critical hit!");
+                        }
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        combatant_B.CurrentHealth -= damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+
+                        combatant_B.CurrentState = GameManager.States.Confusion;
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                    }
+                }
+                break;
+            case GameManager.States.Heal:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Chin.level;
+
+                    hit = CalculateChances(power, combatant_B.Strength.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Chin.level));
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} successfully healing.");
+
+                        if (damageToDeal >= power + special)
+                        {
+                            loggerQueue.Enqueue("It's extremely effective!");
+                        }
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+
+                        combatant_A.CurrentState = GameManager.States.Heal;
+
+                        combatant_A.CurrentHealth += damageToDeal;
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It failed...</i>");
+                    }
+                }
+                break;
+            case GameManager.States.Taunt:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Agility.level;
+
+                    hit = CalculateChances(power, combatant_B.Agility.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Agility.level)) - combatant_B.Chin.level;
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+
+                        if (damageToDeal >= power + special)
+                        {
+                            loggerQueue.Enqueue("Critical hit!");
+                        }
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        combatant_B.CurrentHealth -= damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+
+                        combatant_B.CurrentState = GameManager.States.Taunt;
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                    }
+                }
+                break;
+            case GameManager.States.Protection:
+                {
+                    power += combatant_A.Strength.level + combatant_A.Chin.level;
+
+                    hit = CalculateChances(power, combatant_B.Strength.level * 2);
+
+                    special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Chin.level));
+
+                    if (hit == true)
+                    {
+                        //Hit
+                        int damageToDeal = Random.Range(power, power + special + 1);
+
+                        loggerQueue.Enqueue($"{combatant_A.Name} is blocking.");
+
+                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+
+                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+
+                        combatant_A.CurrentState = GameManager.States.Protection;
+                    }
+                    else
+                    {
+                        //miss
+
+                        loggerQueue.Enqueue($"<i>It failed...</i>");
+                    }
+                }
                 break;
             default:
                 break;
-        }
-
-        loggerQueue.Enqueue($"{combatant_A.Name} used {combatant_A.attacks.ToArray()[attackNo].name}...");
-
-        if (hit == true)
-        {
-            //Hit
-
-            int damageToDeal = Random.Range(power, power + special + 1);
-
-            loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
-
-            if (damageToDeal >= power + special)
-            {
-                loggerQueue.Enqueue("Critical hit!");
-            }
-
-            combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
-
-            combatant_B.CurrentHealth -= damageToDeal;
-
-            if (combatant_A.attacks.ToArray()[attackNo].experience >= combatant_A.attacks.ToArray()[attackNo].maxExperience)
-            {
-                if (1 <= combatant_A.attacks.ToArray()[attackNo].Upgrade.Length)
-                {
-                    loggerQueue.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up to {combatant_A.attacks.ToArray()[attackNo].Upgrade[0].name} for {combatant_A.Name}!");
-
-                    combatant_A.attacks.Add(combatant_A.attacks.ToArray()[attackNo].Upgrade[0]);
-
-                    combatant_A.attacks.Remove(combatant_A.attacks.ToArray()[attackNo]);
-
-                    combatant_A.attacks.ToArray()[attackNo].experience = 0;
-
-                }
-                else
-                {
-                    loggerQueue.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up! But there are no upgrades available...");
-                }
-            }
-        }
-        else
-        {
-            //miss
-
-            loggerQueue.Enqueue($"<i>It missed...</i>");
         }
 
         logging = true;
@@ -250,6 +616,28 @@ public class CombatManager : MonoBehaviour
         if (combatant_0.CurrentHealth <= 0 && !loggerQueue.Contains($"{combatant_0.Name} knocked out."))
         {
             loggerQueue.Enqueue($"{combatant_0.Name} got knocked out.");
+        }
+    }
+
+    private void CheckToSeeIfAttackLeveledUp(int attackNo, CombatUniversals combatant_A)
+    {
+        if (combatant_A.attacks.ToArray()[attackNo].experience >= combatant_A.attacks.ToArray()[attackNo].maxExperience)
+        {
+            if (1 <= combatant_A.attacks.ToArray()[attackNo].Upgrade.Length)
+            {
+                loggerQueue.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up to {combatant_A.attacks.ToArray()[attackNo].Upgrade[0].name} for {combatant_A.Name}!");
+
+                combatant_A.attacks.Add(combatant_A.attacks.ToArray()[attackNo].Upgrade[0]);
+
+                combatant_A.attacks.Remove(combatant_A.attacks.ToArray()[attackNo]);
+
+                combatant_A.attacks.ToArray()[attackNo].experience = 0;
+
+            }
+            else
+            {
+                loggerQueue.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up! But there are no upgrades available...");
+            }
         }
     }
 
@@ -394,7 +782,7 @@ public class CombatManager : MonoBehaviour
 
                         switch (itemToRemove.Effect)
                         {
-                            case GameManager.States.Fine:
+                            case GameManager.States.Normal:
                                 combatant_0.CurrentState = itemToRemove.Effect;
                                 break;
                             case GameManager.States.GrossOut:
@@ -467,7 +855,7 @@ public class CombatManager : MonoBehaviour
         playersTurn = !playersTurn;
     }
 
-    private void SetUiElements(GameObject uiParent, CombatUniversals combatUniversal)
+    private void SetUiElements(GameObject uiParent, CombatUniversals combatant)
     {
         foreach (var item in uiParent.GetComponentsInChildren<Transform>())
         {
@@ -480,11 +868,49 @@ public class CombatManager : MonoBehaviour
             {
                 if (text.name.Contains("Health"))
                 {
-                    text.text = $"{combatUniversal.CurrentHealth}/{combatUniversal.MaxHealth}";
+                    string state = "";
+
+                    switch (combatant.CurrentState)
+                    {
+                        case GameManager.States.Normal:
+                            state = "Fine";
+                            break;
+                        case GameManager.States.GrossOut:
+                            state = "Grossed out";
+                            break;
+                        case GameManager.States.Burn:
+                            state = "Burned";
+                            break;
+                        case GameManager.States.Freeze:
+                            state = "Frozen";
+                            break;
+                        case GameManager.States.Paralysis:
+                            state = "Paralized";
+                            break;
+                        case GameManager.States.Poison:
+                            state = "Poisoned";
+                            break;
+                        case GameManager.States.Confusion:
+                            state = "Confused";
+                            break;
+                        case GameManager.States.Heal:
+                            state = "Healing";
+                            break;
+                        case GameManager.States.Taunt:
+                            state = "Enraged";
+                            break;
+                        case GameManager.States.Protection:
+                            state = "Blocking";
+                            break;
+                        default:
+                            break;
+                    }
+
+                    text.text = $"{combatant.CurrentHealth}/{combatant.MaxHealth} : {state}";
                 }
                 else
                 {
-                    text.text = combatUniversal.Name;
+                    text.text = combatant.Name;
                 }
             }
 
@@ -492,8 +918,8 @@ public class CombatManager : MonoBehaviour
 
             if (slider)
             {
-                slider.value = combatUniversal.CurrentHealth;
-                slider.maxValue = combatUniversal.MaxHealth;
+                slider.value = combatant.CurrentHealth;
+                slider.maxValue = combatant.MaxHealth;
             }
         }
     }

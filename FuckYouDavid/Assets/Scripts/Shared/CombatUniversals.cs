@@ -9,14 +9,14 @@ public class CombatUniversals
     public UnityEngine.Sprite Image;
 
     //Stats
-    public Stat Stength; //attack
+    public Stat Strength; //attack
     public Stat Agility; //attackspeed
     public Stat Chin; //defence
     public Stat StaminaStat;
 
     public int experience;
 
-    public GameManager.States CurrentState = GameManager.States.Fine;
+    public GameManager.States CurrentState = GameManager.States.Normal;
 
     // Main Values
     public int MaxHealth => 5 + (Chin.level * 5);
@@ -26,7 +26,7 @@ public class CombatUniversals
 
     public bool isDead => CurrentHealth <= 0;
 
-    public int PowerLevel => StaminaStat.level + Stength.level + Chin.level + Agility.level;
+    public int PowerLevel => StaminaStat.level + Strength.level + Chin.level + Agility.level;
 
     public void Inititialize()
     {
@@ -57,9 +57,7 @@ public class CombatUniversals
 
         public string description;
 
-        public enum reliance { Strength, Agility, Chin, Stamina }
-
-        public reliance powerType;
+        public GameManager.States Effect = GameManager.States.Normal;
 
         public int power;
 

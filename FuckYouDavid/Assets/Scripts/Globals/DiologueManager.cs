@@ -32,4 +32,30 @@ public class DiologueManager : MonoBehaviour
             Dtext.text = " ";
         }
     }
+
+    public void OpenDialogueBox()
+    {
+        if (DBOX != null)
+        {
+            DBOX.gameObject.SetActive(true);
+
+            Dtext.text = " ";
+        }
+    }
+
+    public void DisplayMessage(string message, float timeToDisplay)
+    {
+        OpenDialogueBox();
+
+        Dtext.text = message;
+
+        Invoke("ClearDialogueBox", timeToDisplay);
+    }
+
+    public void DisplayMessage(string message)
+    {
+        OpenDialogueBox();
+
+        Dtext.text = message;
+    }
 }

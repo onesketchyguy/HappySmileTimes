@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject namePanel;
 
-    public enum States { Fine, GrossOut, Burn, Freeze, Paralysis, Poison, Confusion, Heal, Taunt, Protection }
+    public enum States { Normal, GrossOut, Burn, Freeze, Paralysis, Poison, Confusion, Heal, Taunt, Protection }
 
     public enum GameState { Playing, InCombat, InBag, InChat, OnConveyor, Paused }
 
