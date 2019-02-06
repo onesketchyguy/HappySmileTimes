@@ -26,7 +26,6 @@ public class Shop : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
        
-
             if (collision.gameObject.tag == "Player")
             {
             if (Input.GetKeyDown(KeyCode.E))
@@ -37,8 +36,7 @@ public class Shop : MonoBehaviour
                 DM.DBOX.gameObject.SetActive(true);
                 Invoke("Leave", 1);
             }
-           
-            
+
         }
     }
     public void Leave() {

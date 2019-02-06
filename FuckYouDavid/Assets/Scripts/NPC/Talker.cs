@@ -50,7 +50,7 @@ public class Talker : MonoBehaviour
             HasItem = false;
             Invoke("NewD",1);
         }
-        if (Main == false)
+        if (Main == false && Sales==false)
         {
             Invoke("Leave", TextTime);
         }
@@ -58,7 +58,7 @@ public class Talker : MonoBehaviour
         {
             MM.ON();
         }
-        if (Sales)
+       else if (Sales==true)
         {
             Invoke("Shop", .5f);
         }
@@ -84,6 +84,7 @@ public class Talker : MonoBehaviour
 
     public void Shop()
     {
+        print("in shop");
         GameManager.gameState = GameManager.GameState.InChat;
 
         DiologueManager.instance.ClearDialogueBox();
