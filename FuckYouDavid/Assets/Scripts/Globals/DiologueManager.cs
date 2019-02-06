@@ -16,7 +16,7 @@ public class DiologueManager : MonoBehaviour
     }
 
     public GameObject DBOX;
-    public Text Dtext;
+    public Text Dtext, Dtext2;
 
     void Start()
     {

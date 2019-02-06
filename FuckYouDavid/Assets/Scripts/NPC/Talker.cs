@@ -3,7 +3,7 @@
 public class Talker : MonoBehaviour
 {
     public DiologueManager DM;
-    public string DIALOGUE,DIALOGUE2;
+    public string DIALOGUE,DIALOGUE2,Name;
     public bool Sales;
     public Inventory INV;
     public GameObject SP;
@@ -37,7 +37,7 @@ public class Talker : MonoBehaviour
         {
             DM = FindObjectOfType<DiologueManager>();
         }
-
+        DM.Dtext2.text = Name;
         DM.Dtext.text = DIALOGUE;
         DM.DBOX.gameObject.SetActive(true);
 
