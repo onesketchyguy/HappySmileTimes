@@ -2,6 +2,8 @@
 
 public class Fighter : MonoBehaviour
 {
+    [SerializeField] private Inventory inventory;
+
     public float rotationSpeed = 0;
 
     private float lastRotation;
@@ -65,6 +67,12 @@ public class Fighter : MonoBehaviour
 
         if (combattant.isDead)
         {
+            //Open inventory added notification
+
+            FindObjectOfType<Player>().inventory += inventory;
+
+            Debug.Log("Added items to player inventory.");
+
             Destroy(gameObject);
         }
 
