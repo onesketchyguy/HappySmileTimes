@@ -16,6 +16,19 @@ public class Talker : MonoBehaviour
     public bool InChat;
     public float TextTime = 1f;
 
+
+    private void Start()
+    {
+        if (GetComponent<Fighter>()) {
+
+            Name = GetComponent<Fighter>().combattant.Name;
+
+        }
+
+
+    }
+    
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
