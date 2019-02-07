@@ -71,16 +71,21 @@ public class Fighter : MonoBehaviour
 
             FindObjectOfType<Player>().inventory += inventory;
 
-            string itemsRetrieved = $"Got {inventory.Money}";
+            string itemsRetrieved = $"Got ${inventory.Money}";
 
             foreach (var item in inventory.items.ToArray())
             {
                 itemsRetrieved += $", {item.name}";
             }
 
+            foreach (var item in inventory.keys.ToArray())
+            {
+                itemsRetrieved += $", key";
+            }
+
             itemsRetrieved += ".";
 
-            float timeToDisplayNotification = itemsRetrieved.ToCharArray().Length/2;
+            float timeToDisplayNotification = itemsRetrieved.ToCharArray().Length/5;
 
             FindObjectOfType<DialogueManager>().DisplayMessage(itemsRetrieved, timeToDisplayNotification);
 

@@ -19,15 +19,11 @@ public class Talker : MonoBehaviour
 
     private void Start()
     {
-        if (GetComponent<Fighter>()) {
-
+        if (GetComponent<Fighter>())
+        {
             Name = GetComponent<Fighter>().combattant.Name;
-
         }
-
-
     }
-    
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -69,13 +65,16 @@ public class Talker : MonoBehaviour
         if (HasItem == true)
         {
             //gives Item
-            FindObjectOfType<Player>().inventory += inventory;
-
-            string itemsRetrieved = $"Got {inventory.Money}";
+            string itemsRetrieved = $"Got ${inventory.Money}";
 
             foreach (var item in inventory.items.ToArray())
             {
                 itemsRetrieved += $", {item.name}";
+            }
+
+            foreach (var item in inventory.keys.ToArray())
+            {
+                itemsRetrieved += $", key";
             }
 
             itemsRetrieved += ".";
@@ -104,6 +103,8 @@ public class Talker : MonoBehaviour
         }
 
         DialogueManager.instance.DisplayMessage(NewDialogue(), Name, TextTime);
+
+        Invoke("Leave", TextTime);
     }
 
     public void Leave()
