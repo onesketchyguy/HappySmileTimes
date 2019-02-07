@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7b25c180cae6e4195c2cde35b6e636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xpSFX: {fileID: 0}
+  LevelUp: {fileID: 8300000, guid: fdcdc98c0a9011d47830c5b5aba8dad0, type: 3}
   NotificationSound: {fileID: 8300000, guid: 515c1aaa38dccfc47bee0bde3ceef7b4, type: 3}
   DoorSounds:
   - {fileID: 8300000, guid: ecd375b41af34d348b3a463697e74e9d, type: 3}
@@ -373,7 +373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39a0348de8f40248aaf8b8361d7bcc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   namePanel: {fileID: 435256114}
   ChildrenToSpawnOnStart:
   - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}

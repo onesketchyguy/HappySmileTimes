@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
         Reference = this;
     }
 
-    public AudioClip xpSFX;
+    public AudioClip LevelUp;
 
     public AudioClip NotificationSound;
 
@@ -23,10 +23,10 @@ public class SoundManager : MonoBehaviour
         m_source = GetComponent<AudioSource>();
     }
 
-    public void PlayXPEffect()
+    public void PlayLevelUpEffect()
     {
-        if (xpSFX != null)
-            m_source.PlayOneShot(xpSFX, 1 /* PlayerPrefsManager.GetSFXVolume()*/);
+        if (LevelUp != null)
+            m_source.PlayOneShot(LevelUp, 1 /* PlayerPrefsManager.GetSFXVolume()*/);
     }
 
     public void PlayDoorSound(int soundToPlay)

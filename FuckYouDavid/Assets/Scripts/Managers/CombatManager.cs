@@ -106,6 +106,13 @@ public class CombatManager : MonoBehaviour
             if (Logger.text.Contains("hit") || Logger.text.Contains("encountered"))
             {
                 SetupUI();
+
+                SoundManager.Reference.PlayDoorSound(1);
+            }
+            else
+            if (Logger.text.Contains("leveled up"))
+            {
+                SoundManager.Reference.PlayLevelUpEffect();
             }
 
             float time = Logger.text.ToCharArray().Length / 10;

@@ -30,13 +30,13 @@ public class CombatUniversals
 
     public void Inititialize()
     {
-        CurrentHealth = MaxHealth;
-        CurrentHealth = MaxStamina;
-
         if (attacks.Count < 1)
         {
             attacks.Add(GameManager.instance.moves.ToArray()[0]);
         }
+
+        CurrentHealth = MaxHealth;
+        CurrentHealth = MaxStamina;
     }
 
     internal List<Move> attacks = new List<Move>() { };
