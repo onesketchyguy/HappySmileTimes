@@ -52,18 +52,14 @@ public class DiologueManager : MonoBehaviour
         OpenDialogueBox();
 
         Dtext.text = message;
-     
-
         Invoke("ClearDialogueBox", timeToDisplay);
     }
+
     public void DisplayName(string Name)
     {
         OpenDialogueBox();
-
-     
         NameDisplay.text = Name;
-
-       
+   
     }
     public void DisplayMessage(string message)
     {
