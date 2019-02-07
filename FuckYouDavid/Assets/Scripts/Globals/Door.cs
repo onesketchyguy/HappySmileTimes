@@ -22,6 +22,15 @@ public class Door : MonoBehaviour
                 {
                     OpenDoor();
                 }
+                else
+                {
+                    DiologueManager dManager = FindObjectOfType<DiologueManager>();
+
+                    if (dManager)
+                    {
+                        dManager.DisplayMessage("Door Locked...", 1);
+                    }
+                }
             }
             else
             {
