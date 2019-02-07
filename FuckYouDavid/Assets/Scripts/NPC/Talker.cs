@@ -8,8 +8,8 @@ public class Talker : MonoBehaviour
 
     public string Name;
 
-    public bool Sales;
-
+    public bool Sales,Tourial;
+       
     public Inventory inventory;
 
     public MainBehaviour MM => GetComponent<MainBehaviour>() ?? null;
@@ -51,6 +51,14 @@ public class Talker : MonoBehaviour
 
     public void OnChat()
     {
+        if (Tourial)
+        {
+            GameManager.UpdateNameText = true;
+            Tourial = false;
+            OnExitChat();
+            return;
+        }
+
         CheckName();
 
         if (HasItem == true)
@@ -96,6 +104,9 @@ public class Talker : MonoBehaviour
         DialogueManager.instance.DisplayMessage(NewDialogue(), Name, TextTime);
 
         Invoke("OnExitChat", TextTime);
+
+   
+        
     }
 
     public void OnExitChat()

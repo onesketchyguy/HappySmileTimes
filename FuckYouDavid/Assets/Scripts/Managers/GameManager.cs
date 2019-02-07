@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    public bool UpdateNameText = false;
+    public static bool UpdateNameText = false;
 
     private GameObject Shop;
 
