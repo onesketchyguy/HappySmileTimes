@@ -103,7 +103,7 @@ public class CombatManager : MonoBehaviour
                 GameManager.gameState = GameManager.GameState.Playing;
             }
 
-            if (Logger.text.Contains("hit"))
+            if (Logger.text.Contains("hit") || Logger.text.Contains("encountered"))
             {
                 SetupUI();
             }
