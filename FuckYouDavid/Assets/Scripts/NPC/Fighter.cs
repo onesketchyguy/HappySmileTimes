@@ -89,8 +89,6 @@ public class Fighter : MonoBehaviour
 
             FindObjectOfType<DialogueManager>().DisplayMessage(itemsRetrieved, timeToDisplayNotification);
 
-            inventory = new Inventory { };
-
             Destroy(gameObject);
         }
 

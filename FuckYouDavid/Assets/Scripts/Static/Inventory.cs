@@ -13,19 +13,19 @@ public class Inventory
 
     public static Inventory operator + (Inventory a, Inventory b)
     {
-        Inventory invToReturn = new Inventory { };
+        foreach (var item in b.items) { a.items.Add(item); }
 
-        foreach (var item in a.items) { invToReturn.items.Add(item); }
+        foreach (var key in b.keys) { a.keys.Add(key); }
 
-        foreach (var item in b.items) { invToReturn.items.Add(item); }
+        a.Money += b.Money;
 
-        foreach (var key in a.keys) { invToReturn.keys.Add(key); }
+        b.keys = new List<string> { };
 
-        foreach (var key in b.keys) { invToReturn.keys.Add(key); }
+        b.items = new List<ItemDefinition> { };
 
-        invToReturn.Money = (a.Money + b.Money);
+        b.Money = 0;
 
-        return invToReturn;
+        return a;
     }
 }
 /// <summary>

@@ -7,34 +7,23 @@ public class Talker : MonoBehaviour
     int currentSentence = 0;
 
     public string Name;
+
     public bool Sales;
+
     public Inventory inventory;
-    public GameObject SP;
-    public MainBehaviour MM => GetComponent<MainBehaviour>() ?? gameObject.AddComponent<MainBehaviour>();
-    public bool Main=false;
-    public bool HasItem;
-    public bool InChat;
+
+    public MainBehaviour MM => GetComponent<MainBehaviour>() ?? null;
+
+    private bool Main => MM != null;
+
+    private bool HasItem => inventory.items.Count > 0 || inventory.keys.Count > 0 || inventory.Money > 0;
+
+    private bool InChat;
+
+    /// <summary>
+    /// Amount of time for the dialogue box to show.
+    /// </summary>
     public float TextTime = 1f;
-
-
-    private void Start()
-    {
-        if (GetComponent<Fighter>())
-        {
-            Name = GetComponent<Fighter>().combattant.Name;
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                OnChat();
-            }
-        }
-    }
 
     public string NewDialogue()
     {
@@ -62,9 +51,13 @@ public class Talker : MonoBehaviour
 
     public void OnChat()
     {
+        CheckName();
+
         if (HasItem == true)
         {
             //gives Item
+            FindObjectOfType<Player>().inventory += inventory;
+
             string itemsRetrieved = $"Got ${inventory.Money}";
 
             foreach (var item in inventory.items.ToArray())
@@ -83,11 +76,7 @@ public class Talker : MonoBehaviour
 
             FindObjectOfType<DialogueManager>().DisplayMessage(itemsRetrieved, timeToDisplayNotification);
 
-            inventory = new Inventory { };
-
-            HasItem = false;
-
-            Invoke("Leave", timeToDisplayNotification);
+            Invoke("OnExitChat", timeToDisplayNotification);
 
             return;
         }
@@ -99,15 +88,17 @@ public class Talker : MonoBehaviour
         else
         if (Sales == true)
         {
-            Invoke("Shop", TextTime);
+            Shop();
+
+            return;
         }
 
         DialogueManager.instance.DisplayMessage(NewDialogue(), Name, TextTime);
 
-        Invoke("Leave", TextTime);
+        Invoke("OnExitChat", TextTime);
     }
 
-    public void Leave()
+    public void OnExitChat()
     {
         InChat = false;
 
@@ -125,20 +116,53 @@ public class Talker : MonoBehaviour
 
     public void Shop()
     {
-        print("in shop");
+        Debug.Log("Opening shop...");
 
-        DialogueManager.instance.ClearDialogueBox();
+        //DialogueManager.instance.ClearDialogueBox();
 
-        if (SP != null)
+        GameManager.instance.ToggleShop(true);
+    }
+
+    private void CheckName()
+    {
+        Fighter fighter = GetComponent<Fighter>();
+
+        if (fighter)
         {
-            GameManager.gameState = GameManager.GameState.InChat;
+            Name = fighter.combattant.Name;
+        }
+    }
 
-            SP.gameObject.SetActive(true);
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
+
+            if (rigidBody)
+            {
+                rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                OnChat();
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Leave();
+        if (collision.gameObject.tag == "Player")
+        {
+            Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
+
+            if (rigidBody)
+            {
+                rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
+            }
+
+            OnExitChat();
+        }
     }
 }

@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static string PlayerName = "";
 
+    internal Player player = new Player { };
+
     public GameObject namePanel;
 
     public enum States { Normal, GrossOut, Burn, Freeze, Paralysis, Poison, Confusion, Heal, Taunt, Protection }
 
-    public enum GameState { Playing, InCombat, InBag, InChat, OnConveyor, Paused }
+    public enum GameState { Playing, InCombat, InBag, InChat, OnConveyor, InShop, Paused }
 
     public static GameState gameState = GameState.Playing;
 
@@ -20,6 +22,10 @@ public class GameManager : MonoBehaviour
     public List<CombatUniversals.Move> moves = new List<CombatUniversals.Move>() { };
 
     public static GameManager instance;
+
+    public bool UpdateNameText = false;
+
+    private GameObject Shop;
 
     private void Awake()
     {
@@ -44,13 +50,38 @@ public class GameManager : MonoBehaviour
 
         foreach (var obj in ChildrenToSpawnOnStart)
         {
-            Instantiate(obj, transform.position, transform.rotation, transform);
+            bool skipItem = false;
+
+            foreach (var child in GetComponentsInChildren<Transform>())
+            {
+                if (child.name == obj.name) skipItem = true;
+
+                if (obj.name.Contains("ShopPanel"))
+                {
+                    Shop = child.gameObject;
+                }
+            }
+
+            if (skipItem)
+                continue;
+
+            GameObject thing = Instantiate(obj, transform.position, transform.rotation, transform) as GameObject;
+
+            if (thing.name.Contains("ShopPanel"))
+            {
+                Shop = thing;
+            }
+        }
+
+        if (Shop != gameObject)
+        {
+            ToggleShop(false);
         }
 
         if (MainManager.instance != null)
             MainManager.instance.OFF();
 
-        UpdateNameText = true;
+        UpdateNameText = false;
     }
 
     private void Update()
@@ -102,8 +133,6 @@ public class GameManager : MonoBehaviour
 
                 gameState = GameState.Playing;
 
-                CancelInvoke("UpdateNameText");
-
                 UpdateNameText = false;
             }
         }
@@ -118,12 +147,6 @@ public class GameManager : MonoBehaviour
 
     private void sceneChanged(Scene arg0, Scene arg1)
     {
-        if (PlayerName == "")
-        {
-            //Open name dialogue
-            UpdateNameText = true;
-        }
-
         gameState = GameState.Playing;
 
         if (MainManager.instance != null)
@@ -135,5 +158,17 @@ public class GameManager : MonoBehaviour
             GetComponent<Canvas>().worldCamera = Camera.main;
     }
 
-    private bool UpdateNameText = false;
+    public void ToggleShop(bool active)
+    {
+        Shop.SetActive(active);
+
+        if (active)
+        {
+            gameState = GameState.InShop;
+        }
+        else
+        {
+            gameState = GameState.Playing;
+        }
+    }
 }

@@ -12,6 +12,12 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        if (GameManager.instance.player != null)
+        {
+            inventory = GameManager.instance.player.inventory;
+            combattant = GameManager.instance.player.combattant;
+        }
+
         combattant.Inititialize();
     }
 
@@ -50,5 +56,7 @@ public class Player : MonoBehaviour
         {
             mov.input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
+
+        GameManager.instance.player = this;
     }
 }

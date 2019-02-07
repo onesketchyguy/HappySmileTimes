@@ -33,7 +33,7 @@ public class MainBehaviour : MonoBehaviour
 
         Debug.Log("Off pressed");
 
-        T.Leave();
+        T.OnExitChat();
 
         MainManager.instance.OFF();
     }

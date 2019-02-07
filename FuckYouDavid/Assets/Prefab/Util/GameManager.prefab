@@ -373,168 +373,171 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39a0348de8f40248aaf8b8361d7bcc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   namePanel: {fileID: 435256114}
   ChildrenToSpawnOnStart:
   - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}
   - {fileID: 5221820662604740199, guid: 288ffa7f3aa395d409d58ef67f4d9f3d, type: 3}
   - {fileID: 2208264721924431943, guid: d4cca1b9287b93f4baaa38a6b4a3aa3d, type: 3}
   - {fileID: 4522769273125857492, guid: b393eaa17100d7440acc8d388c1d1129, type: 3}
+  - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}
   moves:
   - name: Punch
     description: Straight to the point
-    powerType: 0
+    Effect: 0
     power: 1
     Upgrade:
     - name: Great punch
       description: A pretty good punch.
-      powerType: 0
+      Effect: 0
       power: 2
       Upgrade: []
   - name: Use feet
     description: Kind of like a kick
-    powerType: 1
+    Effect: 0
     power: 1
     Upgrade: []
   - name: Spit
     description: EWW.. or yum no judgment
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Fast Punch
     description: Straight to the
-    powerType: 1
+    Effect: 0
     power: 1
     Upgrade: []
   - name: Hard Punch
     description: More straighter to the point
-    powerType: 0
+    Effect: 0
     power: 5
     Upgrade: []
   - name: Flail
     description: Panic that could work
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Barrier
     description: Leave me alone
-    powerType: 2
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Fetal Possition
     description: 'Wait for your mom to help '
-    powerType: 2
+    Effect: 0
     power: 4
     Upgrade: []
   - name: double punch
     description: Straight to the point Straight to the point
-    powerType: 1
+    Effect: 0
     power: 3
     Upgrade: []
   - name: A Fucking FireBall
     description: 'to send you''re enimes to burn again '
-    powerType: 3
+    Effect: 0
     power: 5
     Upgrade: []
   - name: karate high jump attack
     description: For the jackie chan fans
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Fastest attack ever
     description: Wanta see me do it again
-    powerType: 1
+    Effect: 0
     power: 3
     Upgrade: []
   - name: kameameama
     description: 'From your favoirte anime '
-    powerType: 3
+    Effect: 0
     power: 5
     Upgrade: []
   - name: Falcon punch
     description: 'from the plastation brawls '
-    powerType: 0
+    Effect: 0
     power: 3
     Upgrade: []
   - name: 'cursyhameha '
     description: Vanquish your enemies or your dean
-    powerType: 3
+    Effect: 0
     power: 2
     Upgrade: []
   - name: 'A pokemon '
     description: referancing it makes the whole game not stolen
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Dwite's karate
     description: 'Newer and udpated now with bear defences '
-    powerType: 0
+    Effect: 0
     power: 3
     Upgrade: []
   - name: A gun
     description: Fighting dirtier than ever before
-    powerType: 0
+    Effect: 0
     power: 6
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
   - name: Flail
     description: 
-    powerType: 1
+    Effect: 0
     power: 2
     Upgrade: []
+  UpdateNameText: 0
 --- !u!223 &6939113495119107743
 Canvas:
   m_ObjectHideFlags: 0
