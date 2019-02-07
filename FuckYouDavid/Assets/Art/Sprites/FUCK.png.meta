@@ -16,10 +16,13 @@ TextureImporter:
     21300022: right_2
     21300024: FUCK_2
     21300026: FUCK_3
-    21300028: FUCK_4
-    21300030: FUCK_5
-    21300032: FUCK_6
+    21300028: Tree_0
+    21300030: Tree_0
+    21300032: Tree_1
     21300034: FUCK_7
+    21300036: Bush
+    21300038: FUCK_8
+    21300040: FUCK_9
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -132,13 +135,13 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32c82ce41c9498249a223fa2e20faac2
+      spriteID: 04cfc0d4965677048883f1787eedf53d
       vertices: []
       indices: 
       edges: []
@@ -152,13 +155,13 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b5278a931aac5b4eb0cd03786840ec0
+      spriteID: 5e73780d43b802c479bd8a3caedc7752
       vertices: []
       indices: 
       edges: []
@@ -172,13 +175,13 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 740fd5eec6b648d45ab48c50a6db9305
+      spriteID: 594d307c9052a5842835bf38316081c3
       vertices: []
       indices: 
       edges: []
@@ -192,19 +195,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e7cfb12d0da38b40a970ac5c2ca9d7f
+      spriteID: c2a0ddd467d001e44951c77e24fce5d0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_4
+      name: Tree_0
       rect:
         serializedVersion: 2
         x: 80
@@ -212,19 +215,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b6fec9f2e7f8bc43811d4ce7eee3092
+      spriteID: abad77fded01a6643bc0e1a8bae7bc52
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_5
+      name: Tree_1
       rect:
         serializedVersion: 2
         x: 100
@@ -232,27 +235,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -10, y: -10}
-        - {x: -10, y: 10}
-        - {x: 10, y: 10}
-        - {x: 10, y: -10}
-      physicsShape:
-      - - {x: -10, y: -10}
-        - {x: -10, y: 10}
-        - {x: 10, y: 10}
-        - {x: 10, y: -10}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 025a3a1173b3e4a40904c94823030ae2
+      spriteID: 306bec92ea44b6847a5c784cea4d2354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_6
+      name: Bush
       rect:
         serializedVersion: 2
         x: 120
@@ -260,21 +255,13 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -10, y: -10}
-        - {x: -10, y: 10}
-        - {x: 10, y: 10}
-        - {x: 10, y: -10}
-      physicsShape:
-      - - {x: -10, y: -10}
-        - {x: -10, y: 10}
-        - {x: 10, y: 10}
-        - {x: 10, y: -10}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b13cb6b5c86bae4999aa22558f4e0fd
+      spriteID: 1be29850156884641bb97bafe7ae87e3
       vertices: []
       indices: 
       edges: []
@@ -294,7 +281,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f501ab6490e0514db030b8337bfd77e
+      spriteID: 7045bded5c415a142864d9c21cfe4291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FUCK_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcd21d9838d6ad4aba7aad6e3a7bf30
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FUCK_9
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7acb5fa1fd35eb42b8bc8f7687a79e8
       vertices: []
       indices: 
       edges: []

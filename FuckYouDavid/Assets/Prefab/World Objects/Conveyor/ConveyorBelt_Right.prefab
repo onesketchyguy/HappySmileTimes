@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3944311507131763400}
   - component: {fileID: 4149240380215131375}
   - component: {fileID: 3403804595815319473}
+  - component: {fileID: 8998268115373712947}
   m_Layer: 0
   m_Name: ConveyorBelt_Right
   m_TagString: Untagged
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300024, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  m_Sprite: {fileID: 21300034, guid: d997927672214d84994f168f7c1d433a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,3 +94,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: {x: 1, y: 0}
+--- !u!114 &8998268115373712947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031182688198392122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084201c4a343aae44bd684ffdd7f366d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSprites: []
+  verticalSprites_Up: []
+  verticalSprites_Down:
+  - {fileID: 21300034, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  - {fileID: 21300038, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  - {fileID: 21300040, guid: d997927672214d84994f168f7c1d433a, type: 3}
+  timeToSpendOnSprites: 0.1

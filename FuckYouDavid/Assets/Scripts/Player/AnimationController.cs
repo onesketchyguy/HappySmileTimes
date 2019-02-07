@@ -25,67 +25,87 @@ public class AnimationController : MonoBehaviour
     {
         Sprite spriteToUse = spriteRenderer.sprite;
 
-        if (mov.input == Vector2.zero)
+        if (mov == null)
         {
-            switch (mov.myFaceDirection)
+            if ((timeSpentOnSprite < Time.time))
             {
-                case Movement.faceDirection.Down:
-                    spriteToUse = verticalSprites_Down[0];
-                    break;
-                case Movement.faceDirection.Left:
-                    spriteRenderer.flipX = true;
-
-                    spriteToUse = horizontalSprites[0];
-                    break;
-                case Movement.faceDirection.Up:
-                    spriteToUse = verticalSprites_Up[0];
-                    break;
-                case Movement.faceDirection.Right:
-                    spriteRenderer.flipX = false;
-
-                    spriteToUse = horizontalSprites[0];
-                    break;
-                default:
-                    break;
-            }
-
-            spriteRenderer.sprite = spriteToUse;
-
-            timeSpentOnSprite = Time.time;
-
-            return;
-        }
-
-        if ((timeSpentOnSprite < Time.time))
-        {
-            if (mov.input.x != 0)
-            {
-                spriteRenderer.flipX = mov.myFaceDirection == Movement.faceDirection.Left;
-
-                if (index < horizontalSprites.Length - 1)
-                    index++;
-                else index = 0;
-
-                spriteToUse = horizontalSprites[index];
-
-                timeSpentOnSprite = Time.time + timeToSpendOnSprites;
-            }
-
-            if (mov.input.y != 0)
-            {
-                bool movingUp = mov.myFaceDirection == Movement.faceDirection.Up;
-
-                if (index < verticalSprites_Down.Length - 1 && index < verticalSprites_Up.Length - 1)
+                if (index < verticalSprites_Down.Length - 1)
                     index++;
                 else index = 0;
 
 
-                spriteToUse = movingUp ? verticalSprites_Up[index] : verticalSprites_Down[index];
+                spriteToUse = verticalSprites_Down[index];
 
                 timeSpentOnSprite = Time.time + timeToSpendOnSprites;
+
+                spriteRenderer.sprite = spriteToUse;
+            }
+        }
+        else
+        {
+            if (mov.input == Vector2.zero)
+            {
+                switch (mov.myFaceDirection)
+                {
+                    case Movement.faceDirection.Down:
+                        spriteToUse = verticalSprites_Down[0];
+                        break;
+                    case Movement.faceDirection.Left:
+                        spriteRenderer.flipX = true;
+
+                        spriteToUse = horizontalSprites[0];
+                        break;
+                    case Movement.faceDirection.Up:
+                        spriteToUse = verticalSprites_Up[0];
+                        break;
+                    case Movement.faceDirection.Right:
+                        spriteRenderer.flipX = false;
+
+                        spriteToUse = horizontalSprites[0];
+                        break;
+                    default:
+                        break;
+                }
+
+                spriteRenderer.sprite = spriteToUse;
+
+                timeSpentOnSprite = Time.time;
+
+                return;
             }
 
-            spriteRenderer.sprite = spriteToUse;
+            if ((timeSpentOnSprite < Time.time))
+            {
+                if (mov.input.x != 0)
+                {
+                    spriteRenderer.flipX = mov.myFaceDirection == Movement.faceDirection.Left;
+
+                    if (index < horizontalSprites.Length - 1)
+                        index++;
+                    else index = 0;
+
+                    spriteToUse = horizontalSprites[index];
+
+                    timeSpentOnSprite = Time.time + timeToSpendOnSprites;
+                }
+
+                if (mov.input.y != 0)
+                {
+                    bool movingUp = mov.myFaceDirection == Movement.faceDirection.Up;
+
+                    if (index < verticalSprites_Down.Length - 1 && index < verticalSprites_Up.Length - 1)
+                        index++;
+                    else index = 0;
+
+
+                    spriteToUse = movingUp ? verticalSprites_Up[index] : verticalSprites_Down[index];
+
+                    timeSpentOnSprite = Time.time + timeToSpendOnSprites;
+                }
+
+                spriteRenderer.sprite = spriteToUse;
+            }
         }
+
     }
 }
