@@ -20,9 +20,9 @@ public class CombatManager : MonoBehaviour
 
     [SerializeField] private GameObject fightOptionsRegion, inventoryPanel, inventoryContent;
 
-    [SerializeField] private Text Logger;
+    [SerializeField] private Text LoggerObject;
     private bool logging = true;
-    private Queue<string> loggerQueue = new Queue<string> { };
+    private Queue<string> logger = new Queue<string> { };
 
     private void SetCombatScreen(bool active)
     {
@@ -35,9 +35,11 @@ public class CombatManager : MonoBehaviour
                 return;
             }
 
+            playersTurn = Random.Range(0, 1) == 1;
+
             inventoryPanel.SetActive(false);
 
-            loggerQueue.Enqueue($"{combatant_1.Name} encountered!");
+            logger.Enqueue($"{combatant_1.Name} encountered!");
 
             SetupUI();
 
@@ -62,7 +64,7 @@ public class CombatManager : MonoBehaviour
             {
                 SetupUI();
 
-                Logger.text = "";
+                LoggerObject.text = "";
 
                 if (combatant_0 != null && combatant_1 != null)
                 {
@@ -94,28 +96,28 @@ public class CombatManager : MonoBehaviour
     {
         //Display next text
 
-        if (loggerQueue.Count > 0)
+        if (logger.Count > 0)
         {
-            Logger.text = $"{loggerQueue.Dequeue()}";
+            LoggerObject.text = $"{logger.Dequeue()}";
 
-            if (Logger.text == "<i>Got away!</i>")
+            if (LoggerObject.text == "<i>Got away!</i>")
             {
                 GameManager.gameState = GameManager.GameState.Playing;
             }
 
-            if (Logger.text.Contains("hit") || Logger.text.Contains("encountered"))
+            if (LoggerObject.text.Contains("hit") || LoggerObject.text.Contains("encountered"))
             {
                 SetupUI();
 
                 SoundManager.Reference.PlayDoorSound(1);
             }
             else
-            if (Logger.text.Contains("leveled up"))
+            if (LoggerObject.text.Contains("leveled up"))
             {
                 SoundManager.Reference.PlayLevelUpEffect();
             }
 
-            float time = Logger.text.ToCharArray().Length / 10;
+            float time = LoggerObject.text.ToCharArray().Length / 10;
 
             Invoke("Logger_DisplayNext", time > 1 && time < 3 ? time : 2);
         }
@@ -203,7 +205,7 @@ public class CombatManager : MonoBehaviour
             case GameManager.States.Confusion:
                 freed = CalculateChances(combatA.Chin.level, 0.6f);
 
-                loggerQueue.Enqueue($"{combatA.Name} is confused...");
+                logger.Enqueue($"{combatA.Name} is confused...");
 
                 CommitAttack(attackNo, combatA, combatA);
 
@@ -230,7 +232,7 @@ public class CombatManager : MonoBehaviour
 
         if (freed)
         {
-            loggerQueue.Enqueue($"{combatA.Name} recovered from {state}...");
+            logger.Enqueue($"{combatA.Name} recovered from {state}...");
 
             combatA.CurrentState = GameManager.States.Normal;
 
@@ -238,11 +240,11 @@ public class CombatManager : MonoBehaviour
         }
         else if (state != "")
         {
-            loggerQueue.Enqueue($"{combatA.Name} is {state}...");
+            logger.Enqueue($"{combatA.Name} is {state}...");
 
             if (damage > 0)
             {
-                loggerQueue.Enqueue($"{combatA.Name} hurt for {damage}hp!");
+                logger.Enqueue($"{combatA.Name} hurt for {damage}hp!");
             }
 
             Invoke("Logger_DisplayNext", 0);
@@ -257,7 +259,7 @@ public class CombatManager : MonoBehaviour
 
         int power = combatant_A.attacks.ToArray()[attackNo].power;
 
-        loggerQueue.Enqueue($"{combatant_A.Name} used {combatant_A.attacks.ToArray()[attackNo].name}...");
+        logger.Enqueue($"{combatant_A.Name} used {combatant_A.attacks.ToArray()[attackNo].name}...");
 
         switch (combatant_A.attacks.ToArray()[attackNo].Effect)
         {
@@ -274,11 +276,11 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+                        logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
                         if (damageToDeal >= power + special)
                         {
-                            loggerQueue.Enqueue("Critical hit!");
+                            logger.Enqueue("Critical hit!");
                         }
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -291,7 +293,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                        logger.Enqueue($"<i>It missed...</i>");
                     }
                 }
                 break;
@@ -308,11 +310,11 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+                        logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
                         if (damageToDeal >= power + special)
                         {
-                            loggerQueue.Enqueue("Critical hit!");
+                            logger.Enqueue("Critical hit!");
                         }
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -327,7 +329,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                        logger.Enqueue($"<i>It missed...</i>");
                     }
                 }
                 break;
@@ -344,11 +346,11 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+                        logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
                         if (damageToDeal >= power + special)
                         {
-                            loggerQueue.Enqueue("Critical hit!");
+                            logger.Enqueue("Critical hit!");
                         }
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -363,7 +365,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                        logger.Enqueue($"<i>It missed...</i>");
                     }
                 }
                 break;
@@ -380,11 +382,11 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+                        logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
                         if (damageToDeal >= power + special)
                         {
-                            loggerQueue.Enqueue("Critical hit!");
+                            logger.Enqueue("Critical hit!");
                         }
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -399,7 +401,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                        logger.Enqueue($"<i>It missed...</i>");
                     }
                 }
                 break;
@@ -416,11 +418,11 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+                        logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
                         if (damageToDeal >= power + special)
                         {
-                            loggerQueue.Enqueue("Critical hit!");
+                            logger.Enqueue("Critical hit!");
                         }
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -435,7 +437,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                        logger.Enqueue($"<i>It missed...</i>");
                     }
                 }
                 break;
@@ -452,11 +454,11 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+                        logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
                         if (damageToDeal >= power + special)
                         {
-                            loggerQueue.Enqueue("Critical hit!");
+                            logger.Enqueue("Critical hit!");
                         }
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -471,7 +473,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                        logger.Enqueue($"<i>It missed...</i>");
                     }
                 }
                 break;
@@ -488,11 +490,11 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+                        logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
                         if (damageToDeal >= power + special)
                         {
-                            loggerQueue.Enqueue("Critical hit!");
+                            logger.Enqueue("Critical hit!");
                         }
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -507,7 +509,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                        logger.Enqueue($"<i>It missed...</i>");
                     }
                 }
                 break;
@@ -524,11 +526,11 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} successfully healing.");
+                        logger.Enqueue($"{combatant_A.Name} successfully healing.");
 
                         if (damageToDeal >= power + special)
                         {
-                            loggerQueue.Enqueue("It's extremely effective!");
+                            logger.Enqueue("It's extremely effective!");
                         }
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -543,7 +545,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It failed...</i>");
+                        logger.Enqueue($"<i>It failed...</i>");
                     }
                 }
                 break;
@@ -560,11 +562,11 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
+                        logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
                         if (damageToDeal >= power + special)
                         {
-                            loggerQueue.Enqueue("Critical hit!");
+                            logger.Enqueue("Critical hit!");
                         }
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
@@ -579,7 +581,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It missed...</i>");
+                        logger.Enqueue($"<i>It missed...</i>");
                     }
                 }
                 break;
@@ -596,7 +598,7 @@ public class CombatManager : MonoBehaviour
                         //Hit
                         int damageToDeal = Random.Range(power, power + special + 1);
 
-                        loggerQueue.Enqueue($"{combatant_A.Name} is blocking.");
+                        logger.Enqueue($"{combatant_A.Name} is blocking.");
 
                         combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
 
@@ -608,7 +610,7 @@ public class CombatManager : MonoBehaviour
                     {
                         //miss
 
-                        loggerQueue.Enqueue($"<i>It failed...</i>");
+                        logger.Enqueue($"<i>It failed...</i>");
                     }
                 }
                 break;
@@ -620,20 +622,20 @@ public class CombatManager : MonoBehaviour
 
         Invoke("Logger_DisplayNext", 0);
 
-        if (combatant_1.CurrentHealth <= 0 && !loggerQueue.Contains($"{combatant_1.Name} knocked out."))
+        if (combatant_1.CurrentHealth <= 0 && !logger.Contains($"{combatant_1.Name} knocked out."))
         {
-            loggerQueue.Enqueue($"{combatant_1.Name} got knocked out.");
+            logger.Enqueue($"{combatant_1.Name} got knocked out.");
 
             int experienceAdded = Random.Range(combatant_1.PowerLevel / 2, combatant_1.PowerLevel * 2);
 
             combatant_0.experience += (experienceAdded);
 
-            loggerQueue.Enqueue($"Gained {experienceAdded} XP.");
+            logger.Enqueue($"Gained {experienceAdded} XP.");
         }
 
-        if (combatant_0.CurrentHealth <= 0 && !loggerQueue.Contains($"{combatant_0.Name} knocked out."))
+        if (combatant_0.CurrentHealth <= 0 && !logger.Contains($"{combatant_0.Name} knocked out."))
         {
-            loggerQueue.Enqueue($"{combatant_0.Name} got knocked out.");
+            logger.Enqueue($"{combatant_0.Name} got knocked out.");
         }
     }
 
@@ -643,7 +645,7 @@ public class CombatManager : MonoBehaviour
         {
             if (1 <= combatant_A.attacks.ToArray()[attackNo].Upgrade.Length)
             {
-                loggerQueue.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up to {combatant_A.attacks.ToArray()[attackNo].Upgrade[0].name} for {combatant_A.Name}!");
+                logger.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up to {combatant_A.attacks.ToArray()[attackNo].Upgrade[0].name} for {combatant_A.Name}!");
 
                 combatant_A.attacks.Add(combatant_A.attacks.ToArray()[attackNo].Upgrade[0]);
 
@@ -654,7 +656,7 @@ public class CombatManager : MonoBehaviour
             }
             else
             {
-                loggerQueue.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up! But there are no upgrades available...");
+                logger.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up! But there are no upgrades available...");
             }
         }
     }
@@ -792,7 +794,7 @@ public class CombatManager : MonoBehaviour
                 {
                     if (CalculateChances(itemToRemove.ChanceOfEffect))
                     {
-                        loggerQueue.Enqueue($"{combatant_0.Name} used {itemToRemove.name} successfully!");
+                        logger.Enqueue($"{combatant_0.Name} used {itemToRemove.name} successfully!");
 
                         switch (itemToRemove.Effect)
                         {
@@ -834,7 +836,7 @@ public class CombatManager : MonoBehaviour
                     }
                     else
                     {
-                        loggerQueue.Enqueue($"{combatant_0.Name} failed to use {itemToRemove.name}...");
+                        logger.Enqueue($"{combatant_0.Name} failed to use {itemToRemove.name}...");
                     }
 
                     if (itemToRemove.count > 1)
@@ -859,11 +861,11 @@ public class CombatManager : MonoBehaviour
     {
         if (CalculateChances(combatant_0.Agility.level, 0.6f))
         {
-            loggerQueue.Enqueue("Got away!");
+            logger.Enqueue("Got away!");
         }
         else
         {
-            loggerQueue.Enqueue("Failed to get away!");
+            logger.Enqueue("Failed to get away!");
         }
 
         playersTurn = !playersTurn;

@@ -945,7 +945,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5742124098611453918}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.28456
+  m_Size: 0.28126332
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1208,7 +1208,7 @@ MonoBehaviour:
   fightOptionsRegion: {fileID: 6905390822493269494}
   inventoryPanel: {fileID: 1335298643037410117}
   inventoryContent: {fileID: 8489935805278909959}
-  Logger: {fileID: 1723435802380989748}
+  LoggerObject: {fileID: 1723435802380989748}
 --- !u!1 &5416049256297990770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4429,7 +4429,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4209549458581311322}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.64990485
+  m_Size: 0.64750886
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
