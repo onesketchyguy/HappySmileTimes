@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
         if (MainManager.instance != null)
             MainManager.instance.OFF();
 
-        DiologueManager.instance.ClearDialogueBox();
+        DialogueManager.instance.ClearDialogueBox();
 
         if (GetComponent<Canvas>())
             GetComponent<Canvas>().worldCamera = Camera.main;

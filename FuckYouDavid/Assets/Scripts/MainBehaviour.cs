@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainBehaviour : MonoBehaviour
 {
-    public DiologueManager DM;
+    public DialogueManager DM;
     public string LevelToGo = "Main";
     public Talker T;
 

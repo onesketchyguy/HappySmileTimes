@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
 
-    public DiologueManager DM;
+    public DialogueManager DM;
     public  Player player;
     public string DIALOGUE;
   
@@ -13,7 +13,7 @@ public class Shop : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
-        DM = FindObjectOfType<DiologueManager>();
+        DM = FindObjectOfType<DialogueManager>();
    
     }
 

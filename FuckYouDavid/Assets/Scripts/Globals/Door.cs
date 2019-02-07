@@ -24,7 +24,7 @@ public class Door : MonoBehaviour
                 }
                 else
                 {
-                    DiologueManager dManager = FindObjectOfType<DiologueManager>();
+                    DialogueManager dManager = FindObjectOfType<DialogueManager>();
 
                     if (dManager)
                     {

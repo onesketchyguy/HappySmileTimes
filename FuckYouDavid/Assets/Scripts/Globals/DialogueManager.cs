@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class DiologueManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
-    public static DiologueManager instance;
+    public static DialogueManager instance;
 
     private void Awake()
     {
@@ -52,15 +52,37 @@ public class DiologueManager : MonoBehaviour
         OpenDialogueBox();
 
         Dtext.text = message;
+
         Invoke("ClearDialogueBox", timeToDisplay);
+    }
+
+    public void DisplayMessage(string message, string name, float timeToDisplay)
+    {
+        OpenDialogueBox();
+
+        NameDisplay.text = name;
+
+        Dtext.text = message;
+
+        Invoke("ClearDialogueBox", timeToDisplay);
+    }
+
+    public void DisplayMessage(string message, string name)
+    {
+        OpenDialogueBox();
+
+        NameDisplay.text = name;
+
+        Dtext.text = message;
     }
 
     public void DisplayName(string Name)
     {
         OpenDialogueBox();
+
         NameDisplay.text = Name;
-   
     }
+
     public void DisplayMessage(string message)
     {
         OpenDialogueBox();

@@ -2,10 +2,13 @@
 
 public class Talker : MonoBehaviour
 {
-    public DiologueManager DM;
-    public string DIALOGUE,DIALOGUE2,Name;
+    public string[] dialogue;
+
+    int currentSentence = 0;
+
+    public string Name;
     public bool Sales;
-    public Inventory INV;
+    public Inventory inventory;
     public GameObject SP;
     public MainBehaviour MM => GetComponent<MainBehaviour>() ?? gameObject.AddComponent<MainBehaviour>();
     public bool Main=false;
@@ -19,49 +22,75 @@ public class Talker : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                
-                GameManager.gameState = GameManager.GameState.InChat;
-                Onchat();
+                OnChat();
             }
         }
     }
 
-    public void NewD()
+    public string NewDialogue()
     {
-        DIALOGUE = DIALOGUE2;
+        string text = "";
+
+        for (int i = 0; i < dialogue.Length; i++)
+        {
+            if (i == currentSentence)
+            {
+                text = dialogue[i];
+            }
+        }
+
+        if (dialogue.Length <= currentSentence + 1)
+        {
+            currentSentence = 0;
+        }
+        else
+        {
+            currentSentence++;
+        }
+
+        return text;
     }
 
-    public void Onchat()
+    public void OnChat()
     {
-        if (DM == null)
+        if (HasItem == true)
         {
-            DM = FindObjectOfType<DiologueManager>();
-        }
-        DM.NameDisplay.text = Name;
-        DM.Dtext.text = DIALOGUE;
-        DM.DBOX.gameObject.SetActive(true);
-
-        if (HasItem==true) {
             //gives Item
-          
-            Player player = FindObjectOfType<Player>();
-            player.inventory.keys.Add(INV.keys.ToArray()[0]);
-            INV.Money += player.inventory.Money;
+            FindObjectOfType<Player>().inventory += inventory;
+
+            string itemsRetrieved = $"Got {inventory.Money}";
+
+            foreach (var item in inventory.items.ToArray())
+            {
+                itemsRetrieved += $", {item.name}";
+            }
+
+            itemsRetrieved += ".";
+
+            float timeToDisplayNotification = itemsRetrieved.ToCharArray().Length / 5;
+
+            FindObjectOfType<DialogueManager>().DisplayMessage(itemsRetrieved, timeToDisplayNotification);
+
+            inventory = new Inventory { };
+
             HasItem = false;
-            Invoke("NewD",1);
+
+            Invoke("Leave", timeToDisplayNotification);
+
+            return;
         }
-        if (Main == false && Sales==false)
-        {
-            Invoke("Leave", TextTime);
-        }
-        else if (Main == true)
+        else 
+        if (Main == true)
         {
             MM.ON();
         }
-       else if (Sales==true)
+        else
+        if (Sales == true)
         {
-            Invoke("Shop", .5f);
+            Invoke("Shop", TextTime);
         }
+
+        DialogueManager.instance.DisplayMessage(NewDialogue(), Name, TextTime);
     }
 
     public void Leave()
@@ -70,9 +99,7 @@ public class Talker : MonoBehaviour
 
         Debug.Log("Leaving chat...");
 
-        GameManager.gameState = GameManager.GameState.Playing;
-
-        DiologueManager.instance.ClearDialogueBox();
+        DialogueManager.instance.ClearDialogueBox();
 
         Fighter fightComponent = GetComponent<Fighter>();
 
@@ -85,12 +112,13 @@ public class Talker : MonoBehaviour
     public void Shop()
     {
         print("in shop");
-        GameManager.gameState = GameManager.GameState.InChat;
 
-        DiologueManager.instance.ClearDialogueBox();
+        DialogueManager.instance.ClearDialogueBox();
 
-        if (SP != null) {
-       
+        if (SP != null)
+        {
+            GameManager.gameState = GameManager.GameState.InChat;
+
             SP.gameObject.SetActive(true);
         }
     }

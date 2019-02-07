@@ -1639,6 +1639,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
         type: 3}
+      propertyPath: inventory.items.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
       propertyPath: DIALOGUE
       value: 'Here bro YOU RECIVE A YELLOW SUBWAY SANDWITCH '
       objectReference: {fileID: 0}
@@ -1646,6 +1656,67 @@ PrefabInstance:
         type: 3}
       propertyPath: HasItem
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: Name
+      value: Dude
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: SHIT YO!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300002, guid: c555d3e493f67f44380e4d1126c2aa93,
+        type: 3}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].count
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].ChanceOfEffect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Sup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: How you doin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[2]
+      value: How you doin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[3]
+      value: Shut up
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[4]
+      value: I hate you
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 431664e21eff9c34286127c9c51533ba, type: 3}

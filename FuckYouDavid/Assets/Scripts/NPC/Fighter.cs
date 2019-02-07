@@ -82,7 +82,9 @@ public class Fighter : MonoBehaviour
 
             float timeToDisplayNotification = itemsRetrieved.ToCharArray().Length/2;
 
-            FindObjectOfType<DiologueManager>().DisplayMessage(itemsRetrieved, timeToDisplayNotification);
+            FindObjectOfType<DialogueManager>().DisplayMessage(itemsRetrieved, timeToDisplayNotification);
+
+            inventory = new Inventory { };
 
             Destroy(gameObject);
         }
@@ -134,7 +136,7 @@ public class Fighter : MonoBehaviour
 
                 if (fightComponent)
                 {
-                    fightComponent.Onchat();
+                    fightComponent.OnChat();
                 }
             }
         }
