@@ -16,7 +16,7 @@ public class DiologueManager : MonoBehaviour
     }
 
     public GameObject DBOX;
-    public Text Dtext, Dtext2;
+    public Text Dtext, NameDisplay;
 
     void Start()
     {
@@ -27,8 +27,10 @@ public class DiologueManager : MonoBehaviour
     {
         if (DBOX != null)
         {
+            GameManager.gameState = GameManager.GameState.Playing;
             DBOX.gameObject.SetActive(false);
 
+            NameDisplay.text = " ";
             Dtext.text = " ";
         }
     }
@@ -37,9 +39,11 @@ public class DiologueManager : MonoBehaviour
     {
         if (DBOX != null)
         {
+            GameManager.gameState = GameManager.GameState.InChat;
             DBOX.gameObject.SetActive(true);
 
             Dtext.text = " ";
+            NameDisplay.text = " ";
         }
     }
 
@@ -48,10 +52,19 @@ public class DiologueManager : MonoBehaviour
         OpenDialogueBox();
 
         Dtext.text = message;
+     
 
         Invoke("ClearDialogueBox", timeToDisplay);
     }
+    public void DisplayName(string Name)
+    {
+        OpenDialogueBox();
 
+     
+        NameDisplay.text = Name;
+
+       
+    }
     public void DisplayMessage(string message)
     {
         OpenDialogueBox();

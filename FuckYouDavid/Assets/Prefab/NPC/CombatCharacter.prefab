@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 208125251730294604}
   - component: {fileID: 208125251730294643}
+  - component: {fileID: 1916778342895761178}
   - component: {fileID: 208125251730294642}
   - component: {fileID: 208125251730294641}
   - component: {fileID: 208125251730294640}
@@ -196,6 +197,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1916778342895761178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208125251730294646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d422d5789a3e0ac43b64da457ddeb007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DM: {fileID: 0}
+  DIALOGUE: asdasdasd
+  DIALOGUE2: 
+  Name: Some ass hole
+  Sales: 0
+  INV:
+    items: []
+    keys: []
+    Money: 0
+  SP: {fileID: 0}
+  Main: 0
+  HasItem: 0
+  InChat: 0
+  TextTime: 1
 --- !u!114 &208125251730294642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,11 +269,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33a216e6332df74f98ab7a72ea6acaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory:
+    items: []
+    keys: []
+    Money: 0
   rotationSpeed: 1
   combattant:
     Name: Some ass hole
     Image: {fileID: 21300002, guid: 71e5e0344a236aa4b8b017b047831ae4, type: 3}
-    Stength:
+    Strength:
       level: 1
       experience: 0
     Agility:
@@ -259,9 +290,9 @@ MonoBehaviour:
       level: 1
       experience: 0
     experience: 0
+    CurrentState: 0
     CurrentStamina: 0
     CurrentHealth: 0
-  attackOnSight: 1
   sightRange: 5
   Collisions:
     serializedVersion: 2

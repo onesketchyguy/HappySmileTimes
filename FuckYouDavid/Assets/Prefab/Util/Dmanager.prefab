@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DBOX: {fileID: 2208264722908520366}
   Dtext: {fileID: 2208264723591557705}
-  Dtext2: {fileID: 4027960871185111896}
+  NameDisplay: {fileID: 4027960871185111896}
 --- !u!1 &2208264722908520366
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 27, y: -51}
+  m_AnchoredPosition: {x: 27, y: -43}
   m_SizeDelta: {x: 1001.6, y: 254.7}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2208264723591557704
@@ -219,12 +219,12 @@ GameObject:
   - component: {fileID: 1006859614703598007}
   - component: {fileID: 4027960871185111896}
   m_Layer: 5
-  m_Name: Dtext 2
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4849168897806156898
 RectTransform:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -235.65, y: 180}
+  m_AnchoredPosition: {x: -215, y: 180}
   m_SizeDelta: {x: 471.3, y: 94.8}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1006859614703598007
@@ -285,4 +285,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Door Locked
+  m_Text: 

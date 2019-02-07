@@ -37,7 +37,7 @@ public class Talker : MonoBehaviour
         {
             DM = FindObjectOfType<DiologueManager>();
         }
-        DM.Dtext2.text = Name;
+        DM.NameDisplay.text = Name;
         DM.Dtext.text = DIALOGUE;
         DM.DBOX.gameObject.SetActive(true);
 
