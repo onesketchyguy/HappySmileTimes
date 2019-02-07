@@ -39,6 +39,8 @@ public class CombatManager : MonoBehaviour
 
             loggerQueue.Enqueue($"{combatant_1.Name} encountered!");
 
+            SetupUI();
+
             Invoke("Logger_DisplayNext", 0);
         }
 
@@ -56,10 +58,10 @@ public class CombatManager : MonoBehaviour
                 inventoryPanel.SetActive(false);
             }
 
-            SetupUI();
-
             if (logging == false)
             {
+                SetupUI();
+
                 Logger.text = "";
 
                 if (combatant_0 != null && combatant_1 != null)
@@ -99,6 +101,11 @@ public class CombatManager : MonoBehaviour
             if (Logger.text == "<i>Got away!</i>")
             {
                 GameManager.gameState = GameManager.GameState.Playing;
+            }
+
+            if (Logger.text.Contains("hit"))
+            {
+                SetupUI();
             }
 
             float time = Logger.text.ToCharArray().Length / 10;

@@ -12,7 +12,7 @@ public class CombatUniversals
     public Stat Strength; //attack
     public Stat Agility; //attackspeed
     public Stat Chin; //defence
-    public Stat StaminaStat;
+    public Stat StaminaStat; // PP
 
     public int experience;
 
