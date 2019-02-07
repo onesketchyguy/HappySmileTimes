@@ -71,7 +71,7 @@ public class CombatManager : MonoBehaviour
 
                         // Implement AI that makes strategy instead of being retarded
 
-                        Attack(Random.Range(0, combatant_1.attacks.Count - 1), combatant_1);
+                        Attack(Random.Range(0, combatant_1.attacks.Count - 1), combatant_1, combatant_0);
                     }
                 }
             }
@@ -145,10 +145,10 @@ public class CombatManager : MonoBehaviour
 
     public void Player_Attack(int attackNo)
     {
-        Attack(attackNo, combatant_0);
+        Attack(attackNo, combatant_0, combatant_1);
     }
 
-    public void Attack(int attackNo, CombatUniversals combatant)
+    public void Attack(int attackNo, CombatUniversals combatA, CombatUniversals combatb)
     {
         bool freed = false;
 
@@ -156,53 +156,57 @@ public class CombatManager : MonoBehaviour
 
         int damage = 0;
 
-        switch (combatant.CurrentState)
+        switch (combatA.CurrentState)
         {
             case GameManager.States.Normal:
-                CommitAttack(attackNo, combatant, combatant_0);
+                CommitAttack(attackNo, combatA, combatb);
                 break;
             case GameManager.States.GrossOut:
-                freed = CalculateChances(combatant.Chin.level, 0.6f);
+                freed = CalculateChances(combatA.Chin.level, 0.6f);
 
                 state = "gross out";
                 break;
             case GameManager.States.Burn:
-                freed = CalculateChances(combatant.Chin.level, 0.6f);
+                freed = CalculateChances(combatA.Chin.level, 0.6f);
 
                 state = "burn";
                 break;
             case GameManager.States.Freeze:
-                freed = CalculateChances(combatant.Chin.level, 0.6f);
+                freed = CalculateChances(combatA.Chin.level, 0.6f);
 
                 state = "frozen";
                 break;
             case GameManager.States.Paralysis:
-                freed = CalculateChances(combatant.Chin.level, 0.6f);
+                freed = CalculateChances(combatA.Chin.level, 0.6f);
 
                 state = "paralysis";
                 break;
             case GameManager.States.Poison:
-                freed = CalculateChances(combatant.Chin.level, 0.6f);
+                freed = CalculateChances(combatA.Chin.level, 0.6f);
 
                 state = "poison";
                 break;
             case GameManager.States.Confusion:
-                freed = CalculateChances(combatant.Chin.level, 0.6f);
+                freed = CalculateChances(combatA.Chin.level, 0.6f);
+
+                loggerQueue.Enqueue($"{combatA.Name} is confused...");
+
+                CommitAttack(attackNo, combatA, combatA);
 
                 state = "confusion";
                 break;
             case GameManager.States.Heal:
-                freed = CalculateChances(combatant.Chin.level, 0f);
+                freed = CalculateChances(combatA.Chin.level, 0f);
 
                 state = "healing";
                 break;
             case GameManager.States.Taunt:
-                freed = CalculateChances(combatant.Chin.level, 0.6f);
+                freed = CalculateChances(combatA.Chin.level, 0.6f);
 
                 state = "taunting";
                 break;
             case GameManager.States.Protection:
-                freed = CalculateChances(combatant.Chin.level, 0f);
+                freed = CalculateChances(combatA.Chin.level, 0f);
 
                 state = "blocking";
                 break;
@@ -212,19 +216,19 @@ public class CombatManager : MonoBehaviour
 
         if (freed)
         {
-            loggerQueue.Enqueue($"{combatant.Name} recovered from {state}...");
+            loggerQueue.Enqueue($"{combatA.Name} recovered from {state}...");
 
-            combatant.CurrentState = GameManager.States.Normal;
+            combatA.CurrentState = GameManager.States.Normal;
 
             Invoke("Logger_DisplayNext", 0);
         }
         else if (state != "")
         {
-            loggerQueue.Enqueue($"{combatant.Name} is {state}...");
+            loggerQueue.Enqueue($"{combatA.Name} is {state}...");
 
             if (damage > 0)
             {
-                loggerQueue.Enqueue($"{combatant.Name} hurt for {damage}hp!");
+                loggerQueue.Enqueue($"{combatA.Name} hurt for {damage}hp!");
             }
 
             Invoke("Logger_DisplayNext", 0);
@@ -247,7 +251,7 @@ public class CombatManager : MonoBehaviour
                 {
                     power += combatant_A.Strength.level + combatant_A.Agility.level;
 
-                    hit = CalculateChances(power, combatant_B.Agility.level * 2);
+                    hit = CalculateChances(power, combatant_B.Agility.level);
 
                     special = (combatant_A.attacks.ToArray()[attackNo].power * (combatant_A.Strength.level + combatant_A.Agility.level)) - combatant_B.Chin.level;
 
@@ -643,33 +647,29 @@ public class CombatManager : MonoBehaviour
 
     bool CalculateChances(float successChance)
     {
-        float chance = 1 - Mathf.Abs((Random.Range(0.0f, 1) - 1) / 1);
-
-        //Debug.Log(chance);
+        float chance = 1 - Mathf.Abs(1 - (Random.Range(0.0f, 1)) / 1);
 
         return (chance > successChance);
     }
 
     bool CalculateChances(int stat, float successChance)
     {
-        float chance = 1 - Mathf.Abs((Random.Range(0.0f, 1 * stat) - 1 * stat) / 1 * stat);
-
-        //Debug.Log(chance);
+        float chance = 1 - Mathf.Abs((1 * stat) - (Random.Range(0.0f, 1 * stat)) / 1 * stat);
 
         return (chance > successChance);
     }
 
     bool CalculateChances(int stat, int stat2)
     {
-        float chance = 1 - Mathf.Abs((Random.Range(0.0f, 1 * stat) - 1 * stat) / 1 * stat);
+        int chance1Stat = 1 * stat;
 
-        //Debug.Log(chance);
+        float chance = 1 - Mathf.Abs(chance1Stat - (Random.Range(0.0f, chance1Stat)) / chance1Stat);
 
-        float chance2 = 1 - Mathf.Abs((Random.Range(0.0f, 1 * stat2) - 1 * stat2) / 1 * stat2);
+        int chance2Stat = 1 * stat2;
 
-        //Debug.Log(chance2);
+        float chance2 = 1 - Mathf.Abs(chance1Stat - (Random.Range(0.0f, chance1Stat)) / chance1Stat);
 
-        return (chance > chance2);
+        return (chance >= chance2);
     }
 
     //Pressed by button
