@@ -265,7 +265,7 @@ public class CombatManager : MonoBehaviour
         {
             case GameManager.States.Normal:
                 {
-                    power += combatant_A.Strength.level + combatant_A.Agility.level;
+                    power += combatant_A.Strength.level + combatant_A.Agility.level - combatant_B.Chin.level;
 
                     hit = CalculateChances(power, combatant_B.Agility.level);
 
@@ -274,20 +274,27 @@ public class CombatManager : MonoBehaviour
                     if (hit == true)
                     {
                         //Hit
-                        int damageToDeal = Random.Range(power, power + special + 1);
+                        int damageToDeal = Mathf.Abs(Random.Range(power, power + special));
 
-                        logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
-
-                        if (damageToDeal >= power + special)
+                        if (damageToDeal <= 0)
                         {
-                            logger.Enqueue("Critical hit!");
+                            logger.Enqueue("It does nothing...");
                         }
+                        else
+                        {
+                            logger.Enqueue($"{combatant_A.Name} hit {combatant_B.Name} for {damageToDeal}hp!");
 
-                        combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+                            if (damageToDeal >= power + special)
+                            {
+                                logger.Enqueue("Critical!");
+                            }
 
-                        combatant_B.CurrentHealth -= damageToDeal;
+                            combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
 
-                        CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+                            combatant_B.CurrentHealth -= damageToDeal;
+
+                            CheckToSeeIfAttackLeveledUp(attackNo, combatant_A);
+                        }
                     }
                     else
                     {

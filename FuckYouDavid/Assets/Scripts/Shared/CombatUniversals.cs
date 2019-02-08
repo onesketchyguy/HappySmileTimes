@@ -20,9 +20,10 @@ public class CombatUniversals
 
     // Main Values
     public int MaxHealth => 5 + (Chin.level * 5);
+    public int CurrentHealth;
+
     public int MaxStamina => 5 + (StaminaStat.level * 5);
     public int CurrentStamina;
-    public int CurrentHealth;
 
     public bool isDead => CurrentHealth <= 0;
 
@@ -36,7 +37,7 @@ public class CombatUniversals
         }
 
         CurrentHealth = MaxHealth;
-        CurrentHealth = MaxStamina;
+        CurrentStamina = MaxStamina;
     }
 
     internal List<Move> attacks = new List<Move>() { };
