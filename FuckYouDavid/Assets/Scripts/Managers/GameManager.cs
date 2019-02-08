@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject namePanel;
 
+    public GameObject Panel;
+
     public enum States { Normal, GrossOut, Burn, Freeze, Paralysis, Poison, Confusion, Heal, Taunt, Protection }
 
     public enum GameState { Playing, InCombat, InBag, InChat, OnConveyor, InShop, Paused }
@@ -78,10 +80,22 @@ public class GameManager : MonoBehaviour
             ToggleShop(false);
         }
 
-        if (MainManager.instance != null)
-            MainManager.instance.OFF();
+        if (DialogueManager.instance != null)
+            DialogueManager.instance.SetButtonsActive(false);
 
         UpdateNameText = false;
+    }
+
+    public void TogglePanelOff()
+    {
+        Panel.SetActive(false);
+    }
+
+    public void TogglePanelOn(float timeToStayActive)
+    {
+        Panel.SetActive(true);
+
+        Invoke("TogglePanelOff", timeToStayActive);
     }
 
     private void Update()
@@ -149,8 +163,7 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.Playing;
 
-        if (MainManager.instance != null)
-            MainManager.instance.OFF();
+        DialogueManager.instance.SetButtonsActive(false);
 
         DialogueManager.instance.ClearDialogueBox();
 

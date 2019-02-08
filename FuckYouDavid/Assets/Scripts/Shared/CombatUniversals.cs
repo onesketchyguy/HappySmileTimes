@@ -66,6 +66,6 @@ public class CombatUniversals
 
         public int maxExperience => power * 10;
 
-        public Move[] Upgrade;
+        public List<Move> Upgrade = new List<Move> { };
     }
 }

@@ -7804,6 +7804,71 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].name
+      value: Amazing punch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].power
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].description
+      value: A fucking amazing punch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].name
+      value: SUPER PUNCH
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].description
+      value: The best of punches.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].power
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].name
+      value: God hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].description
+      value: Better than super punch.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].Upgrade.Array.data[0].power
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: moves.Array.data[0].description
+      value: Straight to the punch.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a8205152bbc7854ab39d09ab48977a2, type: 3}
 --- !u!1 &783522195

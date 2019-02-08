@@ -3,39 +3,32 @@ using UnityEngine.SceneManagement;
 
 public class MainBehaviour : MonoBehaviour
 {
-    public DialogueManager DM;
+    public DialogueManager DialogueManager;
     public string LevelToGo = "Main";
-    public Talker T;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        T = FindObjectOfType<Talker>();
-    }
-
+    public Talker TalkerComponent => GetComponent<Talker>() ?? gameObject.AddComponent<Talker>();
 
     public void ON()
     {
         Debug.Log("On pressed");
 
-        MainManager.instance.ON();
+        DialogueManager.instance.SetButtonsActive(true);
 
-        MainManager.option_A += Yes_Selected;
+        DialogueManager.option_A += Yes_Selected;
 
-        MainManager.option_B += No_Selected;
+        DialogueManager.option_B += No_Selected;
     }
 
     public void OFF()
     {
-        MainManager.option_A -= Yes_Selected;
+        DialogueManager.option_A -= Yes_Selected;
 
-        MainManager.option_B -= No_Selected;
+        DialogueManager.option_B -= No_Selected;
 
         Debug.Log("Off pressed");
 
-        T.OnExitChat();
+        TalkerComponent.OnExitChat();
 
-        MainManager.instance.OFF();
+        DialogueManager.instance.SetButtonsActive(false);
     }
 
 
@@ -68,7 +61,5 @@ public class MainBehaviour : MonoBehaviour
     public void No_Selected()
     {
         OFF();
-        //T.Leave();
     }
-
 }

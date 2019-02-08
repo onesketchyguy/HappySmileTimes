@@ -23,6 +23,36 @@ public class DialogueManager : MonoBehaviour
         ClearDialogueBox();
     }
 
+    public delegate void Option_a();
+
+    public static Option_a option_A;
+
+    public delegate void Option_b();
+
+    public static Option_b option_B;
+
+    public GameObject ButtonA, ButtonB;
+
+    public void Yes()
+    {
+        option_A();
+    }
+
+    public void No()
+    {
+        option_B();
+    }
+
+    public void SetButtonsActive(bool active)
+    {
+        string on = active == true ? "on" : "off";
+
+        Debug.Log($"Turning {on} buttons...");
+
+        ButtonA.SetActive(active);
+        ButtonB.SetActive(active);
+    }
+
     public void ClearDialogueBox()
     {
         if (DBOX != null)
@@ -32,6 +62,8 @@ public class DialogueManager : MonoBehaviour
 
             NameDisplay.text = " ";
             Dtext.text = " ";
+
+            SetButtonsActive(false);
         }
     }
 
