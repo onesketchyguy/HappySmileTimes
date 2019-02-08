@@ -4,11 +4,39 @@ public class BedManager : MonoBehaviour
 {
     private Player player;
 
+    float timeToSleep = 2;
+
     private void Sleep(Player localPlayer)
     {
         localPlayer.combattant.CurrentHealth = localPlayer.combattant.MaxHealth;
 
-        Debug.Log($"Slept... Player health restored to {localPlayer.combattant.CurrentHealth}/{localPlayer.combattant.MaxHealth}.");
+        Vector2[] lineIn = new Vector2[] { transform.position + Vector3.up * 0.5f, transform.position + Vector3.right * 0.5f, transform.position + Vector3.down * 0.5f, transform.position + Vector3.left * 0.5f };
+
+        Vector2[] lineOut = new Vector2[] { transform.position + Vector3.up, transform.position + Vector3.right, transform.position + Vector3.down, transform.position + Vector3.left };
+
+        Vector3 spawnPoint = transform.position;
+
+        for (int i = 0; i < lineOut.Length; i++)
+        {
+            Vector2 startPoint = lineIn[i];
+            Vector2 hitPoint = lineOut[i];
+
+            RaycastHit2D hit2D = Physics2D.Linecast(startPoint, hitPoint, LayerMask.NameToLayer("Default"));
+
+            if (hit2D.transform == null)
+            {
+                spawnPoint = hitPoint;
+            }
+        }
+
+        player.transform.position = spawnPoint;
+
+        Invoke("showRestedMessage", timeToSleep + 1f);
+    }
+
+    void showRestedMessage()
+    {
+        DialogueManager.instance.DisplayMessage("Health restored!", $"{player.combattant.Name}", 1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,12 +67,9 @@ public class BedManager : MonoBehaviour
 
         DialogueManager.instance.SetButtonsActive(false);
 
-
-        float timeToSleep = 2;
-
         GameManager.instance.TogglePanelOn(timeToSleep + 1f);
 
-        DialogueManager.instance.DisplayMessage("zZzZzZz...", $"{player.combattant.Name}", timeToSleep);
+        DialogueManager.instance.DisplayMessage("...zZzZzZz...", $"{player.combattant.Name}", timeToSleep);
     }
 
     public void No ()

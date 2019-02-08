@@ -1,32 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
 
-    public GameObject Panel,Moves,Bag,INVPanel,INVContent;
+    public GameObject Panel, Moves, Bag, INVPanel, INVContent;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
-    { 
-            Panel.SetActive(GameManager.gameState==GameManager.GameState.InBag);      
+    {
+        Panel.SetActive(GameManager.gameState == GameManager.GameState.InBag);   
     }
 
-    public void PanelController(int Factor) {
+    public void PanelController(int Factor)
+    {
         Panel.SetActive(Factor==1);
         Bag.SetActive(Factor == 2);
         Moves.SetActive(Factor == 3);
 
-
+        if (Bag.activeSelf)
+        {
+            OpenBag();
+        }
     }
+
     public void OpenBag()
     {
         //OpenPlayers bag
@@ -86,6 +82,4 @@ public class InventoryManager : MonoBehaviour
             INVPanel.SetActive(false);
         }
     }
-
-
 }

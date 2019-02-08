@@ -5324,10 +5324,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 849787016097681974, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 849787016097681974, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3089466804060521181, guid: e10fec87bd776424e9d112811f5f14e9,
         type: 3}
       propertyPath: Name
       value: Forest of the dead
+      objectReference: {fileID: 0}
+    - target: {fileID: 849787016097681975, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: df3dfc1e31d4c054ab741c57922787b1,
+        type: 3}
+    - target: {fileID: 7286184672265385034, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286184672265385034, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286184672265385034, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286184672265385034, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286184672265385034, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286184672265385034, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286184672265385034, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286184672265385034, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e10fec87bd776424e9d112811f5f14e9, type: 3}
