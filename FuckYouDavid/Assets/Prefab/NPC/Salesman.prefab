@@ -137,7 +137,17 @@ MonoBehaviour:
   Sales: 1
   Tourial: 0
   inventory:
-    items: []
+    items:
+    - name: 
+      image: {fileID: 0}
+      count: 0
+      Effect: 0
+      ChanceOfEffect: 0
+    - name: 
+      image: {fileID: 0}
+      count: 0
+      Effect: 0
+      ChanceOfEffect: 0
     keys: []
     Money: 0
   TextTime: 1
