@@ -69,6 +69,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (DBOX != null)
         {
+            transform.SetAsLastSibling();
             GameManager.gameState = GameManager.GameState.InChat;
             DBOX.gameObject.SetActive(true);
 

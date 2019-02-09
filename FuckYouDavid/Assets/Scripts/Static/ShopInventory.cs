@@ -36,50 +36,37 @@ public class ShopInventory : MonoBehaviour
         { 
             GameObject invItem = Instantiate(new GameObject(), INVContent.transform) as GameObject;
             invItem.name = item.name;
-            print(item.name);
+           // print(item.name);
             invItem.AddComponent<Image>().sprite = item.image;
-            invItem.AddComponent<Button>().onClick.AddListener(delegate { Bought(); });
+            invItem.AddComponent<Button>().onClick.AddListener(delegate { Bought(item); });
         }
         
     }
-    public void Bought() {
-        Player player = FindObjectOfType<Player>();
-       // player.inventory.Money-=;
-    
-    }
 
-
-
-
-    public void RemoveItemFromBag(ItemDefinition itemToRemove)
+    public void Bought(ItemDefinition itemToAdd)
     {
         Player player = FindObjectOfType<Player>();
+        if (player.inventory.Money >= itemToAdd.value) {
 
-                player.inventory.items.Remove(itemToRemove);
-
-                foreach (var item in INVContent.GetComponentsInChildren<Transform>())
-                {
-                    if (item == INVContent.transform)
-                        continue;
-
-                    if (item.name == itemToRemove.name)
-                    {
-                        player.combattant.CurrentHealth += (int)(10 * itemToRemove.ChanceOfEffect);
-
-                        DialogueManager.instance.DisplayMessage($"Used {itemToRemove.name}.", 1);
-
-                        itemToRemove.count -= 1;
-
-                        if (itemToRemove.count <= 0)
-                        {
-                            Destroy(item.gameObject);
-                        }
-                    }   
-            else
+            print("this works");
+            foreach (var item in INVContent.GetComponentsInChildren<Transform>())
             {
-                DialogueManager.instance.DisplayMessage("You can't use that here!", 1);
+                if (item == INVContent.transform)
+                    continue;
+
+                if (item.name == itemToAdd.name)
+                {
+
+                    player.inventory.items.Add(itemToAdd);
+
+                }
+            }
+            }
+            else if (player.inventory.Money < itemToAdd.value)
+            {
+            print("Poor");
+                DialogueManager.instance.DisplayMessage("You are to poor!", 1);
             }
         }
      
     }
-}
