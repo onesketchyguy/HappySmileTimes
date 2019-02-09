@@ -128,11 +128,12 @@ public class Talker : MonoBehaviour
     public void Shop()
     {
         Debug.Log("Opening shop...");
-
+        
         //DialogueManager.instance.ClearDialogueBox();
         ShopInventory.INV = inventory;
        // ShopInventory.OpenBag();
         GameManager.instance.ToggleShop(true);
+        
     }
 
     private void CheckName()

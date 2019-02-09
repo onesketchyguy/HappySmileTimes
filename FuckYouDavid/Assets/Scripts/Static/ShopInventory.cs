@@ -31,24 +31,16 @@ public class ShopInventory : MonoBehaviour
             Destroy(item.gameObject);
         }
 
-        Talker Sales = FindObjectOfType<Talker>();
-        if (Sales)
-        {
-            print("salesman found");
-          
-            foreach (var item in Sales.inventory.items.ToArray())
-            {
-              
-                print("Items found found");
-                GameObject invItem = Instantiate(new GameObject(), INVContent.transform) as GameObject;
-
-                invItem.name = item.name;
-                print(item.name);
-                invItem.AddComponent<Image>().sprite = item.image;
-
-                invItem.AddComponent<Button>().onClick.AddListener(delegate { Bought(); });
-            }
+     
+        foreach (var item in INV.items.ToArray())
+        { 
+            GameObject invItem = Instantiate(new GameObject(), INVContent.transform) as GameObject;
+            invItem.name = item.name;
+            print(item.name);
+            invItem.AddComponent<Image>().sprite = item.image;
+            invItem.AddComponent<Button>().onClick.AddListener(delegate { Bought(); });
         }
+        
     }
     public void Bought() {
         Player player = FindObjectOfType<Player>();
