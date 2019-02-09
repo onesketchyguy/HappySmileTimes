@@ -1,28 +1,12 @@
 fileFormatVersion: 2
-guid: d997927672214d84994f168f7c1d433a
+guid: 6f23cf55d83ee304cbbf1ee081d32512
 TextureImporter:
   fileIDToRecycleName:
-    21300000: FUCK_0
-    21300002: FUCK_1
-    21300004: down
-    21300006: up
-    21300008: down_0
-    21300010: up_0
-    21300012: up_1
-    21300014: down_1
-    21300016: right
-    21300018: right_0
-    21300020: right_1
-    21300022: right_2
-    21300024: FUCK_2
-    21300026: FUCK_3
-    21300028: Tree_0
-    21300030: Tree_0
-    21300032: Tree_1
-    21300034: FUCK_7
-    21300036: Sign
-    21300038: FUCK_8
-    21300040: FUCK_9
+    21300000: Fire_0
+    21300002: Fire_1
+    21300004: Fire_2
+    21300006: Fire_3
+    21300008: Fire_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -81,7 +65,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -92,7 +76,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 256
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -103,7 +87,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
-    maxTextureSize: 256
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -114,7 +98,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: WebGL
-    maxTextureSize: 256
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -127,7 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FUCK_0
+      name: Fire_0
       rect:
         serializedVersion: 2
         x: 0
@@ -135,19 +119,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04cfc0d4965677048883f1787eedf53d
+      spriteID: 9d693eb2328375d41bb29ae32a85bed1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_1
+      name: Fire_1
       rect:
         serializedVersion: 2
         x: 20
@@ -155,19 +139,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e73780d43b802c479bd8a3caedc7752
+      spriteID: c46ef582cf20d5b4695355bada48fb50
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_2
+      name: Fire_2
       rect:
         serializedVersion: 2
         x: 40
@@ -175,19 +159,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 594d307c9052a5842835bf38316081c3
+      spriteID: 02e491420d673a5439e4084f6e7c649f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FUCK_3
+      name: Fire_3
       rect:
         serializedVersion: 2
         x: 60
@@ -195,19 +179,19 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2a0ddd467d001e44951c77e24fce5d0
+      spriteID: 7218d734860847a4c8310967956166c9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_0
+      name: Fire_4
       rect:
         serializedVersion: 2
         x: 80
@@ -215,113 +199,13 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abad77fded01a6643bc0e1a8bae7bc52
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tree_1
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 306bec92ea44b6847a5c784cea4d2354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sign
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1be29850156884641bb97bafe7ae87e3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FUCK_7
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7045bded5c415a142864d9c21cfe4291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FUCK_8
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fbcd21d9838d6ad4aba7aad6e3a7bf30
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FUCK_9
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7acb5fa1fd35eb42b8bc8f7687a79e8
+      spriteID: c5676249bf61b8e418aa3f6705bf1653
       vertices: []
       indices: 
       edges: []
@@ -329,7 +213,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 05a48277ca328be41ae74c94313c6856
+    spriteID: 0718b911990b9ae4290af7afc17b1fcd
     vertices: []
     indices: 
     edges: []

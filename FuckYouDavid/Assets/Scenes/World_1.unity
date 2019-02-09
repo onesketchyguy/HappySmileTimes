@@ -1957,8 +1957,8 @@ MonoBehaviour:
       experience: 0
     experience: 0
     CurrentState: 0
-    CurrentStamina: 0
     CurrentHealth: 0
+    CurrentStamina: 0
   sightRange: 5
   Collisions:
     serializedVersion: 2
@@ -3277,12 +3277,12 @@ PrefabInstance:
     - target: {fileID: 849787016097681974, guid: e10fec87bd776424e9d112811f5f14e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9570265
+      value: 16.46
       objectReference: {fileID: 0}
     - target: {fileID: 849787016097681974, guid: e10fec87bd776424e9d112811f5f14e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7871597
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 849787016097681974, guid: e10fec87bd776424e9d112811f5f14e9,
         type: 3}
@@ -3332,7 +3332,7 @@ PrefabInstance:
     - target: {fileID: 3089466804060521181, guid: e10fec87bd776424e9d112811f5f14e9,
         type: 3}
       propertyPath: Name
-      value: Foreset of the dead
+      value: Forest of the dead
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e10fec87bd776424e9d112811f5f14e9, type: 3}

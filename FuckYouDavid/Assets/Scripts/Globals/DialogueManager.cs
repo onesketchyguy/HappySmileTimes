@@ -47,8 +47,6 @@ public class DialogueManager : MonoBehaviour
     {
         string on = active == true ? "on" : "off";
 
-        Debug.Log($"Turning {on} buttons...");
-
         ButtonA.SetActive(active);
         ButtonB.SetActive(active);
     }
