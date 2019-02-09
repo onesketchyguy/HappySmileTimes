@@ -66,15 +66,62 @@ public class InventoryManager : MonoBehaviour
 
         if (player)
         {
-            player.inventory.items.Remove(itemToRemove);
+            bool use = false;
 
-            foreach (var item in INVContent.GetComponentsInChildren<Transform>())
+            switch (itemToRemove.Effect)
             {
-                if (item == INVContent.transform)
-                    continue;
+                case GameManager.States.Normal:
+                    break;
+                case GameManager.States.GrossOut:
+                    break;
+                case GameManager.States.Burn:
+                    break;
+                case GameManager.States.Freeze:
+                    break;
+                case GameManager.States.Paralysis:
+                    break;
+                case GameManager.States.Poison:
+                    break;
+                case GameManager.States.Confusion:
+                    break;
+                case GameManager.States.Heal:
+                    use = true;
+                    break;
+                case GameManager.States.Taunt:
+                    break;
+                case GameManager.States.Protection:
+                    break;
+                default:
+                    break;
+            }
 
-                if (item.name == itemToRemove.name)
-                    Destroy(item.gameObject);
+            if (use == true)
+            {
+                player.inventory.items.Remove(itemToRemove);
+
+                foreach (var item in INVContent.GetComponentsInChildren<Transform>())
+                {
+                    if (item == INVContent.transform)
+                        continue;
+
+                    if (item.name == itemToRemove.name)
+                    {
+                        player.combattant.CurrentHealth += (int) (10 * itemToRemove.ChanceOfEffect);
+
+                        DialogueManager.instance.DisplayMessage($"Used {itemToRemove.name}.", 1);
+
+                        itemToRemove.count -= 1;
+
+                        if (itemToRemove.count <= 0)
+                        {
+                            Destroy(item.gameObject);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                DialogueManager.instance.DisplayMessage("You can't use that here!", 1);
             }
         }
         else
