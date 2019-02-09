@@ -5,9 +5,39 @@ public class InventoryManager : MonoBehaviour
 {
     public GameObject Panel, Moves, Bag, INVPanel, INVContent;
 
-    void Update()
+    [Space]
+
+    [SerializeField] private Text experienceText;
+
+    [SerializeField] private Text StrengthText, StaminaText, AgilityText, ChinText;
+
+    [SerializeField] private Button StrengthButton, StaminaButton, AgilityButton, ChinButton;
+    private void Update()
     {
         Panel.SetActive(GameManager.gameState == GameManager.GameState.InBag);   
+
+        if (Panel.activeSelf == true)
+        {
+            Player player = FindObjectOfType<Player>();
+
+            StrengthText.text = $"STR {player.combattant.Strength.level} : {player.combattant.Strength.experience}/{player.combattant.Strength.maxExperience}";
+
+            StaminaText.text = $"STA {player.combattant.StaminaStat.level}: {player.combattant.StaminaStat.experience}/{player.combattant.StaminaStat.maxExperience}";
+
+            AgilityText.text = $"AGL {player.combattant.Agility.level}: {player.combattant.Agility.experience}/{player.combattant.Agility.maxExperience}";
+
+            ChinText.text = $"CHIN {player.combattant.Chin.level}: {player.combattant.Chin.experience}/{player.combattant.Chin.maxExperience}";
+
+            StrengthButton.gameObject.SetActive(0 < player.combattant.experience);
+
+            StaminaButton.gameObject.SetActive(0 < player.combattant.experience);
+
+            AgilityButton.gameObject.SetActive(0 < player.combattant.experience);
+
+            ChinButton.gameObject.SetActive(0 < player.combattant.experience);
+
+            experienceText.text = $"XP: {player.combattant.experience}";
+        }
     }
 
     public void PanelController(int Factor)
@@ -127,5 +157,41 @@ public class InventoryManager : MonoBehaviour
         {
             INVPanel.SetActive(false);
         }
+    }
+
+    public void IncStrengthSkill()
+    {
+        Player player = FindObjectOfType<Player>();
+
+        player.combattant.experience -= 1;
+
+        player.combattant.Strength.experience += 1;
+    }
+
+    public void IncStaminaSkill()
+    {
+        Player player = FindObjectOfType<Player>();
+
+        player.combattant.experience -= 1;
+
+        player.combattant.StaminaStat.experience += 1;
+    }
+
+    public void IncAgilitySkill()
+    {
+        Player player = FindObjectOfType<Player>();
+
+        player.combattant.experience -= 1;
+
+        player.combattant.Agility.experience += 1;
+    }
+
+    public void IncChinSkill()
+    {
+        Player player = FindObjectOfType<Player>();
+
+        player.combattant.experience -= 1;
+
+        player.combattant.Chin.experience += 1;
     }
 }

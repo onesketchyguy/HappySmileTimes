@@ -289,7 +289,7 @@ public class CombatManager : MonoBehaviour
                                 logger.Enqueue("Critical!");
                             }
 
-                            combatant_A.attacks.ToArray()[attackNo].experience += damageToDeal;
+                            combatant_A.attacks.ToArray()[attackNo].experience += Random.Range(0, damageToDeal);
 
                             combatant_B.CurrentHealth -= damageToDeal;
 
@@ -633,7 +633,7 @@ public class CombatManager : MonoBehaviour
         {
             logger.Enqueue($"{combatant_1.Name} got knocked out.");
 
-            int experienceAdded = Random.Range(combatant_1.PowerLevel / 2, combatant_1.PowerLevel * 2);
+            int experienceAdded = Random.Range(combatant_1.PowerLevel, combatant_1.PowerLevel + 10);
 
             combatant_0.experience += (experienceAdded);
 
