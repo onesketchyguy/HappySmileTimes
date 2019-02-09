@@ -100,7 +100,7 @@ public class CombatManager : MonoBehaviour
         {
             LoggerObject.text = $"{logger.Dequeue()}";
 
-            if (LoggerObject.text == "<i>Got away!</i>")
+            if (LoggerObject.text == "Got away!")
             {
                 GameManager.gameState = GameManager.GameState.Playing;
             }
