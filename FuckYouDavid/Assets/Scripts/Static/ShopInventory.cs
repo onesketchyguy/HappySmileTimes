@@ -7,13 +7,18 @@ using UnityEngine.UI;
 public class ShopInventory : MonoBehaviour
 {
     public GameObject INVContent;
+    public static Inventory INV;
 
     void Update()
     {
        
     }
+    public void Start()
+    {
+        OpenBag();
+    }
 
-    public void OpenBag()
+    public  void OpenBag()
     {
         //OpenPlayers bag
         Debug.Log("Attempting to open bag.");
@@ -26,21 +31,33 @@ public class ShopInventory : MonoBehaviour
             Destroy(item.gameObject);
         }
 
-        Player player = FindObjectOfType<Player>();
-        if (player)
+        Talker Sales = FindObjectOfType<Talker>();
+        if (Sales)
         {
-            foreach (var item in player.inventory.items.ToArray())
+            print("salesman found");
+          
+            foreach (var item in Sales.inventory.items.ToArray())
             {
+              
+                print("Items found found");
                 GameObject invItem = Instantiate(new GameObject(), INVContent.transform) as GameObject;
 
                 invItem.name = item.name;
-
+                print(item.name);
                 invItem.AddComponent<Image>().sprite = item.image;
 
-                invItem.AddComponent<Button>().onClick.AddListener(delegate { RemoveItemFromBag(item); });
+                invItem.AddComponent<Button>().onClick.AddListener(delegate { Bought(); });
             }
         }
     }
+    public void Bought() {
+        Player player = FindObjectOfType<Player>();
+       // player.inventory.Money-=;
+    
+    }
+
+
+
 
     public void RemoveItemFromBag(ItemDefinition itemToRemove)
     {

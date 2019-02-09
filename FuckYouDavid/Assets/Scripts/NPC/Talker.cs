@@ -63,9 +63,7 @@ public class Talker : MonoBehaviour
             return;
         }
 
-    
-
-        if (HasItem == true)
+        if (HasItem == true&& Sales==false)
         {
             //gives Item
             FindObjectOfType<Player>().inventory += inventory;
@@ -98,17 +96,17 @@ public class Talker : MonoBehaviour
             MM.ON();
         }
         else
-        if (Sales == true)
-        {
-            Shop();
-
-            return;
-        }
+ 
 
         DialogueManager.instance.DisplayMessage(NewDialogue(), Name, TextTime);
 
         Invoke("OnExitChat", TextTime);
-        
+        if (Sales == true)
+        {
+            Invoke("Shop", TextTime);
+            return;
+        }
+
     }
 
     public void OnExitChat()
@@ -132,7 +130,8 @@ public class Talker : MonoBehaviour
         Debug.Log("Opening shop...");
 
         //DialogueManager.instance.ClearDialogueBox();
-
+        ShopInventory.INV = inventory;
+       // ShopInventory.OpenBag();
         GameManager.instance.ToggleShop(true);
     }
 
