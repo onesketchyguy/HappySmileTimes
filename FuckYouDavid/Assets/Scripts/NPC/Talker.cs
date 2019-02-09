@@ -4,7 +4,7 @@ public class Talker : MonoBehaviour
 {
     public string[] dialogue;
 
-    int currentSentence = 0;
+   public int currentSentence = 0;
 
     public string Name;
 
@@ -39,7 +39,10 @@ public class Talker : MonoBehaviour
 
         if (dialogue.Length <= currentSentence +1)
         {
+            Invoke("OnExitChat", TextTime);
             currentSentence = 0;
+           
+
         }
         else
         {
@@ -51,6 +54,7 @@ public class Talker : MonoBehaviour
 
     public void OnChat()
     {
+        CheckName();
         if (Tourial)
         {
             GameManager.UpdateNameText = true;
@@ -59,7 +63,7 @@ public class Talker : MonoBehaviour
             return;
         }
 
-        CheckName();
+    
 
         if (HasItem == true)
         {
@@ -104,8 +108,6 @@ public class Talker : MonoBehaviour
         DialogueManager.instance.DisplayMessage(NewDialogue(), Name, TextTime);
 
         Invoke("OnExitChat", TextTime);
-
-   
         
     }
 

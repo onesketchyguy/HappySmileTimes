@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6441355737845752573}
   - component: {fileID: 2974174134391212807}
   - component: {fileID: 8593751436135602425}
-  - component: {fileID: 6637559486504149656}
+  - component: {fileID: 1062577250189551011}
   m_Layer: 0
   m_Name: TalkingCharictar
   m_TagString: Untagged
@@ -131,14 +131,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d422d5789a3e0ac43b64da457ddeb007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DM: {fileID: 0}
-  player: {fileID: 0}
-  DIALOGUE: Hey bro trying to get your dick sucked
+  dialogue: []
+  currentSentence: 0
+  Name: 
   Sales: 0
-  SP: {fileID: 0}
-  Main: 0
-  HasItem: 0
-  InChat: 0
+  Tourial: 0
+  inventory:
+    items: []
+    keys: []
+    Money: 0
   TextTime: 1
 --- !u!114 &2974174134391212807
 MonoBehaviour:
@@ -194,7 +195,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6995325, y: 0.6585672}
   m_EdgeRadius: 0
---- !u!61 &6637559486504149656
+--- !u!61 &1062577250189551011
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,10 +205,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014248133, y: 0.06103155}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -218,5 +219,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.70145655, y: 0.27793688}
+  m_Size: {x: 0.35, y: 0.4}
   m_EdgeRadius: 0

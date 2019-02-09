@@ -3617,7 +3617,7 @@ Tilemap:
       - {fileID: 21300004, guid: 6f23cf55d83ee304cbbf1ee081d32512, type: 3}
       - {fileID: 21300006, guid: 6f23cf55d83ee304cbbf1ee081d32512, type: 3}
       - {fileID: 21300008, guid: 6f23cf55d83ee304cbbf1ee081d32512, type: 3}
-      m_AnimationSpeed: 8.260544
+      m_AnimationSpeed: 8.896894
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -3679,100 +3679,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &123745502
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1029932472529738438, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_Name
-      value: TalkingCharictar (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.937
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.168
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: dialogue.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: Name
-      value: Felix
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: dialogue.Array.data[0]
-      value: watch out the forest is nuts
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: dialogue.Array.data[1]
-      value: I heard there is hidden stuff everywhere
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: dialogue.Array.data[2]
-      value: I heard there is hidden stuff everywhere
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 89e3615e4265d9b4992692420a30e386, type: 3}
 --- !u!1001 &174231815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4259,6 +4165,95 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce36f18187c05543b32ac02763590aa, type: 3}
+--- !u!1001 &622886924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1029932472529738438, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_Name
+      value: TalkingCharictar
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: Name
+      value: Repete
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Talk to me again
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: See multible dialouges so dynamic
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89e3615e4265d9b4992692420a30e386, type: 3}
 --- !u!1001 &747822083
 PrefabInstance:
   m_ObjectHideFlags: 0
