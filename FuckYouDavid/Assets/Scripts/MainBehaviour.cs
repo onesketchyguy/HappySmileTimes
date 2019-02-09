@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class MainBehaviour : MonoBehaviour
 {
-    public DialogueManager DialogueManager;
     public string LevelToGo = "Main";
     public Talker TalkerComponent => GetComponent<Talker>() ?? gameObject.AddComponent<Talker>();
 
@@ -53,7 +52,7 @@ public class MainBehaviour : MonoBehaviour
 
             return;
         }
-
+        OFF();
         GameManager.gameState = GameManager.GameState.Playing;
         SceneManager.LoadScene(LevelToGo);
     }

@@ -94,10 +94,10 @@ public class Talker : MonoBehaviour
         if (Main == true)
         {
             MM.ON();
-        }
-        else
- 
+            DialogueManager.instance.DisplayMessage(NewDialogue(), Name );
+            return;
 
+        }
         DialogueManager.instance.DisplayMessage(NewDialogue(), Name, TextTime);
 
         Invoke("OnExitChat", TextTime);
