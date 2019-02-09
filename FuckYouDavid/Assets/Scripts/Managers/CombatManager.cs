@@ -109,12 +109,12 @@ public class CombatManager : MonoBehaviour
             {
                 SetupUI();
 
-                SoundManager.Reference.PlayDoorSound(1);
+                SoundManager.Instance.PlayDoorSound(1);
             }
             else
             if (LoggerObject.text.Contains("leveled up"))
             {
-                SoundManager.Reference.PlayLevelUpEffect();
+                SoundManager.Instance.PlayLevelUpEffect();
             }
 
             float time = LoggerObject.text.ToCharArray().Length / 10;

@@ -3,11 +3,19 @@
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Reference;
+    public static SoundManager Instance;
 
     private void Awake()
     {
-        Reference = this;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public AudioClip LevelUp;

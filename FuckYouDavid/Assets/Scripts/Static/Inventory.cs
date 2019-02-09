@@ -42,6 +42,8 @@ public class ItemDefinition
 
     public GameManager.States Effect;
 
+    public float value;
+
     /// <summary>
     /// Chance of effect.
     /// Range of 0-1

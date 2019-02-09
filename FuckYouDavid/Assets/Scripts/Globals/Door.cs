@@ -51,7 +51,7 @@ public class Door : MonoBehaviour
     {
         boxCollider.isTrigger = true;
 
-        SoundManager.Reference.PlayDoorSound(0);
+        SoundManager.Instance.PlayDoorSound(0);
 
         spriteRenderer.sprite = sprites[1];
     }
@@ -60,7 +60,7 @@ public class Door : MonoBehaviour
     {
         boxCollider.isTrigger = false;
 
-        SoundManager.Reference.PlayDoorSound(1);
+        SoundManager.Instance.PlayDoorSound(1);
 
         spriteRenderer.sprite = sprites[0];
     }

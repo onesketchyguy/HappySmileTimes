@@ -1182,6 +1182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: []
+  currentSentence: 0
   Name: 
   Sales: 0
   Tourial: 0
@@ -1444,6 +1445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: []
+  currentSentence: 0
   Name: 
   Sales: 0
   Tourial: 0
@@ -1711,6 +1713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: []
+  currentSentence: 0
   Name: 
   Sales: 0
   Tourial: 0

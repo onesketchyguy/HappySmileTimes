@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-
     public GameObject Panel, Moves, Bag, INVPanel, INVContent;
 
     void Update()

@@ -116,7 +116,7 @@ public class Fighter : MonoBehaviour
 
                     SeenAnimObject.SetActive(true);
 
-                    SoundManager.Reference.PlayNotificationSound();
+                    SoundManager.Instance.PlayNotificationSound();
                 }
             }
         }
