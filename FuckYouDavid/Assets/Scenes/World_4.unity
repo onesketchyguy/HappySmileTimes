@@ -6815,6 +6815,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.keys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.keys.Array.data[0]
+      value: City
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.Strength.level
@@ -6834,21 +6849,6 @@ PrefabInstance:
         type: 3}
       propertyPath: rotationSpeed
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
-        type: 3}
-      propertyPath: inventory.keys.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
-        type: 3}
-      propertyPath: inventory.keys.Array.data[0]
-      value: City
-      objectReference: {fileID: 0}
-    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
-        type: 3}
-      propertyPath: inventory.Money
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
@@ -18902,7 +18902,7 @@ PrefabInstance:
     - target: {fileID: 4857996175179814214, guid: 6311cd52078922e43879ad7c1739e90a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -82
+      value: -84.25
       objectReference: {fileID: 0}
     - target: {fileID: 4857996175179814214, guid: 6311cd52078922e43879ad7c1739e90a,
         type: 3}
