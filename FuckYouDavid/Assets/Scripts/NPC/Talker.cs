@@ -37,7 +37,7 @@ public class Talker : MonoBehaviour
             }
         }
 
-        if (dialogue.Length <= currentSentence + 1)
+        if (dialogue.Length <= currentSentence +1)
         {
             currentSentence = 0;
         }
