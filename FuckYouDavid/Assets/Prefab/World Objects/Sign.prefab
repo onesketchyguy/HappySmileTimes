@@ -100,6 +100,7 @@ MonoBehaviour:
   - Watch out for pervs
   Name: Foreset f the dead
   Sales: 0
+  Tourial: 0
   inventory:
     items: []
     keys: []
