@@ -179,6 +179,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: Castle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce36f18187c05543b32ac02763590aa, type: 3}
 --- !u!1 &31546566
@@ -11664,6 +11674,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Theres a book about me kid
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Jesus
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &174712140
@@ -11732,6 +11757,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: My demons
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Gary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
@@ -11872,6 +11912,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: I dislike you
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: Used sock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: Name
+      value: Hater
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 431664e21eff9c34286127c9c51533ba, type: 3}
@@ -12284,6 +12354,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Tap tap tap
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: ASMR
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &373845105
@@ -12352,6 +12437,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: Paqradox
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].ChanceOfEffect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce36f18187c05543b32ac02763590aa, type: 3}
@@ -13004,6 +13114,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Did you hear about the devils dick
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Drama queen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &540010158
@@ -13072,6 +13197,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: Name
+      value: PRison mike
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Bitch!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: The dementors!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: The bell of the ball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 431664e21eff9c34286127c9c51533ba, type: 3}
@@ -13156,6 +13311,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.93586
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: ice ice baby
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce36f18187c05543b32ac02763590aa, type: 3}
@@ -13810,6 +13975,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: Drugs
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce36f18187c05543b32ac02763590aa, type: 3}
 --- !u!1001 &896269361
@@ -13878,6 +14053,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Lets do this '
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Tig toe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
@@ -14365,6 +14555,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: The lost city of Asslandpiss
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: e10fec87bd776424e9d112811f5f14e9,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: Smells like pedo in here
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e10fec87bd776424e9d112811f5f14e9, type: 3}
 --- !u!1001 &1358306891
@@ -14534,6 +14734,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Thanks for coming
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Ted
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1559025483
@@ -14602,6 +14817,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Did you hear the devils dick is huge '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: Name
+      value: Lvl 5 meemer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: Gotteem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 431664e21eff9c34286127c9c51533ba, type: 3}
@@ -14672,6 +14917,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: Picture of satans dick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce36f18187c05543b32ac02763590aa, type: 3}
 --- !u!1001 &1589927342
@@ -14740,6 +14995,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: Shriking staff
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce36f18187c05543b32ac02763590aa, type: 3}
@@ -14945,6 +15210,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.07
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: 'LOL this is litterally me '
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Litterally me
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1722093565
@@ -15013,6 +15293,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Im a you tuber
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: beyound tublar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
@@ -15083,6 +15378,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Im hispanic by the way
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Lele
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1785444044
@@ -15151,6 +15461,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Did you know theFIle name of the game was fuck you david '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441355737845752573, guid: 431664e21eff9c34286127c9c51533ba,
+        type: 3}
+      propertyPath: Name
+      value: Ryan randolls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 431664e21eff9c34286127c9c51533ba, type: 3}
@@ -15341,6 +15671,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: 'Old spice '
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Terry
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1923916899
@@ -15410,6 +15755,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: We dont take kindly to Players around here
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Sceeder
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1990242414
@@ -15478,6 +15838,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].name
+      value: fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089466804060521181, guid: 9ce36f18187c05543b32ac02763590aa,
+        type: 3}
+      propertyPath: inventory.items.Array.data[0].Effect
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce36f18187c05543b32ac02763590aa, type: 3}
@@ -28993,6 +29363,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: I sure hope it does
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Road work
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
