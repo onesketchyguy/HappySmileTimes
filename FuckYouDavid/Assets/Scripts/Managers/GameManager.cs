@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public static string PlayerName = "";
 
-    internal Player player = new Player { };
+    internal Player player = null;
 
     public GameObject namePanel;
+
+    public static CombatUniversals.CLASSTYPE playerClass;
 
     public GameObject Panel;
 

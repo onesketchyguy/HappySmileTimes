@@ -8,14 +8,22 @@ public class Player : MonoBehaviour
     public bool AllowedToMove = true;
     Movement mov => GetComponent<Movement>();
 
-    [SerializeField] public CombatUniversals combattant;
+    [SerializeField] public CombatUniversals combattant = new CombatUniversals { };
 
     private void Start()
     {
         if (GameManager.instance.player != null)
         {
-            inventory = GameManager.instance.player.inventory;
-            combattant = GameManager.instance.player.combattant;
+            if (GameManager.instance.player.inventory != null)
+                inventory = GameManager.instance.player.inventory;
+
+            if (GameManager.instance.player.combattant != null)
+                combattant = GameManager.instance.player.combattant;
+        }
+
+        if (combattant.Class == CombatUniversals.CLASSTYPE.Weak)
+        {
+            combattant.Class = GameManager.playerClass;
         }
 
         combattant.Inititialize();

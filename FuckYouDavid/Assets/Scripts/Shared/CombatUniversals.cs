@@ -4,6 +4,10 @@ using System.Collections.Generic;
 [Serializable]
 public class CombatUniversals
 {
+    public enum CLASSTYPE { Weak, Tank, Puncher, Runner }
+
+    public CLASSTYPE Class = CLASSTYPE.Weak;
+
     public string Name = "Nameless";
 
     public UnityEngine.Sprite Image;
@@ -38,6 +42,64 @@ public class CombatUniversals
 
         CurrentHealth = MaxHealth;
         CurrentStamina = MaxStamina;
+
+        if (Strength.experience == 0 && StaminaStat.experience == 0 && Agility.experience == 0 && Chin.experience == 0)
+        {
+            switch (Class)
+            {
+                case CLASSTYPE.Weak:
+
+                    Strength.level = 1;
+
+                    StaminaStat.level = 1;
+
+                    Agility.level = 1;
+
+                    Chin.level = 1;
+
+                    break;
+                case CLASSTYPE.Tank:
+
+                    Strength.level = 3;
+
+                    StaminaStat.level = 2;
+
+                    Agility.level = 2;
+
+                    Chin.level = 5;
+
+                    break;
+                case CLASSTYPE.Puncher:
+
+                    Strength.level = 5;
+
+                    StaminaStat.level = 3;
+
+                    Agility.level = 2;
+
+                    Chin.level = 2;
+
+                    break;
+                case CLASSTYPE.Runner:
+
+                    Strength.level = 2;
+
+                    StaminaStat.level = 3;
+
+                    Agility.level = 5;
+
+                    Chin.level = 2;
+
+                    break;
+                default:
+                    break;
+            }
+
+            Strength.experience = 0;
+            StaminaStat.experience = 0;
+            Agility.experience = 0;
+            Chin.experience = 0;
+        }
     }
 
     internal List<Move> attacks = new List<Move>() { };
@@ -62,9 +124,9 @@ public class CombatUniversals
 
         public int power;
 
-        internal int experience;
+        internal int experience = -1;
 
-        public int maxExperience => power * 10;
+        public int maxExperience => power * 5;
 
         public List<Move> Upgrade = new List<Move> { };
     }

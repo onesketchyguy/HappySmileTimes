@@ -1302,7 +1302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a56c9ed21df848418b52e70ae9bea92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueManager: {fileID: 0}
   LevelToGo: Quit
 --- !u!1001 &769766861
 PrefabInstance:
@@ -1612,8 +1611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a56c9ed21df848418b52e70ae9bea92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueManager: {fileID: 0}
-  LevelToGo: World_1
+  LevelToGo: ClassScene
 --- !u!1 &968791918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,7 +1837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a56c9ed21df848418b52e70ae9bea92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueManager: {fileID: 0}
   LevelToGo: TestingScene
 --- !u!1001 &1356234874
 PrefabInstance:
