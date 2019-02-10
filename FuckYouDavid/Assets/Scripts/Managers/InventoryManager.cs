@@ -166,6 +166,13 @@ public class InventoryManager : MonoBehaviour
         player.combattant.experience -= 1;
 
         player.combattant.Strength.experience += 1;
+
+        if (player.combattant.Strength.experience > player.combattant.Strength.maxExperience)
+        {
+            player.combattant.Strength.experience = 0;
+
+            player.combattant.Strength.level += 1;
+        }
     }
 
     public void IncStaminaSkill()
@@ -175,6 +182,13 @@ public class InventoryManager : MonoBehaviour
         player.combattant.experience -= 1;
 
         player.combattant.StaminaStat.experience += 1;
+
+        if (player.combattant.StaminaStat.experience > player.combattant.StaminaStat.maxExperience)
+        {
+            player.combattant.StaminaStat.experience = 0;
+
+            player.combattant.StaminaStat.level += 1;
+        }
     }
 
     public void IncAgilitySkill()
@@ -184,6 +198,13 @@ public class InventoryManager : MonoBehaviour
         player.combattant.experience -= 1;
 
         player.combattant.Agility.experience += 1;
+
+        if (player.combattant.Agility.experience > player.combattant.Agility.maxExperience)
+        {
+            player.combattant.Agility.experience = 0;
+
+            player.combattant.Agility.level += 1;
+        }
     }
 
     public void IncChinSkill()
@@ -193,5 +214,12 @@ public class InventoryManager : MonoBehaviour
         player.combattant.experience -= 1;
 
         player.combattant.Chin.experience += 1;
+
+        if (player.combattant.Chin.experience > player.combattant.Chin.maxExperience)
+        {
+            player.combattant.Chin.experience = 0;
+
+            player.combattant.Chin.level += 1;
+        }
     }
 }
