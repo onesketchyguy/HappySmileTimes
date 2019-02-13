@@ -15,7 +15,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private GameObject[] combatant_regions;
 
     [SerializeField] private Button[] attacks;
-
+    public MusicManager Music;
     public static CombatUniversals combatant_0, combatant_1;
 
     [SerializeField] private GameObject fightOptionsRegion, inventoryPanel, inventoryContent;
@@ -28,7 +28,10 @@ public class CombatManager : MonoBehaviour
     public void Start()
     {
         P = FindObjectOfType<Player>();
+        Music = FindObjectOfType<MusicManager>();
+
     }
+
     private void SetCombatScreen(bool active)
     {
         if (active == true && !CombatScreen.activeSelf)
@@ -93,7 +96,6 @@ public class CombatManager : MonoBehaviour
         {
             SetFightPanel(false);
         }
-
         SetCombatScreen(GameManager.gameState == GameManager.GameState.InCombat);
     }
 
@@ -150,8 +152,10 @@ public class CombatManager : MonoBehaviour
 
     private void SetupUI()
     {
+
         if (combatant_0 != null && combatant_1 != null)
         {
+            Music.audioSource.clip = Music.Songs[1];
             //Player
             icons[0].sprite = combatant_0.Image;
 

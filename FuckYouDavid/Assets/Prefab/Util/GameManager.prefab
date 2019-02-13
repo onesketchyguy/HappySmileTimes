@@ -437,6 +437,7 @@ MonoBehaviour:
   - {fileID: 4522769273125857492, guid: b393eaa17100d7440acc8d388c1d1129, type: 3}
   - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}
   - {fileID: 1427054749215695217, guid: 9fcc5579ec59ade45b1a00696e4a6c4b, type: 3}
+  - {fileID: 1427054749215695217, guid: 6c9b7340e4573384289dbbf1f4053973, type: 3}
   moves:
   - name: Punch
     description: Straight to the point

@@ -23,16 +23,16 @@ public class MusicManager : MonoBehaviour
 
     public Slider Slider;
 
-    [SerializeField] private AudioClip[] Songs;
+    [SerializeField] public AudioClip[] Songs;
 
     private int LastClipIndex;
-
-    private AudioSource audioSource;
+    public GameManager GM;
+    public AudioSource audioSource;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
+        GM = FindObjectOfType<GameManager>();
         audioSource.loop = false;
     }
 
@@ -40,7 +40,8 @@ public class MusicManager : MonoBehaviour
     {
         if (audioSource.isPlaying == false)
         {
-            pickRandomSong();
+            audioSource.Play();
+
         }
 
         if (Slider == null)

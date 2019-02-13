@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public static CombatUniversals.CLASSTYPE playerClass;
 
     public GameObject Panel;
+    public MusicManager Music;
  
     public enum States { Normal, GrossOut, Burn, Freeze, Paralysis, Poison, Confusion, Heal, Taunt, Protection }
 
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+          
             instance = this;
 
             DontDestroyOnLoad(gameObject);
@@ -47,6 +49,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        print("psdads");
+        Music.audioSource.clip = Music.Songs[0];
+
         if (GetComponent<Canvas>())
             GetComponent<Canvas>().worldCamera = Camera.main;
 
