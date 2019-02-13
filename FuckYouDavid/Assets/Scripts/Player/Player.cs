@@ -7,11 +7,15 @@ public class Player : MonoBehaviour
 
     public bool AllowedToMove = true;
     Movement mov => GetComponent<Movement>();
+    public GameObject Spawn;
+    public BedManager bedM;
 
     [SerializeField] public CombatUniversals combattant = new CombatUniversals { };
 
     private void Start()
     {
+        bedM = FindObjectOfType<BedManager>();
+    
         if (GameManager.instance.player != null)
         {
             if (GameManager.instance.player.inventory != null)
@@ -66,5 +70,10 @@ public class Player : MonoBehaviour
         }
 
         GameManager.instance.player = this;
+    }
+
+    public void Respawn() {
+        bedM.Sleep(this);
+        gameObject.transform.position = Spawn.transform.position;
     }
 }

@@ -2,11 +2,11 @@
 
 public class BedManager : MonoBehaviour
 {
-    private Player player;
+    public Player player;
 
     float timeToSleep = 2;
 
-    private void Sleep(Player localPlayer)
+    public void Sleep(Player localPlayer)
     {
         localPlayer.combattant.CurrentHealth = localPlayer.combattant.MaxHealth;
 
@@ -29,7 +29,6 @@ public class BedManager : MonoBehaviour
             }
         }
 
-        player.transform.position = spawnPoint;
 
         Invoke("showRestedMessage", timeToSleep + 1f);
     }

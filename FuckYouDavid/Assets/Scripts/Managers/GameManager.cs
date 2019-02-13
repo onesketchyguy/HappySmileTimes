@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public static CombatUniversals.CLASSTYPE playerClass;
 
     public GameObject Panel;
-
+ 
     public enum States { Normal, GrossOut, Burn, Freeze, Paralysis, Poison, Confusion, Heal, Taunt, Protection }
 
     public enum GameState { Playing, InCombat, InBag, InChat, OnConveyor, InShop, Paused }
@@ -102,6 +102,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (CombatManager.combatant_0.CurrentHealth==0) {
+
+            player.Respawn();
+        }
+
         if (UpdateNameText == true)
         {
             namePanel.SetActive(true);
@@ -172,6 +177,8 @@ public class GameManager : MonoBehaviour
         if (GetComponent<Canvas>())
             GetComponent<Canvas>().worldCamera = Camera.main;
     }
+
+
 
     public void ToggleShop(bool active)
     {

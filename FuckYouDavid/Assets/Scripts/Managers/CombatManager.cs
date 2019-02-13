@@ -7,7 +7,7 @@ public class CombatManager : MonoBehaviour
     private bool playersTurn = false;
 
     public GameObject CombatScreen;
-
+    public Player P;
     [SerializeField] private Image[] icons;
 
     [SerializeField] private GameObject optionsRegion;
@@ -24,6 +24,11 @@ public class CombatManager : MonoBehaviour
     private bool logging = true;
     private Queue<string> logger = new Queue<string> { };
 
+
+    public void Start()
+    {
+        P = FindObjectOfType<Player>();
+    }
     private void SetCombatScreen(bool active)
     {
         if (active == true && !CombatScreen.activeSelf)
@@ -131,7 +136,7 @@ public class CombatManager : MonoBehaviour
 
                 if (combatant_0.CurrentHealth <= 0)
                 {
-                    GameManager.instance.LoadScene("Main");
+                    P.Respawn();
                 }
 
                 return;

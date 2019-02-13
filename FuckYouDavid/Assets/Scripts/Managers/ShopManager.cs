@@ -17,11 +17,5 @@ public class ShopManager : MonoBehaviour
         GameManager.instance.ToggleShop(false);
     }
 
-    public void Burger()
-    {
-        if (player.inventory.Money >= 10)
-        {
-            print("pressed yum yum");
-        }
-    }
+
 }
