@@ -634,9 +634,10 @@ public class CombatManager : MonoBehaviour
 
         Invoke("Logger_DisplayNext", 0);
 
-        if (combatant_1.CurrentHealth <= 0 && !logger.Contains($"{combatant_1.Name} knocked out."))
+        if (combatant_1.CurrentHealth <= 0 && (!logger.Contains($"{combatant_1.Name}")&& !logger.Contains("knocked out")))
         {
-            logger.Enqueue($"{combatant_1.Name} got knocked out.");
+            if (combatant_1.CurrentHealth <= -2 && (!logger.Contains($"{combatant_1.Name}") && !logger.Contains("knocked out")))
+                logger.Enqueue($"{combatant_1.Name} got knocked the fuck out!");
 
             int experienceAdded = Random.Range(combatant_1.PowerLevel, combatant_1.PowerLevel + 10);
 
@@ -645,8 +646,10 @@ public class CombatManager : MonoBehaviour
             logger.Enqueue($"Gained {experienceAdded} XP.");
         }
 
-        if (combatant_0.CurrentHealth <= 0 && !logger.Contains($"{combatant_0.Name} knocked out."))
+        if (combatant_0.CurrentHealth <= 0 && (!logger.Contains($"{combatant_0.Name}") && !logger.Contains("knocked out")))
         {
+            if (combatant_0.CurrentHealth <= -2 && (!logger.Contains($"{combatant_0.Name}") && !logger.Contains("knocked out")))
+                logger.Enqueue($"{combatant_0.Name} got knocked the fuck out!");
             logger.Enqueue($"{combatant_0.Name} got knocked out.");
         }
     }

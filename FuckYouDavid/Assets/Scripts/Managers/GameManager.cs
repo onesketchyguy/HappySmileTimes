@@ -102,8 +102,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (CombatManager.combatant_0.CurrentHealth==0) {
-
+        if (player != null && player.combattant.isDead)
+        {
             player.Respawn();
         }
 

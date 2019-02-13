@@ -22,7 +22,7 @@ public class PickClass : MonoBehaviour
     {
         anim.SetInteger("Channel" , channel);
 
-        if (Input.GetAxis("Vertical") > 0.9f && channel == lastChannel)
+        if (Input.GetAxis("Vertical") > 0.5f && channel == lastChannel)
         {
             if (channel < 2)
                 channel += 1;
@@ -33,7 +33,7 @@ public class PickClass : MonoBehaviour
             timeOnScreen = Time.time;
         }
         else
-        if (Input.GetAxis("Vertical") < -0.9f && channel == lastChannel)
+        if (Input.GetAxis("Vertical") < -0.5f && channel == lastChannel)
         {
             if (channel > 0)
                 channel -= 1;

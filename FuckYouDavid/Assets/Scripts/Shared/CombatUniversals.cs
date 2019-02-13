@@ -23,6 +23,11 @@ public class CombatUniversals
     public GameManager.States CurrentState = GameManager.States.Normal;
 
     // Main Values
+    public void FillHealth()
+    {
+        CurrentHealth = MaxHealth;
+    }
+
     public int MaxHealth => 5 + (Chin.level * 5);
     public int CurrentHealth;
 
@@ -39,9 +44,6 @@ public class CombatUniversals
         {
             attacks.Add(GameManager.instance.moves.ToArray()[0]);
         }
-
-        CurrentHealth = MaxHealth;
-        CurrentStamina = MaxStamina;
 
         if (Strength.experience == 0 && StaminaStat.experience == 0 && Agility.experience == 0 && Chin.experience == 0)
         {
@@ -100,6 +102,9 @@ public class CombatUniversals
             Agility.experience = 0;
             Chin.experience = 0;
         }
+
+        FillHealth();
+        CurrentStamina = MaxStamina;
     }
 
     internal List<Move> attacks = new List<Move>() { };

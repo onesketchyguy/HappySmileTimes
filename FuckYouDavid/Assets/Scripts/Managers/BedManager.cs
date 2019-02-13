@@ -8,7 +8,7 @@ public class BedManager : MonoBehaviour
 
     public void Sleep(Player localPlayer)
     {
-        localPlayer.combattant.CurrentHealth = localPlayer.combattant.MaxHealth;
+        localPlayer.combattant.FillHealth();
 
         Vector2[] lineIn = new Vector2[] { transform.position + Vector3.up * 0.5f, transform.position + Vector3.right * 0.5f, transform.position + Vector3.down * 0.5f, transform.position + Vector3.left * 0.5f };
 
