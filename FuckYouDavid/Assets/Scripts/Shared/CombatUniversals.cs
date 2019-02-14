@@ -4,41 +4,48 @@ using System.Collections.Generic;
 [Serializable]
 public class CombatUniversals
 {
-    public enum CLASSTYPE { Weak, Tank, Puncher, Runner }
-
-    public CLASSTYPE Class = CLASSTYPE.Weak;
-
     public string Name = "Nameless";
 
     public UnityEngine.Sprite Image;
 
+    public enum CLASSTYPE { Weak, Tank, Puncher, Runner }
+
+    public CLASSTYPE Class = CLASSTYPE.Weak;
+
+    public GameManager.States weakness = GameManager.States.Burn;
+
+    /// <summary>
+    /// Use to increase the power of the given character
+    /// </summary>
+    public int powerLevel;
+
     //Stats
-    public Stat Strength; //attack
-    public Stat Agility; //attackspeed
-    public Stat Chin; //defence
-    public Stat StaminaStat; // PP
+    internal Stat Strength; //attack
+    internal Stat Agility; //attackspeed
+    internal Stat Chin; //defence
+    internal Stat StaminaStat; // PP
 
-    public int experience;
+    internal int experience;
 
-    public GameManager.States CurrentState = GameManager.States.Normal;
+    internal GameManager.States CurrentState = GameManager.States.Normal;
 
     // Main Values
-    public void FillHealth()
+    internal void FillHealth()
     {
         CurrentHealth = MaxHealth;
     }
 
-    public int MaxHealth => 5 + (Chin.level * 5);
-    public int CurrentHealth;
+    internal int MaxHealth => 5 + (Chin.level * 5);
+    internal int CurrentHealth;
 
-    public int MaxStamina => 5 + (StaminaStat.level * 5);
-    public int CurrentStamina;
+    internal int MaxStamina => 5 + (StaminaStat.level * 5);
+    internal int CurrentStamina;
 
-    public bool isDead => CurrentHealth <= 0;
+    internal bool isDead => CurrentHealth <= 0;
 
-    public int PowerLevel => StaminaStat.level + Strength.level + Chin.level + Agility.level;
+    internal int PowerLevel => StaminaStat.level + Strength.level + Chin.level + Agility.level;
 
-    public void Inititialize()
+    internal void Inititialize()
     {
         if (attacks.Count < 1)
         {
@@ -101,6 +108,30 @@ public class CombatUniversals
             StaminaStat.experience = 0;
             Agility.experience = 0;
             Chin.experience = 0;
+        }
+
+
+        while (PowerLevel < powerLevel)
+        {
+            int r = UnityEngine.Random.Range(0, 3);
+            //Instead of random use the class system.
+            switch (r)
+            {
+                case 0:
+                    Strength.level += 1;
+                    break;
+                case 1:
+                    StaminaStat.level += 1;
+                    break;
+                case 2:
+                    Agility.level += 1;
+                    break;
+                case 3:
+                    Chin.level += 1;
+                    break;
+                default:
+                    break;
+            }
         }
 
         FillHealth();

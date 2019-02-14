@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static string PlayerName = "";
 
-    internal Player player = null;
+    internal static Player player = null;
 
     public GameObject namePanel;
 

@@ -635,14 +635,27 @@ public class CombatManager : MonoBehaviour
                 break;
         }
 
+        if (hit && combatant_A.attacks.ToArray()[attackNo].Effect == combatant_B.weakness)
+        {
+            int dam = Random.Range(1, power);
+
+            combatant_B.CurrentHealth -= dam;
+
+            logger.Enqueue($"It's super effective!\nAn extra {dam}HP dealt!");
+        }
+
         logging = true;
 
         Invoke("Logger_DisplayNext", 0);
 
         if (combatant_1.CurrentHealth <= 0 && (!logger.Contains($"{combatant_1.Name}")&& !logger.Contains("knocked out")))
         {
-            if (combatant_1.CurrentHealth <= -2 && (!logger.Contains($"{combatant_1.Name}") && !logger.Contains("knocked out")))
-                logger.Enqueue($"{combatant_1.Name} got knocked the fuck out!");
+            if (combatant_1.CurrentHealth <= -1 && (!logger.Contains($"{combatant_1.Name}") && !logger.Contains("knocked out")))
+                logger.Enqueue($"{combatant_1.Name} got knocked the FUCK out!");
+            else
+            {
+                logger.Enqueue($"{combatant_1.Name} got knocked out!");
+            }
 
             int experienceAdded = Random.Range(combatant_1.PowerLevel, combatant_1.PowerLevel + 10);
 

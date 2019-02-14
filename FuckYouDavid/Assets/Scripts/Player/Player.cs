@@ -16,13 +16,13 @@ public class Player : MonoBehaviour
     {
         bedM = FindObjectOfType<BedManager>();
     
-        if (GameManager.instance.player != null)
+        if (GameManager.player != null)
         {
-            if (GameManager.instance.player.inventory != null)
-                inventory = GameManager.instance.player.inventory;
+            if (GameManager.player.inventory != null)
+                inventory = GameManager.player.inventory;
 
-            if (GameManager.instance.player.combattant != null)
-                combattant = GameManager.instance.player.combattant;
+            if (GameManager.player.combattant != null)
+                combattant = GameManager.player.combattant;
         }
 
         if (combattant.Class == CombatUniversals.CLASSTYPE.Weak)
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
             mov.input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
 
-        GameManager.instance.player = this;
+        GameManager.player = this;
     }
 
     public void Respawn() {
