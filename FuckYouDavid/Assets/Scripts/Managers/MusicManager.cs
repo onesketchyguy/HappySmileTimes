@@ -40,6 +40,7 @@ public class MusicManager : MonoBehaviour
     {
         if (audioSource.isPlaying == false)
         {
+            print("MusicPlaying");
             audioSource.Play();
 
         }

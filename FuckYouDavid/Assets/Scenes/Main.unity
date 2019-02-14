@@ -1933,17 +1933,17 @@ PrefabInstance:
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: Name
-      value: Chris W Chans
+      value: Chris W Chan
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: dialogue.Array.data[0]
-      value: God they are mean  I just wanta play
+      value: God they're mean  I just wanta play
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: dialogue.Array.data[1]
-      value: good luck out there
+      value: Good luck out there
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e3615e4265d9b4992692420a30e386, type: 3}
@@ -2133,7 +2133,7 @@ PrefabInstance:
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
@@ -2153,17 +2153,17 @@ PrefabInstance:
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: dialogue.Array.data[0]
-      value: Hey welcome to the main menu
+      value: Hey, welcome to the main menu
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: dialogue.Array.data[1]
-      value: talk to everyone
+      value: talk to everyone!
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: dialogue.Array.data[3]
-      value: 'State alarms safty for your state of mind '
+      value: 'r your state of mind '
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
@@ -2317,12 +2317,12 @@ PrefabInstance:
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: dialogue.Array.data[0]
-      value: Its Play options and quit
+      value: Its Play, Options and Quit
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}
       propertyPath: dialogue.Array.data[1]
-      value: Man are they intence
+      value: Man, are they intense
       objectReference: {fileID: 0}
     - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
         type: 3}

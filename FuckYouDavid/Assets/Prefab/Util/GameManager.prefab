@@ -430,6 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   namePanel: {fileID: 435256114}
   Panel: {fileID: 6864834907453531908}
+  Music: {fileID: 8018138818520508839, guid: 6c9b7340e4573384289dbbf1f4053973, type: 3}
   ChildrenToSpawnOnStart:
   - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}
   - {fileID: 5221820662604740199, guid: 288ffa7f3aa395d409d58ef67f4d9f3d, type: 3}

@@ -3617,7 +3617,7 @@ Tilemap:
       - {fileID: 21300004, guid: 6f23cf55d83ee304cbbf1ee081d32512, type: 3}
       - {fileID: 21300006, guid: 6f23cf55d83ee304cbbf1ee081d32512, type: 3}
       - {fileID: 21300008, guid: 6f23cf55d83ee304cbbf1ee081d32512, type: 3}
-      m_AnimationSpeed: 11.911265
+      m_AnimationSpeed: 11.927074
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -3679,6 +3679,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &149661492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6109571166763085946, guid: 80d22a4399453d04b9d759a846a96fd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2085151134}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c31c53ed8dcc84e9d79a30e0691af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &174231815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4377,6 +4389,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2,
+        type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 8018138818520508839, guid: 6c9b7340e4573384289dbbf1f4053973,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a8205152bbc7854ab39d09ab48977a2, type: 3}
 --- !u!1 &815776094
@@ -5631,6 +5649,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e3615e4265d9b4992692420a30e386, type: 3}
+--- !u!1 &1592233564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5736643010446251920, guid: 80d22a4399453d04b9d759a846a96fd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2085151134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1814568012
 GameObject:
   m_ObjectHideFlags: 0
@@ -10205,5 +10229,15 @@ PrefabInstance:
       propertyPath: Inventory
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4857996175179814232, guid: 6311cd52078922e43879ad7c1739e90a,
+        type: 3}
+      propertyPath: bedM
+      value: 
+      objectReference: {fileID: 149661492}
+    - target: {fileID: 4857996175179814232, guid: 6311cd52078922e43879ad7c1739e90a,
+        type: 3}
+      propertyPath: Spawn
+      value: 
+      objectReference: {fileID: 1592233564}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6311cd52078922e43879ad7c1739e90a, type: 3}

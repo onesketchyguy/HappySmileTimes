@@ -156,6 +156,7 @@ public class CombatManager : MonoBehaviour
         if (combatant_0 != null && combatant_1 != null)
         {
             Music.audioSource.clip = Music.Songs[1];
+          
             //Player
             icons[0].sprite = combatant_0.Image;
 

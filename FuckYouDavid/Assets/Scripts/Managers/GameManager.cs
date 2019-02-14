@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Music = FindObjectOfType<MusicManager>();
         if (instance != this && GameManager.instance != null)
         {
             Destroy(gameObject);
@@ -45,13 +46,14 @@ public class GameManager : MonoBehaviour
 
             DontDestroyOnLoad(gameObject);
         }
+       
     }
 
     private void Start()
     {
         print("psdads");
-        Music.audioSource.clip = Music.Songs[0];
-
+     //   Music.audioSource.clip = Music.Songs[0];
+    //    Music.audioSource.Play();
         if (GetComponent<Canvas>())
             GetComponent<Canvas>().worldCamera = Camera.main;
 
@@ -167,7 +169,6 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string SceneToLoad)
     {
         if (SceneToLoad == "Main") PlayerName = "";
-
         SceneManager.LoadScene(SceneToLoad);
     }
 
