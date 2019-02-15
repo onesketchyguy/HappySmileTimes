@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
     [Space]
 
     [SerializeField] private Text experienceText;
+    [SerializeField] private Text Money;
 
     [SerializeField] private Text StrengthText, StaminaText, AgilityText, ChinText;
 
@@ -37,6 +38,7 @@ public class InventoryManager : MonoBehaviour
             ChinButton.gameObject.SetActive(0 < player.combattant.experience);
 
             experienceText.text = $"XP: {player.combattant.experience}";
+            Money.text = $"Money: {player.inventory.Money}";
         }
     }
 

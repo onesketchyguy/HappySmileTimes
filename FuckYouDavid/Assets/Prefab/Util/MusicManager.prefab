@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Slider: {fileID: 0}
   Songs:
+  - {fileID: 8300000, guid: a65f109dfdb8031468485179f05b627a, type: 3}
   - {fileID: 8300000, guid: 19c9149615bf4924785be0765de6abb1, type: 3}
-  - {fileID: 8300000, guid: ecd375b41af34d348b3a463697e74e9d, type: 3}
   GM: {fileID: 6939113495119107740, guid: 4a8205152bbc7854ab39d09ab48977a2, type: 3}
   audioSource: {fileID: 6908312511583279110}
 --- !u!82 &6908312511583279110
