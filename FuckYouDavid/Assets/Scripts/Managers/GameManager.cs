@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject[] ChildrenToSpawnOnStart;
 
-    public List<CombatUniversals.Move> moves = new List<CombatUniversals.Move>() { };
-
     public static GameManager instance;
 
     public static bool UpdateNameText = false;
@@ -109,11 +107,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (player != null && player.combattant.isDead)
-        {
-            player.Respawn();
-        }
-
         if (UpdateNameText == true)
         {
             namePanel.SetActive(true);

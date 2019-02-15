@@ -20,10 +20,10 @@ public class CombatUniversals
     public int powerLevel;
 
     //Stats
-    internal Stat Strength; //attack
-    internal Stat Agility; //attackspeed
-    internal Stat Chin; //defence
-    internal Stat StaminaStat; // PP
+    public Stat Strength; //attack
+    public Stat Agility; //attackspeed
+    public Stat Chin; //defence
+    public Stat StaminaStat; // PP
 
     internal int experience;
 
@@ -47,12 +47,7 @@ public class CombatUniversals
 
     internal void Inititialize()
     {
-        if (attacks.Count < 1)
-        {
-            attacks.Add(GameManager.instance.moves.ToArray()[0]);
-        }
-
-        if (Strength.experience == 0 && StaminaStat.experience == 0 && Agility.experience == 0 && Chin.experience == 0)
+        if (Strength.experience == -1 && StaminaStat.experience == -1 && Agility.experience == -1 && Chin.experience == -1)
         {
             switch (Class)
             {
@@ -138,7 +133,7 @@ public class CombatUniversals
         CurrentStamina = MaxStamina;
     }
 
-    internal List<Move> attacks = new List<Move>() { };
+    public List<Move> attacks = new List<Move>() { };
 
     [Serializable]
     public class Stat
@@ -165,5 +160,7 @@ public class CombatUniversals
         public int maxExperience => power * 5;
 
         public List<Move> Upgrade = new List<Move> { };
+
+        public int powerLevelRequired;
     }
 }

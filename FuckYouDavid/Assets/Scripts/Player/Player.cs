@@ -72,7 +72,8 @@ public class Player : MonoBehaviour
         GameManager.player = this;
     }
 
-    public void Respawn() {
+    public void Respawn()
+    {
         bedM.Sleep(this);
         gameObject.transform.position = Spawn.transform.position;
     }
