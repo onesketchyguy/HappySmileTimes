@@ -100,10 +100,15 @@ MonoBehaviour:
     keys: []
     Money: 0
   AllowedToMove: 1
+  Spawn: {fileID: 0}
+  bedM: {fileID: 0}
   combattant:
     Name: Nameless
     Image: {fileID: 21300018, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
-    Stength:
+    Class: 0
+    weakness: 2
+    powerLevel: 0
+    Strength:
       level: 1
       experience: 0
     Agility:
@@ -115,9 +120,37 @@ MonoBehaviour:
     StaminaStat:
       level: 1
       experience: 0
-    experience: 0
-    CurrentStamina: 0
-    CurrentHealth: 0
+    attacks:
+    - name: Swing arms around
+      description: Kinda like a punch
+      Effect: 8
+      power: 1
+      Upgrade:
+      - name: Punch
+        description: Similar swing arms around
+        Effect: 0
+        power: 2
+        Upgrade:
+        - name: Good punch
+          description: It hits harder than a regular punch
+          Effect: 0
+          power: 3
+          Upgrade:
+          - name: Great punch
+            description: Litterally the best
+            Effect: 0
+            power: 4
+            Upgrade:
+            - name: Super punch
+              description: Better than great punch
+              Effect: 2
+              power: 5
+              Upgrade: []
+              powerLevelRequired: 0
+            powerLevelRequired: 0
+          powerLevelRequired: 0
+        powerLevelRequired: 0
+      powerLevelRequired: 0
 --- !u!114 &4857996175179814235
 MonoBehaviour:
   m_ObjectHideFlags: 0
