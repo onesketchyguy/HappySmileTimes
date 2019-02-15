@@ -88,7 +88,7 @@ public class PickClass : MonoBehaviour
                     break;
             }
 
-            GameManager.instance.LoadScene("World_1");
+            GameManager.instance.LoadScene("World_0");
         }
     }
 }
