@@ -47,7 +47,7 @@ public class MusicManager : MonoBehaviour
 
         if (Slider == null)
         {
-            GameObject volumeSilder = GameObject.Find("VolumeSlider");
+            GameObject volumeSilder = GameObject.Find("MusicSlider");
             Slider = volumeSilder == null ? null : volumeSilder.GetComponent<Slider>();
 
             if (Slider != null)

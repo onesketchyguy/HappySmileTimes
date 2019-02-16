@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public GameObject Panel, Moves, Bag, INVPanel, INVContent;
+    public GameObject Panel, Moves, Bag, INVPanel, INVContent, OptionsPanel;
 
     [Space]
 
@@ -47,6 +47,7 @@ public class InventoryManager : MonoBehaviour
         Panel.SetActive(Factor==1);
         Bag.SetActive(Factor == 2);
         Moves.SetActive(Factor == 3);
+        OptionsPanel.SetActive(Factor == 4);
 
         if (Bag.activeSelf)
         {

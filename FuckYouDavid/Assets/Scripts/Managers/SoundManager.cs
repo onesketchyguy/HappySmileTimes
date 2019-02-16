@@ -22,6 +22,12 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip NotificationSound;
 
+    public AudioClip hit;
+
+    public AudioClip death;
+
+    public AudioClip miss;
+
     [SerializeField] AudioClip[] DoorSounds;
 
     private AudioSource m_source;
@@ -29,6 +35,24 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         m_source = GetComponent<AudioSource>();
+    }
+
+    public void PlayHitSoundEffect()
+    {
+        if (hit != null)
+            m_source.PlayOneShot(hit, 1 /* PlayerPrefsManager.GetSFXVolume()*/);
+    }
+
+    public void PlayMissEffect()
+    {
+        if (miss != null)
+            m_source.PlayOneShot(miss, 1 /* PlayerPrefsManager.GetSFXVolume()*/);
+    }
+
+    public void PlayDeathSoundEffect()
+    {
+        if (death != null)
+            m_source.PlayOneShot(death, 1 /* PlayerPrefsManager.GetSFXVolume()*/);
     }
 
     public void PlayLevelUpEffect()
