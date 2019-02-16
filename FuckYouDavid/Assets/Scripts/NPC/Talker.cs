@@ -66,9 +66,9 @@ public class Talker : MonoBehaviour
         if (HasItem == true&& Sales==false)
         {
             //gives Item
-            FindObjectOfType<Player>().inventory += inventory;
-
             string itemsRetrieved = CalculateItemsGot();
+
+            FindObjectOfType<Player>().inventory += inventory;
 
             float timeToDisplayNotification = itemsRetrieved.ToCharArray().Length / 5;
 
@@ -99,7 +99,7 @@ public class Talker : MonoBehaviour
 
     private string CalculateItemsGot()
     {
-        string itemsRetrieved = $"Got";
+        string itemsRetrieved = "Got";
 
         if (inventory.Money > 0)
         {
@@ -117,6 +117,8 @@ public class Talker : MonoBehaviour
         }
 
         itemsRetrieved += ".";
+
+
         return itemsRetrieved;
     }
 

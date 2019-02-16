@@ -19,6 +19,18 @@ public class MusicManager : MonoBehaviour
 
     void Update()
     {
+        switch (GameManager.gameState)
+        {
+            case GameManager.GameState.Playing:
+                audioSource.clip = Songs[0];
+                break;
+            case GameManager.GameState.InCombat:
+                audioSource.clip = Songs[1];
+                break;
+            default:
+                break;
+        }
+
         if (audioSource.isPlaying == false)
         {
             print("MusicPlaying");
