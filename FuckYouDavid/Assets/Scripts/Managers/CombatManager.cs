@@ -126,10 +126,6 @@ public class CombatManager : MonoBehaviour
 
                     if (LoggerObject.text.Contains(combatant_1.Name))
                     {
-                        spawnPos = icons[0].transform.position;
-                    }
-                    else
-                    {
                         spawnPos = icons[1].transform.position;
                     }
 

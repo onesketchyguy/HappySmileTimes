@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -8,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static string PlayerName = "";
 
     internal static Player player = null;
+
+    internal static CombatUniversals playerCombat;
 
     public GameObject namePanel;
 

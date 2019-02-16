@@ -109,16 +109,16 @@ MonoBehaviour:
     weakness: 2
     powerLevel: 0
     Strength:
-      level: 1
+      level: -1
       experience: 0
     Agility:
-      level: 1
+      level: -1
       experience: 0
     Chin:
-      level: 1
+      level: -1
       experience: 0
     StaminaStat:
-      level: 1
+      level: -1
       experience: 0
     attacks:
     - name: Swing arms around

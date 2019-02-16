@@ -20,10 +20,10 @@ public class Player : MonoBehaviour
         {
             if (GameManager.player.inventory != null)
                 inventory = GameManager.player.inventory;
-
-            if (GameManager.player.combattant != null)
-                combattant = GameManager.player.combattant;
         }
+
+        if (GameManager.playerCombat != null)
+            combattant = GameManager.playerCombat;
 
         if (combattant.Class == CombatUniversals.CLASSTYPE.Weak)
         {
@@ -70,6 +70,8 @@ public class Player : MonoBehaviour
         }
 
         GameManager.player = this;
+
+        GameManager.playerCombat = combattant;
     }
 
     public void Respawn()
