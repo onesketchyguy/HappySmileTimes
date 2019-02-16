@@ -133,7 +133,9 @@ public class CombatManager : MonoBehaviour
                         spawnPos = icons[1].transform.position;
                     }
 
-                    Instantiate(hitEffect, spawnPos, Quaternion.identity);
+                    GameObject HitEffect = Instantiate(hitEffect, spawnPos, Quaternion.identity, transform);
+
+                    hitEffect.transform.SetAsLastSibling();
                 }
             }
             else
@@ -718,14 +720,14 @@ public class CombatManager : MonoBehaviour
 
     bool CalculateChances(float successChance)
     {
-        float chance = 1 - Mathf.Abs(1 - (Random.Range(0.0f, 1)) / 1);
+        float chance = 1 - Mathf.Abs(1 - (Random.Range(0.5f, 1)) / 1);
 
         return (chance > successChance);
     }
 
     bool CalculateChances(int stat, float successChance)
     {
-        float chance = 1 - Mathf.Abs((1 * stat) - (Random.Range(0.0f, 1 * stat)) / 1 * stat);
+        float chance = 1 - Mathf.Abs((1 * stat) - (Random.Range(0.5f, 1 * stat)) / 1 * stat);
 
         return (chance > successChance);
     }
@@ -734,7 +736,7 @@ public class CombatManager : MonoBehaviour
     {
         int chance1Stat = 1 * stat;
 
-        float chance = 1 - Mathf.Abs(chance1Stat - (Random.Range(0.0f, chance1Stat)) / chance1Stat);
+        float chance = 1 - Mathf.Abs(chance1Stat - (Random.Range(0.5f, chance1Stat)) / chance1Stat);
 
         int chance2Stat = 1 * stat2;
 
