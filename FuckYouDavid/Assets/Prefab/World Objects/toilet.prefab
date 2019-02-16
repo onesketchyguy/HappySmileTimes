@@ -97,12 +97,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: []
   currentSentence: 0
-  Name: 
+  Name: Toilet
   Sales: 0
   Tourial: 0
   inventory:
     items: []
-    keys: []
+    keys:
+    - FrontDoor
+    - FrontDoor
     Money: 0
   TextTime: 1
 --- !u!61 &7286184672265385034

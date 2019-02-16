@@ -3617,7 +3617,7 @@ Tilemap:
       - {fileID: 21300004, guid: 6f23cf55d83ee304cbbf1ee081d32512, type: 3}
       - {fileID: 21300006, guid: 6f23cf55d83ee304cbbf1ee081d32512, type: 3}
       - {fileID: 21300008, guid: 6f23cf55d83ee304cbbf1ee081d32512, type: 3}
-      m_AnimationSpeed: 11.927074
+      m_AnimationSpeed: 9.251206
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -5407,7 +5407,7 @@ PrefabInstance:
     - target: {fileID: 6543458847941156072, guid: 873938a94bdc5364a88ad6762287a9e3,
         type: 3}
       propertyPath: Key
-      value: FrontDoor
+      value: Front door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 873938a94bdc5364a88ad6762287a9e3, type: 3}
@@ -10394,7 +10394,7 @@ PrefabInstance:
     - target: {fileID: 3089466804060521181, guid: ef1a9898960f60a41921df60e40dc2a2,
         type: 3}
       propertyPath: inventory.keys.Array.data[0]
-      value: FrontDoor
+      value: Front door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef1a9898960f60a41921df60e40dc2a2, type: 3}
