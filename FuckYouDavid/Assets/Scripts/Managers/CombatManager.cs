@@ -758,7 +758,9 @@ public class CombatManager : MonoBehaviour
 
                     if (i < combatant_0.attacks.Count)
                     {
-                        item.GetComponentInChildren<Text>().text = combatant_0.attacks.ToArray()[i].name;
+                        if (combatant_0.attacks[i].powerLevelRequired <= combatant_0.powerLevel)
+                            item.GetComponentInChildren<Text>().text = combatant_0.attacks.ToArray()[i].name;
+                        else item.gameObject.SetActive(false);
                     }
                     else
                     {
