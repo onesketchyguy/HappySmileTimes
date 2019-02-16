@@ -63847,12 +63847,17 @@ PrefabInstance:
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: dialogue.Array.data[0]
-      value: I will not have a seat
+      value: Surprise faggot I was the bad guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: good twist 10/10
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -65096,7 +65101,7 @@ PrefabInstance:
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -65106,12 +65111,32 @@ PrefabInstance:
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: dialogue.Array.data[0]
-      value: Surprise faggot I was the bad guy
+      value: Hey the devil stole from you huh
       objectReference: {fileID: 0}
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: dialogue.Array.data[1]
-      value: good twist 10/10
+      value: OK your gonna need to take his generals out
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[2]
+      value: '1 in the city just on the other side of the forest '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[3]
+      value: the other one is hidden in the sewers
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[4]
+      value: Good luck little boy lick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[5]
+      value: you are more than welcome to sleep in my bed
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
