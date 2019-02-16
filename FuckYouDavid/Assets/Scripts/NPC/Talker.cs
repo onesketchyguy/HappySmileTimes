@@ -68,19 +68,7 @@ public class Talker : MonoBehaviour
             //gives Item
             FindObjectOfType<Player>().inventory += inventory;
 
-            string itemsRetrieved = $"Got ${inventory.Money}";
-
-            foreach (var item in inventory.items.ToArray())
-            {
-                itemsRetrieved += $", {item.name}";
-            }
-
-            foreach (var item in inventory.keys.ToArray())
-            {
-                itemsRetrieved += $", key";
-            }
-
-            itemsRetrieved += ".";
+            string itemsRetrieved = CalculateItemsGot();
 
             float timeToDisplayNotification = itemsRetrieved.ToCharArray().Length / 5;
 
@@ -107,6 +95,29 @@ public class Talker : MonoBehaviour
             return;
         }
 
+    }
+
+    private string CalculateItemsGot()
+    {
+        string itemsRetrieved = $"Got";
+
+        if (inventory.Money > 0)
+        {
+            itemsRetrieved += $"${inventory.Money}";
+        }
+
+        foreach (var item in inventory.items.ToArray())
+        {
+            itemsRetrieved += $" {item.name}";
+        }
+
+        foreach (var item in inventory.keys.ToArray())
+        {
+            itemsRetrieved += $" key to {item}";
+        }
+
+        itemsRetrieved += ".";
+        return itemsRetrieved;
     }
 
     public void OnExitChat()

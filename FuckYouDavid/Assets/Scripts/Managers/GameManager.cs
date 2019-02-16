@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public static CombatUniversals.CLASSTYPE playerClass;
 
     public GameObject Panel;
-    public MusicManager Music;
  
     public enum States { Normal, GrossOut, Burn, Freeze, Paralysis, Poison, Confusion, Heal, Taunt, Protection }
 
@@ -32,7 +31,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Music = FindObjectOfType<MusicManager>();
         if (instance != this && GameManager.instance != null)
         {
             Destroy(gameObject);
