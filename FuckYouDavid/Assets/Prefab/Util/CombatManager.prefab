@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5742124098611453918}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.22192292
+  m_Size: 0.22521959
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1406,7 +1406,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d1e308c2f13c940ac20306c2408d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 4901498212408117472, guid: 1ab0a57dd1c9b8c48a8182c3be69c37a,
+    type: 3}
   CombatScreen: {fileID: 6905390822373819697}
+  P: {fileID: 0}
   icons:
   - {fileID: 6905390821426788447}
   - {fileID: 6905390822400584681}
@@ -1421,6 +1424,7 @@ MonoBehaviour:
   - {fileID: 6977062215716689115}
   - {fileID: 8259329373024145087}
   - {fileID: 5870541325852237219}
+  Music: {fileID: 0}
   fightOptionsRegion: {fileID: 6905390822493269494}
   inventoryPanel: {fileID: 1335298643037410117}
   inventoryContent: {fileID: 8489935805278909959}
@@ -4915,7 +4919,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4209549458581311322}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.5979868
+  m_Size: 0.6011002
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

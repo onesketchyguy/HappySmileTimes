@@ -6,6 +6,8 @@ public class CombatManager : MonoBehaviour
 {
     private bool playersTurn = false;
 
+    [SerializeField] private GameObject hitEffect;
+
     public GameObject CombatScreen;
     public Player P;
     [SerializeField] private Image[] icons;
@@ -116,12 +118,32 @@ public class CombatManager : MonoBehaviour
             {
                 SetupUI();
 
-                SoundManager.Instance.PlayDoorSound(1);
+                if (LoggerObject.text.Contains("hit") && (LoggerObject.text.Contains(combatant_0.Name) || LoggerObject.text.Contains(combatant_1.Name)))
+                {
+                    SoundManager.Instance.PlayHitSoundEffect();
+
+                    Vector3 spawnPos = icons[0].transform.position;
+
+                    if (LoggerObject.text.Contains(combatant_1.Name))
+                    {
+                        spawnPos = icons[0].transform.position;
+                    }
+                    else
+                    {
+                        spawnPos = icons[1].transform.position;
+                    }
+
+                    Instantiate(hitEffect, spawnPos, Quaternion.identity);
+                }
             }
             else
             if (LoggerObject.text.Contains("leveled up"))
             {
                 SoundManager.Instance.PlayLevelUpEffect();
+            }
+            if (LoggerObject.text.Contains("miss"))
+            {
+                SoundManager.Instance.PlayMissEffect();
             }
 
             float time = LoggerObject.text.ToCharArray().Length / 10;
