@@ -60719,6 +60719,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: 'Stop you have violated the law '
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -60752,6 +60757,11 @@ PrefabInstance:
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.data[1].power
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -60873,6 +60883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: combattant.attacks.Array.data[0].powerLevelRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
@@ -61014,6 +61029,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300006, guid: 71e5e0344a236aa4b8b017b047831ae4,
         type: 3}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &150584428
@@ -61227,6 +61247,11 @@ PrefabInstance:
         type: 3}
       propertyPath: combattant.attacks.Array.data[0].Effect
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
@@ -61838,6 +61863,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: Ornge man bad
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -61881,6 +61911,11 @@ PrefabInstance:
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.data[2].power
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -61961,6 +61996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.Array.data[0]
       value: God david thinks hes funny "medaphor for aids" what kind of name is that
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -62288,6 +62328,11 @@ PrefabInstance:
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.data[1].power
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -63067,6 +63112,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: Kiss kiss
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -63374,6 +63424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.Array.data[0]
       value: OWO * stares at you horrnyly
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -63722,6 +63777,230 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1374313098}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1629278633
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 208125251730294646, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_Name
+      value: Hermit fighter
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 84.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: I will not have a seat
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Upgrade.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].Upgrade.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Upgrade.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Stength.level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Agility.level
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: James the perv
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].name
+      value: Grab
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Effect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].power
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Upgrade.Array.data[0].name
+      value: Van grab
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Upgrade.Array.data[0].power
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Upgrade.Array.data[0].Effect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Strength.level
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Chin.level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.StaminaStat.level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].name
+      value: 'Get hansy '
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].Effect
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].power
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].Upgrade.Array.data[0].name
+      value: Van grab
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].Upgrade.Array.data[0].Effect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].Upgrade.Array.data[0].power
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].name
+      value: Cane
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Effect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].power
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Upgrade.Array.data[0].name
+      value: Van grab
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Upgrade.Array.data[0].Effect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Upgrade.Array.data[0].power
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1669351352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63898,6 +64177,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: You read the name sigh lets go
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -63964,6 +64248,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300006, guid: 71e5e0344a236aa4b8b017b047831ae4,
         type: 3}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1678224492
@@ -64157,6 +64446,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: Reeee
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -64299,80 +64593,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c39c6d374f445024dae7a56a993d8d90, type: 3}
---- !u!1001 &1758782533
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1029932472529738438, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_Name
-      value: Hermit
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.602108
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 16.556519
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9044683112274766915, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441355737845752573, guid: 89e3615e4265d9b4992692420a30e386,
-        type: 3}
-      propertyPath: DIALOGUE
-      value: Hi little one lay in my bed
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 89e3615e4265d9b4992692420a30e386, type: 3}
 --- !u!1001 &1795076005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64486,6 +64706,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300004, guid: 71e5e0344a236aa4b8b017b047831ae4,
         type: 3}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1799797429
@@ -64620,6 +64845,11 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[0].Upgrade.Array.data[0].Effect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1 &1814568012
@@ -64744,6 +64974,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: I know about putty Ill ddos you so hard
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -64783,6 +65018,165 @@ PrefabInstance:
         type: 3}
       propertyPath: combattant.attacks.Array.data[0].Effect
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
+--- !u!1001 &1839251484
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 208125251730294646, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_Name
+      value: Hermit
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: Name
+      value: Hermit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Surprise faggot I was the bad guy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: good twist 10/10
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Strength.level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Agility.level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Chin.level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.StaminaStat.level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].name
+      value: Cane
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].power
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].name
+      value: Molest
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].Effect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].power
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].name
+      value: Get handsy
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].power
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Effect
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
@@ -64862,6 +65256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.Array.data[0]
       value: Beat me daddy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -65071,6 +65470,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: Its all I know I would never question it
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -65117,6 +65521,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300006, guid: 71e5e0344a236aa4b8b017b047831ae4,
         type: 3}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1958766469
@@ -65316,6 +65725,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: No relation
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -65357,6 +65771,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300004, guid: 71e5e0344a236aa4b8b017b047831ae4,
         type: 3}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &2095752304
@@ -65435,6 +65854,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.Array.data[0]
       value: I will find my honest truest love
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}

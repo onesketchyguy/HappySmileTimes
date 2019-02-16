@@ -6010,6 +6010,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: Best game
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -7345,7 +7350,7 @@ PrefabInstance:
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: inventory.Money
-      value: 100
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -8778,17 +8783,17 @@ PrefabInstance:
     - target: {fileID: 208125251730294646, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: m_Name
-      value: CombatCharacter (5)
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.564453
+      value: -45.56
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.383959
+      value: 23.18
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -8835,6 +8840,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.177
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.261
+      objectReference: {fileID: 0}
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: dialogue.Array.size
@@ -8843,37 +8858,47 @@ PrefabInstance:
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: Name
-      value: T serise
+      value: Shit monster
       objectReference: {fileID: 0}
     - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: dialogue.Array.data[0]
-      value: Chuytia!
+      value: ???@!??!??#
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Upgrade.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.Name
-      value: T serise
+      value: Shit Monster
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.Strength.level
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.Agility.level
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.Chin.level
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -8883,28 +8908,74 @@ PrefabInstance:
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.data[0].name
-      value: New Subs
+      value: '#":#:!#!'
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.data[0].power
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.data[0].Effect
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.data[1].name
-      value: Bitch lasana
+      value: OH GOD!!!
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.data[1].power
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].name
+      value: Feceses Tornado
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].power
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].Effect
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Effect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Upgrade.Array.data[0].name
+      value: Feceses Explotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Upgrade.Array.data[0].power
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Upgrade.Array.data[0].Effect
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294643, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300012, guid: 71e5e0344a236aa4b8b017b047831ae4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &815844512
@@ -9762,6 +9833,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.Array.data[0]
       value: Ass kicking time
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -10745,6 +10821,11 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[0]
       value: Im a portal master you dont stand a chance
       objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: combattant.attacks.Array.size
@@ -11429,6 +11510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.Array.data[0]
       value: Aww geez
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -12223,6 +12309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Name
       value: Brutus
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: inventory.Money
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}

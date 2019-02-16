@@ -443,8 +443,16 @@ CompositeCollider2D:
         Y: 60000000
       - X: 50000000
         Y: 80000000
-      - X: -60000000
+      - X: -160000000
         Y: 80000000
+      - X: -160000000
+        Y: 120000000
+      - X: -70000000
+        Y: 120000000
+      - X: -70000000
+        Y: 90000000
+      - X: -60000000
+        Y: 90000000
       - X: -60000000
         Y: 120000000
       - X: 0
@@ -839,14 +847,6 @@ CompositeCollider2D:
         Y: -160000000
       - X: 150000000
         Y: -160000000
-    - - X: -160000000
-        Y: 80000000
-      - X: -160000000
-        Y: 120000000
-      - X: -70000000
-        Y: 120000000
-      - X: -70000000
-        Y: 80000000
     - - X: -200000000
         Y: 50000000
       - X: -200000000
@@ -899,14 +899,6 @@ CompositeCollider2D:
         Y: -120000000
       - X: -180000000
         Y: -126500000
-    - - X: -110000000
-        Y: -136000000
-      - X: -107500000
-        Y: -130000000
-      - X: -113500000
-        Y: -130000000
-      - X: -110000000
-        Y: -136500000
     - - X: -70000000
         Y: -136000000
       - X: -67500000
@@ -961,13 +953,13 @@ CompositeCollider2D:
         Y: -130000000
       - X: -170000000
         Y: -136000000
-    - - X: -90000000
+    - - X: -110000000
         Y: -136000000
-      - X: -87500000
+      - X: -107500000
         Y: -130000000
-      - X: -93500000
+      - X: -113500000
         Y: -130000000
-      - X: -90000000
+      - X: -110000000
         Y: -136500000
     - - X: -80000000
         Y: -136000000
@@ -1033,6 +1025,14 @@ CompositeCollider2D:
         Y: -130000000
       - X: -130000000
         Y: -136500000
+    - - X: -90000000
+        Y: -136000000
+      - X: -87500000
+        Y: -130000000
+      - X: -93500000
+        Y: -130000000
+      - X: -90000000
+        Y: -136500000
     - - X: -70000000
         Y: -146000000
       - X: -67500000
@@ -1057,12 +1057,6 @@ CompositeCollider2D:
         Y: -140000000
       - X: -90000000
         Y: -146500000
-    - - X: -137500000
-        Y: -140000000
-      - X: -140000000
-        Y: -140000000
-      - X: -140000000
-        Y: -146000000
     - - X: -120000000
         Y: -146000000
       - X: -117500000
@@ -1103,6 +1097,12 @@ CompositeCollider2D:
         Y: -140000000
       - X: -80000000
         Y: -146500000
+    - - X: -137500000
+        Y: -140000000
+      - X: -140000000
+        Y: -140000000
+      - X: -140000000
+        Y: -146000000
     - - X: -70000000
         Y: -156000000
       - X: -67500000
@@ -1218,7 +1218,11 @@ CompositeCollider2D:
       - {x: 6, y: 6}
       - {x: 5, y: 6}
       - {x: 5, y: 8}
-      - {x: -6, y: 8}
+      - {x: -16, y: 8}
+      - {x: -16, y: 12}
+      - {x: -7, y: 12}
+      - {x: -7, y: 9}
+      - {x: -6, y: 9}
       - {x: -6, y: 12}
       - {x: 0, y: 12}
       - {x: 0, y: 9}
@@ -1416,10 +1420,6 @@ CompositeCollider2D:
       - {x: -3, y: -15.650001}
       - {x: -3, y: -16}
       - {x: 15, y: -16}
-    - - {x: -16, y: 8}
-      - {x: -16, y: 12}
-      - {x: -7, y: 12}
-      - {x: -7, y: 8}
     - - {x: -20, y: 5}
       - {x: -20, y: 6}
       - {x: -19, y: 6}
@@ -1446,10 +1446,6 @@ CompositeCollider2D:
       - {x: -17.75, y: -12}
       - {x: -18.35, y: -12}
       - {x: -18, y: -12.650001}
-    - - {x: -11, y: -13.6}
-      - {x: -10.75, y: -13}
-      - {x: -11.35, y: -13}
-      - {x: -11, y: -13.650001}
     - - {x: -7, y: -13.6}
       - {x: -6.75, y: -13}
       - {x: -7.35, y: -13}
@@ -1477,10 +1473,10 @@ CompositeCollider2D:
     - - {x: -16.75, y: -13}
       - {x: -17, y: -13}
       - {x: -17, y: -13.6}
-    - - {x: -9, y: -13.6}
-      - {x: -8.75, y: -13}
-      - {x: -9.35, y: -13}
-      - {x: -9, y: -13.650001}
+    - - {x: -11, y: -13.6}
+      - {x: -10.75, y: -13}
+      - {x: -11.35, y: -13}
+      - {x: -11, y: -13.650001}
     - - {x: -8, y: -13.6}
       - {x: -7.75, y: -13}
       - {x: -8.35, y: -13}
@@ -1513,6 +1509,10 @@ CompositeCollider2D:
       - {x: -12.75, y: -13}
       - {x: -13.35, y: -13}
       - {x: -13, y: -13.650001}
+    - - {x: -9, y: -13.6}
+      - {x: -8.75, y: -13}
+      - {x: -9.35, y: -13}
+      - {x: -9, y: -13.650001}
     - - {x: -7, y: -14.6}
       - {x: -6.75, y: -14}
       - {x: -7.35, y: -14}
@@ -1525,9 +1525,6 @@ CompositeCollider2D:
       - {x: -8.75, y: -14}
       - {x: -9.35, y: -14}
       - {x: -9, y: -14.650001}
-    - - {x: -13.75, y: -14}
-      - {x: -14, y: -14}
-      - {x: -14, y: -14.6}
     - - {x: -12, y: -14.6}
       - {x: -11.75, y: -14}
       - {x: -12.35, y: -14}
@@ -1548,6 +1545,9 @@ CompositeCollider2D:
       - {x: -7.75, y: -14}
       - {x: -8.35, y: -14}
       - {x: -8, y: -14.650001}
+    - - {x: -13.75, y: -14}
+      - {x: -14, y: -14}
+      - {x: -14, y: -14.6}
     - - {x: -7, y: -15.6}
       - {x: -6.75, y: -15}
       - {x: -7.35, y: -15}
@@ -8282,15 +8282,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -7, y: 8, z: 0}
-    second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: 8, y: 8, z: 0}
     second:
       m_TileIndex: 1
@@ -11553,17 +11544,17 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 831
     m_Data: {fileID: 11400000, guid: 549018be612dda449aa7dc63755e7de6, type: 2}
-  - m_RefCount: 269
+  - m_RefCount: 268
     m_Data: {fileID: 11400000, guid: 479c2f9738a567840bc780772230241f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 831
     m_Data: {fileID: 21300032, guid: d997927672214d84994f168f7c1d433a, type: 3}
-  - m_RefCount: 269
+  - m_RefCount: 268
     m_Data: {fileID: 21300000, guid: d997927672214d84994f168f7c1d433a, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 1100
+  - m_RefCount: 1099
     m_Data:
       e00: 1
       e01: 0
@@ -11582,7 +11573,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1100
+  - m_RefCount: 1099
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11759,6 +11750,11 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[0].power
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &174712140
@@ -11888,6 +11884,11 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[1].power
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1 &175770532
@@ -11959,7 +11960,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &206976013
 PrefabInstance:
@@ -13212,12 +13213,12 @@ PrefabInstance:
     - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -59.535004
+      value: -48.5
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.429469
+      value: 10.21
       objectReference: {fileID: 0}
     - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
         type: 3}
@@ -14295,6 +14296,11 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[0].Effect
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &966991218
@@ -15016,6 +15022,11 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[1].power
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1559025483
@@ -15393,7 +15404,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1659846848
 PrefabInstance:
@@ -15529,6 +15540,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
+--- !u!1 &1677702430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677702432}
+  - component: {fileID: 1677702431}
+  m_Layer: 0
+  m_Name: New Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1677702431
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677702430}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300002, guid: d1931853150f42d45a9cbd10341d0801, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.55, y: 0.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1677702432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677702430}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -69.47, y: 8.488, z: 0}
+  m_LocalScale: {x: 1.767, y: 2.209, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1722093565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16127,6 +16217,195 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
+--- !u!1001 &1882369308
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 208125251730294646, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_Name
+      value: CombatCharacter (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -61.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294604, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: 'NOT SO FAST '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916778342895761178, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: Devil hench man
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Upgrade.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Name
+      value: Devil hench man
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Strength.level
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Chin.level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.StaminaStat.level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].name
+      value: Hell punch
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].power
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Effect
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Agility.level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].name
+      value: Dark dab
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].Effect
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[1].power
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].name
+      value: Toxic CS Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].Effect
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[2].power
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Upgrade.Array.data[0].name
+      value: Super Hell Punch
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Upgrade.Array.data[0].Effect
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.attacks.Array.data[0].Upgrade.Array.data[0].power
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1923916899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16243,6 +16522,11 @@ PrefabInstance:
         type: 3}
       propertyPath: combattant.attacks.Array.data[0].power
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
@@ -29882,6 +30166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: combattant.attacks.Array.data[0].power
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Class
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
