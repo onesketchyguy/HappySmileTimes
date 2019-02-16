@@ -61008,6 +61008,12 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[0].powerLevelRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Image
+      value: 
+      objectReference: {fileID: 21300006, guid: 71e5e0344a236aa4b8b017b047831ae4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &150584428
@@ -63101,6 +63107,12 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[1].Effect
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Image
+      value: 
+      objectReference: {fileID: 21300006, guid: 71e5e0344a236aa4b8b017b047831ae4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1113290384
@@ -63946,6 +63958,12 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[2].Effect
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Image
+      value: 
+      objectReference: {fileID: 21300006, guid: 71e5e0344a236aa4b8b017b047831ae4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1678224492
@@ -64174,6 +64192,12 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[0].power
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Image
+      value: 
+      objectReference: {fileID: 21300004, guid: 71e5e0344a236aa4b8b017b047831ae4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1753095493
@@ -64456,6 +64480,12 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[1].power
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Image
+      value: 
+      objectReference: {fileID: 21300004, guid: 71e5e0344a236aa4b8b017b047831ae4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1799797429
@@ -65081,6 +65111,12 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[2].power
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Image
+      value: 
+      objectReference: {fileID: 21300006, guid: 71e5e0344a236aa4b8b017b047831ae4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1958766469
@@ -65315,6 +65351,12 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[1].Effect
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: combattant.Image
+      value: 
+      objectReference: {fileID: 21300004, guid: 71e5e0344a236aa4b8b017b047831ae4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &2095752304
