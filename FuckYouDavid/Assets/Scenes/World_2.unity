@@ -64004,6 +64004,11 @@ PrefabInstance:
       propertyPath: combattant.attacks.Array.data[2].Upgrade.Array.data[0].power
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 208125251730294640, guid: d822040ccf22b4746adf0c4b0b213196,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d822040ccf22b4746adf0c4b0b213196, type: 3}
 --- !u!1001 &1669351352

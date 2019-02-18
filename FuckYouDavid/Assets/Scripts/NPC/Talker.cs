@@ -51,7 +51,16 @@ public class Talker : MonoBehaviour
 
         return text;
     }
+    public void Update()
+    {
+        if (InChat==true) {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
 
+                OnChat();
+            }
+        }
+    }
     public void OnChat()
     {
         CheckName();
@@ -163,6 +172,7 @@ public class Talker : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            print("in");
             Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
 
             if (rigidBody)
@@ -170,10 +180,7 @@ public class Talker : MonoBehaviour
                 rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                OnChat();
-            }
+            InChat = true;
         }
     }
 
