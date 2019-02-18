@@ -76,13 +76,13 @@ public class PickClass : MonoBehaviour
             switch (channel)
             {
                 case 1:
-                    GameManager.playerClass = CombatUniversals.CLASSTYPE.Runner;
+                    GameManager.playerCombat.Class = CombatUniversals.CLASSTYPE.Runner;
                     break;
                 case 2:
-                    GameManager.playerClass = CombatUniversals.CLASSTYPE.Tank;
+                    GameManager.playerCombat.Class = CombatUniversals.CLASSTYPE.Tank;
                     break;
                 case 0:
-                    GameManager.playerClass = CombatUniversals.CLASSTYPE.Puncher;
+                    GameManager.playerCombat.Class = CombatUniversals.CLASSTYPE.Puncher;
                     break;
                 default:
                     break;

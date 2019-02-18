@@ -8,11 +8,19 @@ public class GameManager : MonoBehaviour
 
     internal static Player player = null;
 
-    internal static CombatUniversals playerCombat;
+    public Sprite playerIcon;
+
+    public System.Collections.Generic.List<CombatUniversals.Move> attacks = new System.Collections.Generic.List<CombatUniversals.Move>() { };
+
+    internal static CombatUniversals playerCombat = new CombatUniversals()
+    {
+        Strength = new CombatUniversals.Stat { level = -1, experience = -1 },
+        Agility = new CombatUniversals.Stat { level = -1, experience = -1 },
+        Chin = new CombatUniversals.Stat { level = -1, experience = -1 },
+        StaminaStat = new CombatUniversals.Stat { level = -1, experience = -1 }
+    };
 
     public GameObject namePanel;
-
-    public static CombatUniversals.CLASSTYPE playerClass;
 
     public GameObject Panel;
  

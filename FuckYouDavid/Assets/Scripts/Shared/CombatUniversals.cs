@@ -47,7 +47,7 @@ public class CombatUniversals
 
     internal void Inititialize()
     {
-        if (Strength.experience == -1 && StaminaStat.experience == -1 && Agility.experience == -1 && Chin.experience == -1)
+        if (Strength.level == -1 || StaminaStat.level == -1 || Agility.level == -1 || Chin.level == -1 || Strength.experience == -1 || StaminaStat.experience == -1 || Agility.experience == -1 || Chin.experience == -1)
         {
             switch (Class)
             {
@@ -105,6 +105,11 @@ public class CombatUniversals
             Chin.experience = 0;
         }
 
+
+        if (attacks.Count == 0)
+        {
+            attacks = GameManager.instance.attacks;
+        }
 
         while (PowerLevel < powerLevel)
         {

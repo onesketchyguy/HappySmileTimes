@@ -8,7 +8,7 @@ public class BedManager : MonoBehaviour
 
     public void Sleep(Player localPlayer)
     {
-        localPlayer.combattant.FillHealth();
+        GameManager.playerCombat.FillHealth();
 
         Vector2[] lineIn = new Vector2[] { transform.position + Vector3.up * 0.5f, transform.position + Vector3.right * 0.5f, transform.position + Vector3.down * 0.5f, transform.position + Vector3.left * 0.5f };
 
@@ -35,7 +35,7 @@ public class BedManager : MonoBehaviour
 
     void showRestedMessage()
     {
-        DialogueManager.instance.DisplayMessage("Health restored!", $"{player.combattant.Name}", 1);
+        DialogueManager.instance.DisplayMessage("Health restored!", $"{GameManager.playerCombat.Name}", 1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,7 +68,7 @@ public class BedManager : MonoBehaviour
 
         GameManager.instance.TogglePanelOn(timeToSleep + 1f);
 
-        DialogueManager.instance.DisplayMessage("...zZzZzZz...", $"{player.combattant.Name}", timeToSleep);
+        DialogueManager.instance.DisplayMessage("...zZzZzZz...", $"{GameManager.playerCombat.Name}", timeToSleep);
     }
 
     public void No ()

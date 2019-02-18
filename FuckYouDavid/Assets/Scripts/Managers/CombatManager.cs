@@ -9,7 +9,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private GameObject hitEffect;
 
     public GameObject CombatScreen;
-    public Player P;
+    public Player P => FindObjectOfType<Player>();
     [SerializeField] private Image[] icons;
 
     [SerializeField] private GameObject optionsRegion;
@@ -17,7 +17,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private GameObject[] combatant_regions;
 
     [SerializeField] private Button[] attacks;
-    public MusicManager Music;
+    public MusicManager Music => FindObjectOfType<MusicManager>();
     public static CombatUniversals combatant_0, combatant_1;
 
     [SerializeField] private GameObject fightOptionsRegion, inventoryPanel, inventoryContent;
@@ -27,15 +27,10 @@ public class CombatManager : MonoBehaviour
     private Queue<string> logger = new Queue<string> { };
 
 
-    public void Start()
-    {
-        P = FindObjectOfType<Player>();
-        Music = FindObjectOfType<MusicManager>();
-
-    }
-
     private void SetCombatScreen(bool active)
     {
+        combatant_0 = GameManager.playerCombat;
+
         if (active == true && !CombatScreen.activeSelf)
         {
             if (combatant_regions[0] == null || combatant_regions[1] == null)
@@ -260,6 +255,8 @@ public class CombatManager : MonoBehaviour
 
         if (freed)
         {
+            playersTurn = !playersTurn;
+
             logger.Enqueue($"{combatA.Name} recovered from {state}...");
 
             combatA.CurrentState = GameManager.States.Normal;

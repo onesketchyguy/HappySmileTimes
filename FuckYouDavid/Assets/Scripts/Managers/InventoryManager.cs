@@ -19,27 +19,27 @@ public class InventoryManager : MonoBehaviour
     {
         parent.SetActive(GameManager.gameState == GameManager.GameState.InBag);
 
-        if (Menu.activeSelf == true)
+        if (parent.activeSelf == true && Menu.activeSelf == true)
         {
             Player player = FindObjectOfType<Player>();
 
-            StrengthText.text = $"STR {player.combattant.Strength.level} : {player.combattant.Strength.experience}/{player.combattant.Strength.maxExperience}";
+            StrengthText.text = $"STR {GameManager.playerCombat.Strength.level} : {GameManager.playerCombat.Strength.experience}/{GameManager.playerCombat.Strength.maxExperience}";
 
-            StaminaText.text = $"STA {player.combattant.StaminaStat.level}: {player.combattant.StaminaStat.experience}/{player.combattant.StaminaStat.maxExperience}";
+            StaminaText.text = $"STA {GameManager.playerCombat.StaminaStat.level}: {GameManager.playerCombat.StaminaStat.experience}/{GameManager.playerCombat.StaminaStat.maxExperience}";
 
-            AgilityText.text = $"AGL {player.combattant.Agility.level}: {player.combattant.Agility.experience}/{player.combattant.Agility.maxExperience}";
+            AgilityText.text = $"AGL {GameManager.playerCombat.Agility.level}: {GameManager.playerCombat.Agility.experience}/{GameManager.playerCombat.Agility.maxExperience}";
 
-            ChinText.text = $"CHIN {player.combattant.Chin.level}: {player.combattant.Chin.experience}/{player.combattant.Chin.maxExperience}";
+            ChinText.text = $"CHIN {GameManager.playerCombat.Chin.level}: {GameManager.playerCombat.Chin.experience}/{GameManager.playerCombat.Chin.maxExperience}";
 
-            StrengthButton.gameObject.SetActive(0 < player.combattant.experience);
+            StrengthButton.gameObject.SetActive(0 < GameManager.playerCombat.experience);
 
-            StaminaButton.gameObject.SetActive(0 < player.combattant.experience);
+            StaminaButton.gameObject.SetActive(0 < GameManager.playerCombat.experience);
 
-            AgilityButton.gameObject.SetActive(0 < player.combattant.experience);
+            AgilityButton.gameObject.SetActive(0 < GameManager.playerCombat.experience);
 
-            ChinButton.gameObject.SetActive(0 < player.combattant.experience);
+            ChinButton.gameObject.SetActive(0 < GameManager.playerCombat.experience);
 
-            experienceText.text = $"XP: {player.combattant.experience}";
+            experienceText.text = $"XP: {GameManager.playerCombat.experience}";
             Money.text = $"Money: {player.inventory.Money}";
         }
     }
@@ -138,7 +138,7 @@ public class InventoryManager : MonoBehaviour
 
                     if (item.name == itemToRemove.name)
                     {
-                        player.combattant.CurrentHealth += (int) (10 * itemToRemove.ChanceOfEffect);
+                        GameManager.playerCombat.CurrentHealth += (int) (10 * itemToRemove.ChanceOfEffect);
 
                         DialogueManager.instance.DisplayMessage($"Used {itemToRemove.name}.", 1);
 
@@ -166,15 +166,15 @@ public class InventoryManager : MonoBehaviour
     {
         Player player = FindObjectOfType<Player>();
 
-        player.combattant.experience -= 1;
+        GameManager.playerCombat.experience -= 1;
 
-        player.combattant.Strength.experience += 1;
+        GameManager.playerCombat.Strength.experience += 1;
 
-        if (player.combattant.Strength.experience > player.combattant.Strength.maxExperience)
+        if (GameManager.playerCombat.Strength.experience > GameManager.playerCombat.Strength.maxExperience)
         {
-            player.combattant.Strength.experience = 0;
+            GameManager.playerCombat.Strength.experience = 0;
 
-            player.combattant.Strength.level += 1;
+            GameManager.playerCombat.Strength.level += 1;
         }
     }
 
@@ -182,15 +182,15 @@ public class InventoryManager : MonoBehaviour
     {
         Player player = FindObjectOfType<Player>();
 
-        player.combattant.experience -= 1;
+        GameManager.playerCombat.experience -= 1;
 
-        player.combattant.StaminaStat.experience += 1;
+        GameManager.playerCombat.StaminaStat.experience += 1;
 
-        if (player.combattant.StaminaStat.experience > player.combattant.StaminaStat.maxExperience)
+        if (GameManager.playerCombat.StaminaStat.experience > GameManager.playerCombat.StaminaStat.maxExperience)
         {
-            player.combattant.StaminaStat.experience = 0;
+            GameManager.playerCombat.StaminaStat.experience = 0;
 
-            player.combattant.StaminaStat.level += 1;
+            GameManager.playerCombat.StaminaStat.level += 1;
         }
     }
 
@@ -198,15 +198,15 @@ public class InventoryManager : MonoBehaviour
     {
         Player player = FindObjectOfType<Player>();
 
-        player.combattant.experience -= 1;
+        GameManager.playerCombat.experience -= 1;
 
-        player.combattant.Agility.experience += 1;
+        GameManager.playerCombat.Agility.experience += 1;
 
-        if (player.combattant.Agility.experience > player.combattant.Agility.maxExperience)
+        if (GameManager.playerCombat.Agility.experience > GameManager.playerCombat.Agility.maxExperience)
         {
-            player.combattant.Agility.experience = 0;
+            GameManager.playerCombat.Agility.experience = 0;
 
-            player.combattant.Agility.level += 1;
+            GameManager.playerCombat.Agility.level += 1;
         }
     }
 
@@ -214,15 +214,15 @@ public class InventoryManager : MonoBehaviour
     {
         Player player = FindObjectOfType<Player>();
 
-        player.combattant.experience -= 1;
+        GameManager.playerCombat.experience -= 1;
 
-        player.combattant.Chin.experience += 1;
+        GameManager.playerCombat.Chin.experience += 1;
 
-        if (player.combattant.Chin.experience > player.combattant.Chin.maxExperience)
+        if (GameManager.playerCombat.Chin.experience > GameManager.playerCombat.Chin.maxExperience)
         {
-            player.combattant.Chin.experience = 0;
+            GameManager.playerCombat.Chin.experience = 0;
 
-            player.combattant.Chin.level += 1;
+            GameManager.playerCombat.Chin.level += 1;
         }
     }
 }

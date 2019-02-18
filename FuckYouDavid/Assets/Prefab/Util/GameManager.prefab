@@ -428,9 +428,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39a0348de8f40248aaf8b8361d7bcc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIcon: {fileID: 21300018, guid: f4ba2ba6f169a9343af536c47f874efc, type: 3}
+  attacks:
+  - name: Fail arms around
+    description: 
+    Effect: 8
+    power: 1
+    Upgrade:
+    - name: It's a punch
+      description: 
+      Effect: 0
+      power: 2
+      Upgrade:
+      - name: Kill him
+        description: 
+        Effect: 0
+        power: 3
+        Upgrade:
+        - name: Yeah do it
+          description: 
+          Effect: 0
+          power: 4
+          Upgrade: []
+          powerLevelRequired: 0
+        powerLevelRequired: 0
+      powerLevelRequired: 0
+    powerLevelRequired: 0
+  - name: Fail legs around
+    description: 
+    Effect: 1
+    power: 2
+    Upgrade:
+    - name: Kick
+      description: 
+      Effect: 0
+      power: 2
+      Upgrade:
+      - name: kick him good
+        description: 
+        Effect: 0
+        power: 3
+        Upgrade:
+        - name: Kick her in the balls
+          description: 
+          Effect: 0
+          power: 4
+          Upgrade: []
+          powerLevelRequired: 0
+        powerLevelRequired: 0
+      powerLevelRequired: 0
+    powerLevelRequired: 0
+  - name: Block?
+    description: 
+    Effect: 9
+    power: 0
+    Upgrade:
+    - name: Block
+      description: 
+      Effect: 9
+      power: 1
+      Upgrade:
+      - name: Protect groin
+        description: 
+        Effect: 9
+        power: 5
+        Upgrade: []
+        powerLevelRequired: 0
+      powerLevelRequired: 0
+    powerLevelRequired: 0
   namePanel: {fileID: 435256114}
   Panel: {fileID: 6864834907453531908}
-  Music: {fileID: 8018138818520508839, guid: 6c9b7340e4573384289dbbf1f4053973, type: 3}
   ChildrenToSpawnOnStart:
   - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}
   - {fileID: 5221820662604740199, guid: 288ffa7f3aa395d409d58ef67f4d9f3d, type: 3}
@@ -439,162 +506,6 @@ MonoBehaviour:
   - {fileID: 4522769273125857492, guid: ca3bc594eb8d8ca40a885585def46e51, type: 3}
   - {fileID: 1427054749215695217, guid: 9fcc5579ec59ade45b1a00696e4a6c4b, type: 3}
   - {fileID: 1427054749215695217, guid: 6c9b7340e4573384289dbbf1f4053973, type: 3}
-  moves:
-  - name: Punch
-    description: Straight to the point
-    Effect: 0
-    power: 1
-    Upgrade:
-    - name: Great punch
-      description: A pretty good punch.
-      Effect: 0
-      power: 2
-      Upgrade: []
-  - name: Use feet
-    description: Kind of like a kick
-    Effect: 0
-    power: 1
-    Upgrade: []
-  - name: Spit
-    description: EWW.. or yum no judgment
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Fast Punch
-    description: Straight to the
-    Effect: 0
-    power: 1
-    Upgrade: []
-  - name: Hard Punch
-    description: More straighter to the point
-    Effect: 0
-    power: 5
-    Upgrade: []
-  - name: Flail
-    description: Panic that could work
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Barrier
-    description: Leave me alone
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Fetal Possition
-    description: 'Wait for your mom to help '
-    Effect: 0
-    power: 4
-    Upgrade: []
-  - name: double punch
-    description: Straight to the point Straight to the point
-    Effect: 0
-    power: 3
-    Upgrade: []
-  - name: A Fucking FireBall
-    description: 'to send you''re enimes to burn again '
-    Effect: 0
-    power: 5
-    Upgrade: []
-  - name: karate high jump attack
-    description: For the jackie chan fans
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Fastest attack ever
-    description: Wanta see me do it again
-    Effect: 0
-    power: 3
-    Upgrade: []
-  - name: kameameama
-    description: 'From your favoirte anime '
-    Effect: 0
-    power: 5
-    Upgrade: []
-  - name: Falcon punch
-    description: 'from the plastation brawls '
-    Effect: 0
-    power: 3
-    Upgrade: []
-  - name: 'cursyhameha '
-    description: Vanquish your enemies or your dean
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: 'A pokemon '
-    description: referancing it makes the whole game not stolen
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Dwite's karate
-    description: 'Newer and udpated now with bear defences '
-    Effect: 0
-    power: 3
-    Upgrade: []
-  - name: A gun
-    description: Fighting dirtier than ever before
-    Effect: 0
-    power: 6
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
-  - name: Flail
-    description: 
-    Effect: 0
-    power: 2
-    Upgrade: []
 --- !u!223 &6939113495119107743
 Canvas:
   m_ObjectHideFlags: 0

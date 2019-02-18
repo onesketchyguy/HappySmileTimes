@@ -10,8 +10,6 @@ public class Player : MonoBehaviour
     public GameObject Spawn;
     public BedManager bedM;
 
-    [SerializeField] public CombatUniversals combattant = new CombatUniversals { };
-
     private void Start()
     {
         bedM = FindObjectOfType<BedManager>();
@@ -22,25 +20,16 @@ public class Player : MonoBehaviour
                 inventory = GameManager.player.inventory;
         }
 
-        if (GameManager.playerCombat != null)
-            combattant = GameManager.playerCombat;
+        GameManager.playerCombat.Inititialize();
 
-        if (combattant.Class == CombatUniversals.CLASSTYPE.Weak)
-        {
-            combattant.Class = GameManager.playerClass;
-        }
-
-        combattant.Inititialize();
+        GameManager.playerCombat.Image = GameManager.instance.playerIcon;
     }
 
     void Update()
     {
-        combattant.Name = GameManager.PlayerName;
+        GameManager.player = this;
 
-        if (GameManager.gameState == GameManager.GameState.InCombat)
-        {
-            CombatManager.combatant_0 = combattant;
-        }
+        GameManager.playerCombat.Name = GameManager.PlayerName;
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -68,10 +57,6 @@ public class Player : MonoBehaviour
         {
             mov.input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
-
-        GameManager.player = this;
-
-        GameManager.playerCombat = combattant;
     }
 
     public void Respawn()
