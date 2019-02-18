@@ -3,7 +3,9 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public GameObject Panel, Moves, Bag, INVPanel, INVContent, OptionsPanel;
+    public GameObject parent;
+
+    public GameObject Menu, Moves, Bag, INVPanel, INVContent, OptionsPanel;
 
     [Space]
 
@@ -15,9 +17,9 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Button StrengthButton, StaminaButton, AgilityButton, ChinButton;
     private void Update()
     {
-        Panel.SetActive(GameManager.gameState == GameManager.GameState.InBag);   
+        parent.SetActive(GameManager.gameState == GameManager.GameState.InBag);
 
-        if (Panel.activeSelf == true)
+        if (Menu.activeSelf == true)
         {
             Player player = FindObjectOfType<Player>();
 
@@ -44,7 +46,7 @@ public class InventoryManager : MonoBehaviour
 
     public void PanelController(int Factor)
     {
-        Panel.SetActive(Factor==1);
+        Menu.SetActive(Factor==1);
         Bag.SetActive(Factor == 2);
         Moves.SetActive(Factor == 3);
         OptionsPanel.SetActive(Factor == 4);
@@ -60,8 +62,6 @@ public class InventoryManager : MonoBehaviour
         //OpenPlayers bag
 
         Debug.Log("Attempting to open bag.");
-
-        Panel.SetActive(!INVPanel.activeSelf);
 
         foreach (var item in INVContent.GetComponentsInChildren<Transform>())
         {
