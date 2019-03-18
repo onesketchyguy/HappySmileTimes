@@ -691,11 +691,11 @@ public class CombatManager : MonoBehaviour
     {
         if (combatant_A.attacks.ToArray()[attackNo].experience >= combatant_A.attacks.ToArray()[attackNo].maxExperience)
         {
-            if (combatant_A.attacks.ToArray()[attackNo].Upgrade.Count >= 1)
+            if (combatant_A.attacks.ToArray()[attackNo].Upgrade != null)
             {
-                logger.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up to {combatant_A.attacks.ToArray()[attackNo].Upgrade[0].name} for {combatant_A.Name}!");
+                logger.Enqueue($"{combatant_A.attacks.ToArray()[attackNo].name} leveled up to {combatant_A.attacks.ToArray()[attackNo].Upgrade.name} for {combatant_A.Name}!");
 
-                combatant_A.attacks.Add(combatant_A.attacks.ToArray()[attackNo].Upgrade.ToArray()[0]);
+                combatant_A.attacks.Add(combatant_A.attacks.ToArray()[attackNo].Upgrade);
 
                 combatant_A.attacks.Remove(combatant_A.attacks.ToArray()[attackNo]);
 

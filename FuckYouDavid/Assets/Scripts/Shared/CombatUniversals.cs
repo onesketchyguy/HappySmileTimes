@@ -148,24 +148,4 @@ public class CombatUniversals
         public int experience = 0;
         public int maxExperience => level * 10;
     }
-
-    [Serializable]
-    public class Move
-    {
-        public string name;
-
-        public string description;
-
-        public GameManager.States Effect = GameManager.States.Normal;
-
-        public int power;
-
-        internal int experience = -1;
-
-        public int maxExperience => power * 5;
-
-        public List<Move> Upgrade = new List<Move> { };
-
-        public int powerLevelRequired;
-    }
 }

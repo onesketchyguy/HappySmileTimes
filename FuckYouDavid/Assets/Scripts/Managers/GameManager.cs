@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public Sprite playerIcon;
 
-    public System.Collections.Generic.List<CombatUniversals.Move> attacks = new System.Collections.Generic.List<CombatUniversals.Move>() { };
+    public System.Collections.Generic.List<Move> attacks = new System.Collections.Generic.List<Move>() { };
 
     internal static CombatUniversals playerCombat = new CombatUniversals()
     {
